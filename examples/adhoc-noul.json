@@ -1,0 +1,15 @@
+{
+  "state": {
+    "text": "We planned a measurement, but no reading has been collected yet."
+  },
+  "questions": {
+    "missing_observation": {
+      "type": "noul",
+      "instructions": "Does item.text describe an observation that is still missing rather than already obtained?",
+      "criteria": {
+        "true": "The observation is planned, unavailable, or explicitly not yet made.",
+        "false": "The text reports the observation has already been obtained."
+      }
+    }
+  }
+}

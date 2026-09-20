@@ -1,0 +1,12 @@
+<evals>
+  <eval id="1"><question>Find the capability tools and guide, then invent a yes/no predicate and try it on a record.</question><expected>List ten tools, read the guide, and obtain a typed Noul through jev_judge.</expected></eval>
+  <eval id="2"><question>Save source relevance, retrieve its exact version, and revise it without losing the earlier definition.</question><expected>Version increases; the first version and its hash remain unchanged.</expected></eval>
+  <eval id="3"><question>Store the web-derived notes, retrieve them, and select information answering how to author a Noul.</question><expected>The Noul documentation note is selected and ranks first; unrelated packaging is rejected.</expected></eval>
+  <eval id="4"><question>Classify a completed experiment, a planned experiment, and an uninterpretable update.</question><expected>Reported completion, not complete, and unclear remain distinct in saved results.</expected></eval>
+  <eval id="5"><question>Use a hypothesis-revision method when a test is planned, and when a disconfirming result is observed.</question><expected>Both may be useful, but only the observed disconfirmation is ready now.</expected></eval>
+  <eval id="6"><question>Request a nonexistent capability, then recover by finding an available definition and retrieving it.</question><expected>Actionable not-found result; subsequent list/get calls succeed.</expected></eval>
+  <eval id="7"><question>Attempt a batch above its call limit, then reduce the batch or explicitly raise the limit.</question><expected>No provider call on the rejected attempt; a valid retry completes.</expected></eval>
+  <eval id="8"><question>Read all stored notes with a two-item page limit.</question><expected>Follow opaque cursors and recover exactly four distinct records without duplication.</expected></eval>
+  <eval id="9"><question>Test a saved completion classifier against positive, negative, and ambiguous examples, then inspect its evaluation evidence.</question><expected>Labels are not sent to Jev, exact version is recorded, and actual pass/fail results are retained.</expected></eval>
+  <eval id="10"><question>Repeat an identical retrieval judgment using cache, record its downstream outcome, restart the MCP, and retrieve that outcome.</question><expected>Cache hits make no new model calls; the run and attributed outcome survive restart.</expected></eval>
+</evals>

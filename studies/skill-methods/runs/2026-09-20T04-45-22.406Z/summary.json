@@ -1,0 +1,321 @@
+{
+  "requests": 18,
+  "httpCalls": 18,
+  "errors": 0,
+  "matched": 12,
+  "reportedCostUsd": 0.0031422719999999998,
+  "unreportedCosts": 0,
+  "returnedModels": [
+    "typesafe/jev-1.13-20260917"
+  ],
+  "results": [
+    {
+      "caseId": "kiln",
+      "variant": "canonical",
+      "selected": [
+        "experiment",
+        "hypothesize",
+        "revise",
+        "separate",
+        "trace",
+        "verify"
+      ],
+      "missed": [],
+      "unwanted": [
+        "revise"
+      ],
+      "success": false,
+      "workflowStatus": "proposed",
+      "steps": [
+        "separate",
+        "hypothesize",
+        "experiment"
+      ],
+      "uncertain": []
+    },
+    {
+      "caseId": "kiln",
+      "variant": "reversed",
+      "selected": [
+        "experiment",
+        "hypothesize",
+        "revise",
+        "separate",
+        "trace",
+        "verify"
+      ],
+      "missed": [],
+      "unwanted": [
+        "revise"
+      ],
+      "success": false,
+      "workflowStatus": "proposed",
+      "steps": [
+        "separate",
+        "hypothesize",
+        "experiment"
+      ],
+      "uncertain": []
+    },
+    {
+      "caseId": "library",
+      "variant": "canonical",
+      "selected": [
+        "experiment",
+        "hypothesize",
+        "pilot",
+        "separate",
+        "trace",
+        "verify"
+      ],
+      "missed": [],
+      "unwanted": [],
+      "success": true,
+      "workflowStatus": "proposed",
+      "steps": [
+        "pilot"
+      ],
+      "uncertain": []
+    },
+    {
+      "caseId": "library",
+      "variant": "reversed",
+      "selected": [
+        "experiment",
+        "pilot",
+        "trace",
+        "verify"
+      ],
+      "missed": [],
+      "unwanted": [],
+      "success": true,
+      "workflowStatus": "proposed",
+      "steps": [
+        "pilot"
+      ],
+      "uncertain": []
+    },
+    {
+      "caseId": "oral_history",
+      "variant": "canonical",
+      "selected": [
+        "separate",
+        "themes",
+        "trace",
+        "verify"
+      ],
+      "missed": [],
+      "unwanted": [],
+      "success": true,
+      "workflowStatus": "proposed",
+      "steps": [
+        "themes"
+      ],
+      "uncertain": []
+    },
+    {
+      "caseId": "oral_history",
+      "variant": "reversed",
+      "selected": [
+        "separate",
+        "themes"
+      ],
+      "missed": [],
+      "unwanted": [],
+      "success": true,
+      "workflowStatus": "proposed",
+      "steps": [
+        "themes"
+      ],
+      "uncertain": []
+    },
+    {
+      "caseId": "committee",
+      "variant": "canonical",
+      "selected": [
+        "experiment",
+        "hypothesize",
+        "revise",
+        "separate",
+        "themes",
+        "trace",
+        "verify"
+      ],
+      "missed": [],
+      "unwanted": [
+        "revise"
+      ],
+      "success": false,
+      "workflowStatus": "proposed",
+      "steps": [
+        "trace"
+      ],
+      "uncertain": []
+    },
+    {
+      "caseId": "committee",
+      "variant": "reversed",
+      "selected": [
+        "experiment",
+        "revise",
+        "separate",
+        "trace"
+      ],
+      "missed": [],
+      "unwanted": [
+        "revise"
+      ],
+      "success": false,
+      "workflowStatus": "proposed",
+      "steps": [
+        "trace"
+      ],
+      "uncertain": []
+    },
+    {
+      "caseId": "refutation",
+      "variant": "canonical",
+      "selected": [
+        "experiment",
+        "hypothesize",
+        "revise",
+        "separate",
+        "trace",
+        "verify"
+      ],
+      "missed": [],
+      "unwanted": [],
+      "success": true,
+      "workflowStatus": "proposed",
+      "steps": [
+        "revise"
+      ],
+      "uncertain": []
+    },
+    {
+      "caseId": "refutation",
+      "variant": "reversed",
+      "selected": [
+        "experiment",
+        "hypothesize",
+        "revise",
+        "separate",
+        "trace"
+      ],
+      "missed": [],
+      "unwanted": [],
+      "success": true,
+      "workflowStatus": "proposed",
+      "steps": [
+        "revise"
+      ],
+      "uncertain": []
+    },
+    {
+      "caseId": "missing_inputs",
+      "variant": "canonical",
+      "selected": [
+        "experiment",
+        "hypothesize",
+        "revise",
+        "separate",
+        "trace",
+        "verify"
+      ],
+      "missed": [],
+      "unwanted": [
+        "revise"
+      ],
+      "success": false,
+      "workflowStatus": "incomplete",
+      "steps": [],
+      "uncertain": []
+    },
+    {
+      "caseId": "missing_inputs",
+      "variant": "reversed",
+      "selected": [
+        "experiment",
+        "hypothesize",
+        "revise",
+        "separate",
+        "trace",
+        "verify"
+      ],
+      "missed": [],
+      "unwanted": [
+        "revise"
+      ],
+      "success": false,
+      "workflowStatus": "incomplete",
+      "steps": [],
+      "uncertain": []
+    },
+    {
+      "caseId": "translation",
+      "variant": "canonical",
+      "selected": [],
+      "missed": [],
+      "unwanted": [],
+      "success": true,
+      "workflowStatus": "no_match",
+      "steps": [],
+      "uncertain": []
+    },
+    {
+      "caseId": "translation",
+      "variant": "reversed",
+      "selected": [],
+      "missed": [],
+      "unwanted": [],
+      "success": true,
+      "workflowStatus": "no_match",
+      "steps": [],
+      "uncertain": []
+    },
+    {
+      "caseId": "format",
+      "variant": "canonical",
+      "selected": [],
+      "missed": [],
+      "unwanted": [],
+      "success": true,
+      "workflowStatus": "no_match",
+      "steps": [],
+      "uncertain": []
+    },
+    {
+      "caseId": "format",
+      "variant": "reversed",
+      "selected": [],
+      "missed": [],
+      "unwanted": [],
+      "success": true,
+      "workflowStatus": "no_match",
+      "steps": [],
+      "uncertain": []
+    },
+    {
+      "caseId": "command_gap",
+      "variant": "canonical",
+      "selected": [],
+      "missed": [],
+      "unwanted": [],
+      "success": true,
+      "workflowStatus": "no_match",
+      "steps": [],
+      "uncertain": []
+    },
+    {
+      "caseId": "command_gap",
+      "variant": "reversed",
+      "selected": [],
+      "missed": [],
+      "unwanted": [],
+      "success": true,
+      "workflowStatus": "no_match",
+      "steps": [],
+      "uncertain": []
+    }
+  ]
+}

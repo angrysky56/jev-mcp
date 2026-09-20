@@ -1,0 +1,55 @@
+{
+  "frozenAt": "2026-09-19T20:54:09.940Z",
+  "author": "Connected Codex agent; no generative API call",
+  "sourceRun": "runs/2026-09-19T20-52-51.239Z-v1-development-528f8b85",
+  "sourceManifestHash": "39951e01486741cd145699f4800c15ec39b3d827d33ccc39ba3459fce31621cf",
+  "sourceEventsHash": "0035e9507e933de901b17e1a93852a366de5db45c5defc87fd8289fdf3b885e8",
+  "originalRubricHash": "321beaa12262fc5cf75a532a5d7087018b5ee7cb6374283dbb6020630fbc68ab",
+  "revisedRubricHash": "1108ac06a48ba911abc6476fcec6bd05f8c7f724c4c61a92c6740578ab3ad847",
+  "observedFailures": [
+    {
+      "caseId": "a04",
+      "variant": "canonical",
+      "answer": {
+        "type": "choice",
+        "choice": "responsive",
+        "probabilities": {
+          "self_sealing": 0.03,
+          "responsive": 0.66,
+          "insufficient": 0.31
+        },
+        "confidence": 0.49
+      }
+    },
+    {
+      "caseId": "a04",
+      "variant": "paraphrase",
+      "answer": {
+        "type": "choice",
+        "choice": "responsive",
+        "probabilities": {
+          "self_sealing": 0.03,
+          "responsive": 0.62,
+          "insufficient": 0.35
+        },
+        "confidence": 0.44
+      }
+    },
+    {
+      "caseId": "a04",
+      "variant": "reversed",
+      "answer": {
+        "type": "choice",
+        "choice": "responsive",
+        "probabilities": {
+          "responsive": 0.83,
+          "self_sealing": 0.03,
+          "insufficient": 0.14
+        },
+        "confidence": 0.75
+      }
+    }
+  ],
+  "change": "Distinguish a vague intention to investigate from an actual revision or a specific test with a losing outcome. Preserve the other two rubrics unchanged because development did not identify an error in them.",
+  "evaluationPolicy": "Freeze now, run v1 and v2 on the reserved evaluation split, and report every result without further rubric changes."
+}

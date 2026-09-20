@@ -1,0 +1,21 @@
+{
+  "author": "Connected Codex agent, September 19 2026; no separate model API call",
+  "createdAt": "2026-09-19T20:47:37Z",
+  "limitation": "Illustrative same-author judgments, written after authoring the cases and before any Jev results. They are not blind or independent. The unaided condition means no explicit checklist pass, not absence of exposure to this project's reasoning guidance. Evaluation cases are reserved from rubric revision, not hidden from the case author. Do not use this comparison to claim a causal Jev advantage.",
+  "unaided": {
+    "b01":"supports","b02":"weakens","b03":"unchanged","b04":"unchanged","b05":"insufficient","b06":"weakens",
+    "b07":"supports","b08":"weakens","b09":"unchanged","b10":"unchanged","b11":"insufficient","b12":"unchanged",
+    "q01":"B","q02":"B","q03":"insufficient","q04":"A","q05":"B","q06":"insufficient",
+    "q07":"A","q08":"B","q09":"insufficient","q10":"A","q11":"B","q12":"insufficient",
+    "a01":"responsive","a02":"self_sealing","a03":"responsive","a04":"insufficient","a05":"self_sealing","a06":"self_sealing",
+    "a07":"responsive","a08":"self_sealing","a09":"self_sealing","a10":"insufficient","a11":"responsive","a12":"insufficient"
+  },
+  "checklist": {
+    "b01":"supports","b02":"weakens","b03":"unchanged","b04":"unchanged","b05":"insufficient","b06":"weakens",
+    "b07":"supports","b08":"weakens","b09":"unchanged","b10":"unchanged","b11":"insufficient","b12":"unchanged",
+    "q01":"B","q02":"B","q03":"insufficient","q04":"A","q05":"B","q06":"insufficient",
+    "q07":"A","q08":"B","q09":"insufficient","q10":"A","q11":"B","q12":"insufficient",
+    "a01":"responsive","a02":"self_sealing","a03":"responsive","a04":"insufficient","a05":"self_sealing","a06":"self_sealing",
+    "a07":"responsive","a08":"self_sealing","a09":"self_sealing","a10":"insufficient","a11":"responsive","a12":"insufficient"
+  }
+}

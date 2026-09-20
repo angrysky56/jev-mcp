@@ -1,0 +1,273 @@
+{
+  "note": "Post-hoc contract correction: cover explicit evidence/checking outputs as well as the primary artifact. No new inference and no relabelling of the original model study.",
+  "sourceRun": "2026-09-20T04-45-22.406Z",
+  "results": [
+    {
+      "caseId": "library",
+      "variant": "canonical",
+      "additionalGoals": [
+        "verification_plan"
+      ],
+      "workflow": {
+        "status": "proposed",
+        "candidates": [
+          "experiment",
+          "hypothesize",
+          "pilot",
+          "separate",
+          "trace",
+          "verify"
+        ],
+        "uncertain": [],
+        "steps": [
+          {
+            "id": "pilot",
+            "fit": "adapt",
+            "requires": [
+              "agreed_scope"
+            ],
+            "wouldProvide": [
+              "pilot_plan"
+            ],
+            "source": "slicing",
+            "startLine": 51,
+            "endLine": 57,
+            "excerpt": "### Vertical-slice rules\n\n- Each slice cuts through every relevant layer (schema, API, UI, tests, whatever applies).\n- A completed slice is demoable or verifiable on its own.\n- Early slices should prove the hardest thing works — build through the uncertain path.\n- If a slice doesn't produce something testable end-to-end, it's probably a layer — restructure.\n- If the milestone crosses runtime boundaries (daemon + API + UI; bot + subprocess + service; extension + RPC), include an explicit final integration slice that exercises the assembled system.",
+            "boundaries": "Parent workflow requires agreed scope before decomposition; repository-specific roadmap formats and GitHub issue creation are not part of the transferable method. Each pilot must exercise one complete path with an observable outcome."
+          },
+          {
+            "id": "verify",
+            "fit": "adapt",
+            "requires": [
+              "claim"
+            ],
+            "wouldProvide": [
+              "verification_plan"
+            ],
+            "source": "verification",
+            "startLine": 30,
+            "endLine": 52,
+            "excerpt": "## Step 1: Identify the claim\n\nWhat are you about to claim? Name it precisely:\n\n- \"Tests pass\" → which tests?\n- \"Build works\" → for which target?\n- \"Bug is fixed\" → which reproduction?\n- \"Task complete\" → which acceptance criteria?\n\n## Step 2: Identify the verification command\n\nMatch claim → command:\n\n| Claim | Verification |\n|---|---|\n| Tests pass | The specific test command the project uses (`npm test`, `cargo test`, `pytest`, etc.) — scoped to changed code if large suite. |\n| Build works | The project's build command, for real — not `tsc --noEmit` if the project needs a bundle. |\n| Lint clean | `lsp diagnostics` on edited files, plus the project's linter if CI runs one. |\n| Bug fixed | The reproduction steps from the bug report or test, freshly run. |\n| UI works | Browser verification via `browser_snapshot_refs` + `browser_assert` in a running app — not \"it looks right in the diff\". |\n| Slice complete | Every acceptance criterion in `S##-PLAN.md`, re-checked against live behavior. |\n\nIf no verification command exists, the task has not produced a falsifiable claim — it is not complete. Write the verification first (see the `tdd` or `test` skill).",
+            "boundaries": "Parent skill requires fresh evidence after the latest relevant change before claiming completion. This fragment maps claims to verification; adapting the software commands requires an actual domain-specific observable check. It never verifies by itself."
+          }
+        ],
+        "blocked": [
+          {
+            "id": "experiment",
+            "missing": [
+              "hypotheses"
+            ]
+          },
+          {
+            "id": "hypothesize",
+            "missing": [
+              "evidence_table"
+            ]
+          },
+          {
+            "id": "separate",
+            "missing": [
+              "raw_notes"
+            ]
+          },
+          {
+            "id": "trace",
+            "missing": [
+              "decision_process"
+            ]
+          }
+        ],
+        "observedArtifacts": [
+          "agreed_scope",
+          "claim"
+        ]
+      }
+    },
+    {
+      "caseId": "library",
+      "variant": "reversed",
+      "additionalGoals": [
+        "verification_plan"
+      ],
+      "workflow": {
+        "status": "proposed",
+        "candidates": [
+          "experiment",
+          "pilot",
+          "trace",
+          "verify"
+        ],
+        "uncertain": [],
+        "steps": [
+          {
+            "id": "pilot",
+            "fit": "adapt",
+            "requires": [
+              "agreed_scope"
+            ],
+            "wouldProvide": [
+              "pilot_plan"
+            ],
+            "source": "slicing",
+            "startLine": 51,
+            "endLine": 57,
+            "excerpt": "### Vertical-slice rules\n\n- Each slice cuts through every relevant layer (schema, API, UI, tests, whatever applies).\n- A completed slice is demoable or verifiable on its own.\n- Early slices should prove the hardest thing works — build through the uncertain path.\n- If a slice doesn't produce something testable end-to-end, it's probably a layer — restructure.\n- If the milestone crosses runtime boundaries (daemon + API + UI; bot + subprocess + service; extension + RPC), include an explicit final integration slice that exercises the assembled system.",
+            "boundaries": "Parent workflow requires agreed scope before decomposition; repository-specific roadmap formats and GitHub issue creation are not part of the transferable method. Each pilot must exercise one complete path with an observable outcome."
+          },
+          {
+            "id": "verify",
+            "fit": "adapt",
+            "requires": [
+              "claim"
+            ],
+            "wouldProvide": [
+              "verification_plan"
+            ],
+            "source": "verification",
+            "startLine": 30,
+            "endLine": 52,
+            "excerpt": "## Step 1: Identify the claim\n\nWhat are you about to claim? Name it precisely:\n\n- \"Tests pass\" → which tests?\n- \"Build works\" → for which target?\n- \"Bug is fixed\" → which reproduction?\n- \"Task complete\" → which acceptance criteria?\n\n## Step 2: Identify the verification command\n\nMatch claim → command:\n\n| Claim | Verification |\n|---|---|\n| Tests pass | The specific test command the project uses (`npm test`, `cargo test`, `pytest`, etc.) — scoped to changed code if large suite. |\n| Build works | The project's build command, for real — not `tsc --noEmit` if the project needs a bundle. |\n| Lint clean | `lsp diagnostics` on edited files, plus the project's linter if CI runs one. |\n| Bug fixed | The reproduction steps from the bug report or test, freshly run. |\n| UI works | Browser verification via `browser_snapshot_refs` + `browser_assert` in a running app — not \"it looks right in the diff\". |\n| Slice complete | Every acceptance criterion in `S##-PLAN.md`, re-checked against live behavior. |\n\nIf no verification command exists, the task has not produced a falsifiable claim — it is not complete. Write the verification first (see the `tdd` or `test` skill).",
+            "boundaries": "Parent skill requires fresh evidence after the latest relevant change before claiming completion. This fragment maps claims to verification; adapting the software commands requires an actual domain-specific observable check. It never verifies by itself."
+          }
+        ],
+        "blocked": [
+          {
+            "id": "experiment",
+            "missing": [
+              "hypotheses"
+            ]
+          },
+          {
+            "id": "trace",
+            "missing": [
+              "decision_process"
+            ]
+          }
+        ],
+        "observedArtifacts": [
+          "agreed_scope",
+          "claim"
+        ]
+      }
+    },
+    {
+      "caseId": "oral_history",
+      "variant": "canonical",
+      "additionalGoals": [
+        "evidence_table"
+      ],
+      "workflow": {
+        "status": "proposed",
+        "candidates": [
+          "separate",
+          "themes",
+          "trace",
+          "verify"
+        ],
+        "uncertain": [],
+        "steps": [
+          {
+            "id": "separate",
+            "fit": "adapt",
+            "requires": [
+              "raw_notes"
+            ],
+            "wouldProvide": [
+              "evidence_table"
+            ],
+            "source": "synthesis",
+            "startLine": 90,
+            "endLine": 92,
+            "excerpt": "1. **Include raw quotes** — Direct participant quotes make insights credible and memorable.\n2. **Separate observations from interpretations** — \"5 of 8 users clicked the wrong button\" is an observation. \"The button placement is confusing\" is an interpretation.\n3. **Quantify where possible** — \"Most users\" is vague. \"7 of 10 users\" is specific.",
+            "boundaries": "Originally qualitative user research. Preserve quotations and denominators; separate observed statements from interpretation. Quotes establish what was said, not whether the reported event occurred."
+          },
+          {
+            "id": "themes",
+            "fit": "adapt",
+            "requires": [
+              "interviews"
+            ],
+            "wouldProvide": [
+              "theme_summary"
+            ],
+            "source": "synthesis",
+            "startLine": 40,
+            "endLine": 49,
+            "excerpt": "#### Theme 1: [Name]\n**Prevalence:** [X of Y participants]\n**Summary:** [What this theme is about]\n**Supporting Evidence:**\n- \"[Quote]\" — P[X]\n- \"[Quote]\" — P[X]\n**Implication:** [What this means for the product]\n\n#### Theme 2: [Name]\n[Same format]",
+            "boundaries": "Originally user research. Themes must retain source quotes and participant counts; reports are not independent confirmation of the events they describe."
+          }
+        ],
+        "blocked": [
+          {
+            "id": "trace",
+            "missing": [
+              "decision_process"
+            ]
+          },
+          {
+            "id": "verify",
+            "missing": [
+              "claim"
+            ]
+          }
+        ],
+        "observedArtifacts": [
+          "raw_notes",
+          "interviews"
+        ]
+      }
+    },
+    {
+      "caseId": "oral_history",
+      "variant": "reversed",
+      "additionalGoals": [
+        "evidence_table"
+      ],
+      "workflow": {
+        "status": "proposed",
+        "candidates": [
+          "separate",
+          "themes"
+        ],
+        "uncertain": [],
+        "steps": [
+          {
+            "id": "separate",
+            "fit": "adapt",
+            "requires": [
+              "raw_notes"
+            ],
+            "wouldProvide": [
+              "evidence_table"
+            ],
+            "source": "synthesis",
+            "startLine": 90,
+            "endLine": 92,
+            "excerpt": "1. **Include raw quotes** — Direct participant quotes make insights credible and memorable.\n2. **Separate observations from interpretations** — \"5 of 8 users clicked the wrong button\" is an observation. \"The button placement is confusing\" is an interpretation.\n3. **Quantify where possible** — \"Most users\" is vague. \"7 of 10 users\" is specific.",
+            "boundaries": "Originally qualitative user research. Preserve quotations and denominators; separate observed statements from interpretation. Quotes establish what was said, not whether the reported event occurred."
+          },
+          {
+            "id": "themes",
+            "fit": "adapt",
+            "requires": [
+              "interviews"
+            ],
+            "wouldProvide": [
+              "theme_summary"
+            ],
+            "source": "synthesis",
+            "startLine": 40,
+            "endLine": 49,
+            "excerpt": "#### Theme 1: [Name]\n**Prevalence:** [X of Y participants]\n**Summary:** [What this theme is about]\n**Supporting Evidence:**\n- \"[Quote]\" — P[X]\n- \"[Quote]\" — P[X]\n**Implication:** [What this means for the product]\n\n#### Theme 2: [Name]\n[Same format]",
+            "boundaries": "Originally user research. Themes must retain source quotes and participant counts; reports are not independent confirmation of the events they describe."
+          }
+        ],
+        "blocked": [],
+        "observedArtifacts": [
+          "raw_notes",
+          "interviews"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "createdAt": "2026-09-20T08:18:04.479Z",
+  "seeded": [
+    {
+      "name": "source_relevance",
+      "version": 1,
+      "hash": "a729c87aeb9c9ba2f3756f247915e2c85992e634d4223029bd5bf83d8910f4fa"
+    },
+    {
+      "name": "evidence_status",
+      "version": 2,
+      "hash": "fbb31fb720e6766620c358f8f421814b6fdb27487aa803bc26347b6188908fca"
+    },
+    {
+      "name": "method_readiness",
+      "version": 1,
+      "hash": "b0cdf0493fd953db1a2d9933f816f5f0ea5139f4479697a40430cd6284f74117"
+    }
+  ],
+  "evaluation": {
+    "runId": "cb467a4e-4669-46ba-af4c-c14f3b35ccdd",
+    "status": "complete",
+    "capability": {
+      "name": "evidence_status",
+      "version": 2,
+      "hash": "fbb31fb720e6766620c358f8f421814b6fdb27487aa803bc26347b6188908fca"
+    },
+    "summary": {
+      "modelCalls": 6,
+      "httpAttempts": 6,
+      "cacheHits": 0,
+      "reportedCostUsd": 0.000118314,
+      "unreportedCosts": 0,
+      "inputTokens": 2817,
+      "outputTokens": 252,
+      "totalItems": 6,
+      "completedItems": 6,
+      "selectedIds": [
+        "calibrated",
+        "inspected",
+        "scheduled",
+        "uncertain",
+        "uninspected",
+        "vague"
+      ]
+    },
+    "results": [
+      {
+        "id": "calibrated",
+        "status": "complete",
+        "stages": {
+          "classify": {
+            "status": "complete",
+            "answers": {
+              "status": {
+                "type": "choice",
+                "choice": "reported_complete",
+                "probabilities": {
+                  "reported_complete": 1,
+                  "unclear": 0,
+                  "not_complete": 0
+                },
+                "confidence": 1
+              }
+            },
+            "cached": false
+          }
+        },
+        "selected": true,
+        "rank": null
+      },
+      {
+        "id": "inspected",
+        "status": "complete",
+        "stages": {
+          "classify": {
+            "status": "complete",
+            "answers": {
+              "status": {
+                "type": "choice",
+                "choice": "reported_complete",
+                "probabilities": {
+                  "reported_complete": 1,
+                  "not_complete": 0,
+                  "unclear": 0
+                },
+                "confidence": 1
+              }
+            },
+            "cached": false
+          }
+        },
+        "selected": true,
+        "rank": null
+      },
+      {
+        "id": "scheduled",
+        "status": "complete",
+        "stages": {
+          "classify": {
+            "status": "complete",
+            "answers": {
+              "status": {
+                "type": "choice",
+                "choice": "not_complete",
+                "probabilities": {
+                  "reported_complete": 0,
+                  "unclear": 0,
+                  "not_complete": 1
+                },
+                "confidence": 1
+              }
+            },
+            "cached": false
+          }
+        },
+        "selected": true,
+        "rank": null
+      },
+      {
+        "id": "uninspected",
+        "status": "complete",
+        "stages": {
+          "classify": {
+            "status": "complete",
+            "answers": {
+              "status": {
+                "type": "choice",
+                "choice": "not_complete",
+                "probabilities": {
+                  "not_complete": 1,
+                  "reported_complete": 0,
+                  "unclear": 0
+                },
+                "confidence": 1
+              }
+            },
+            "cached": false
+          }
+        },
+        "selected": true,
+        "rank": null
+      },
+      {
+        "id": "vague",
+        "status": "complete",
+        "stages": {
+          "classify": {
+            "status": "complete",
+            "answers": {
+              "status": {
+                "type": "choice",
+                "choice": "unclear",
+                "probabilities": {
+                  "reported_complete": 0.05,
+                  "not_complete": 0,
+                  "unclear": 0.95
+                },
+                "confidence": 0.93
+              }
+            },
+            "cached": false
+          }
+        },
+        "selected": true,
+        "rank": null
+      }
+    ],
+    "moreResults": true,
+    "evaluation": {
+      "kind": "authored_test_evaluation",
+      "capability": {
+        "name": "evidence_status",
+        "version": 2,
+        "hash": "fbb31fb720e6766620c358f8f421814b6fdb27487aa803bc26347b6188908fca"
+      },
+      "checks": [
+        {
+          "id": "calibrated",
+          "passed": true,
+          "failed": []
+        },
+        {
+          "id": "inspected",
+          "passed": true,
+          "failed": []
+        },
+        {
+          "id": "scheduled",
+          "passed": true,
+          "failed": []
+        },
+        {
+          "id": "uninspected",
+          "passed": true,
+          "failed": []
+        },
+        {
+          "id": "vague",
+          "passed": true,
+          "failed": []
+        },
+        {
+          "id": "uncertain",
+          "passed": true,
+          "failed": []
+        }
+      ],
+      "passed": 6,
+      "total": 6,
+      "expected": [
+        {
+          "id": "calibrated",
+          "expected": [
+            {
+              "stage": "classify",
+              "question": "status",
+              "op": "eq",
+              "value": "reported_complete"
+            }
+          ]
+        },
+        {
+          "id": "inspected",
+          "expected": [
+            {
+              "stage": "classify",
+              "question": "status",
+              "op": "eq",
+              "value": "reported_complete"
+            }
+          ]
+        },
+        {
+          "id": "scheduled",
+          "expected": [
+            {
+              "stage": "classify",
+              "question": "status",
+              "op": "eq",
+              "value": "not_complete"
+            }
+          ]
+        },
+        {
+          "id": "uninspected",
+          "expected": [
+            {
+              "stage": "classify",
+              "question": "status",
+              "op": "eq",
+              "value": "not_complete"
+            }
+          ]
+        },
+        {
+          "id": "vague",
+          "expected": [
+            {
+              "stage": "classify",
+              "question": "status",
+              "op": "eq",
+              "value": "unclear"
+            }
+          ]
+        },
+        {
+          "id": "uncertain",
+          "expected": [
+            {
+              "stage": "classify",
+              "question": "status",
+              "op": "eq",
+              "value": "unclear"
+            }
+          ]
+        }
+      ],
+      "note": "Labels are caller-authored. Passing them is evidence for these examples, not independent validation."
+    }
+  }
+}

@@ -1,0 +1,180 @@
+[
+  {
+    "id": "kiln",
+    "task": "Help me plan an investigation of patchy ceramic glaze. I need competing explanations and a test that can distinguish them, not a guess at the cause.",
+    "context": "We have firing notes, shelf positions and photos, mixed with potters' interpretations. No new firing is authorized. We only want a written investigation plan.",
+    "available": [
+      "raw_notes"
+    ],
+    "goal": "test_protocol",
+    "gold": {
+      "required": [
+        "separate",
+        "hypothesize",
+        "experiment"
+      ],
+      "forbidden": [
+        "revise"
+      ],
+      "reason": "Evidence organization and hypothesis testing transfer from research/debugging. No result yet supports revision."
+    }
+  },
+  {
+    "id": "library",
+    "task": "Our volunteer tool library has agreed its scope. Plan a small first opening that exercises borrowing through return, and show what would count as the pilot working.",
+    "context": "One desk, ten tools, and a small invited group. We want one complete usable path before expanding, rather than building all storage first and testing borrowing months later. The completion claim is that a volunteer can process a loan and a return.",
+    "available": [
+      "agreed_scope",
+      "claim"
+    ],
+    "goal": "pilot_plan",
+    "gold": {
+      "required": [
+        "pilot",
+        "verify"
+      ],
+      "forbidden": [
+        "revise"
+      ],
+      "reason": "Thin vertical delivery and observable completion transfer to a community service."
+    }
+  },
+  {
+    "id": "oral_history",
+    "task": "Organize interviews about a closed town theater into themes while preserving who said what and which parts are interpretations.",
+    "context": "Six interview transcripts are available. We are documenting differing recollections, not proving the disputed history or testing a causal theory.",
+    "available": [
+      "raw_notes",
+      "interviews"
+    ],
+    "goal": "theme_summary",
+    "gold": {
+      "required": [
+        "separate",
+        "themes"
+      ],
+      "forbidden": [
+        "experiment",
+        "revise"
+      ],
+      "reason": "Research synthesis transfers to oral history without treating recollection as established fact."
+    }
+  },
+  {
+    "id": "committee",
+    "task": "Design a short record for a grant committee so new members can reconstruct why earlier choices were made.",
+    "context": "We have the voting and exception process. A list of meetings and activities does not explain decisions. We need the choice, its reasons and the information used, without confidential applicant details.",
+    "available": [
+      "decision_process"
+    ],
+    "goal": "trace_schema",
+    "gold": {
+      "required": [
+        "trace"
+      ],
+      "forbidden": [
+        "revise"
+      ],
+      "reason": "Decision-point observability transfers to institutional continuity."
+    }
+  },
+  {
+    "id": "refutation",
+    "task": "Our controlled craft trial contradicted the claim that drying time caused the cracking. Help us record what this rules out and revise our explanations.",
+    "context": "The trial was completed; the observation and comparison are recorded. We are making a diagnosis document, not changing production today.",
+    "available": [
+      "disconfirming_result",
+      "evidence_table"
+    ],
+    "goal": "revised_hypotheses",
+    "gold": {
+      "required": [
+        "revise"
+      ],
+      "forbidden": [
+        "pilot"
+      ],
+      "reason": "The debugging recovery method transfers when actual disconfirmation exists."
+    }
+  },
+  {
+    "id": "missing_inputs",
+    "task": "Design an investigation of uneven glazing through competing explanations and a distinguishing experiment.",
+    "context": "Nobody has supplied any observations, firing records or examples. Suggest useful methods, but do not invent the evidence or pretend an executable plan is ready.",
+    "available": [],
+    "goal": "test_protocol",
+    "gold": {
+      "required": [
+        "hypothesize",
+        "experiment"
+      ],
+      "forbidden": [
+        "revise"
+      ],
+      "reason": "Methods may be useful later, while code must expose missing starting evidence."
+    }
+  },
+  {
+    "id": "translation",
+    "task": "Translate only the phrase bonjour into English.",
+    "context": "Return the ordinary greeting. No analysis, research or workflow is needed.",
+    "available": [],
+    "goal": null,
+    "gold": {
+      "required": [],
+      "forbidden": [
+        "separate",
+        "hypothesize",
+        "experiment",
+        "pilot",
+        "trace",
+        "verify",
+        "revise",
+        "themes"
+      ],
+      "reason": "No method is needed for a simple translation."
+    }
+  },
+  {
+    "id": "format",
+    "task": "Pretty-print this JSON with two-space indentation: {\"a\":1,\"b\":[2,3]}",
+    "context": "The JSON is valid. Do not add a project, investigation or explanation.",
+    "available": [],
+    "goal": null,
+    "gold": {
+      "required": [],
+      "forbidden": [
+        "separate",
+        "hypothesize",
+        "experiment",
+        "pilot",
+        "trace",
+        "verify",
+        "revise",
+        "themes"
+      ],
+      "reason": "Formatting does not benefit from these method fragments."
+    }
+  },
+  {
+    "id": "command_gap",
+    "task": "Give the documented command-line syntax for converting a PowerPoint file to PDF with LibreOffice.",
+    "context": "I need the exact command and flags from relevant documentation, not a project workflow or a general way to verify claims. None of these excerpts documents LibreOffice.",
+    "available": [],
+    "goal": null,
+    "gold": {
+      "required": [],
+      "forbidden": [
+        "separate",
+        "hypothesize",
+        "experiment",
+        "pilot",
+        "trace",
+        "verify",
+        "revise",
+        "themes"
+      ],
+      "reason": "General good practices cannot supply the missing command documentation."
+    }
+  }
+]

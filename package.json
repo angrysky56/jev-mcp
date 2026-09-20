@@ -1,0 +1,37 @@
+{
+  "name": "jev-inquiry-lab",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Programmable Jev MCP runtime and reproducible inquiry experiments",
+  "engines": {
+    "node": ">=24.12.0"
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "node --test test/*.test.ts",
+    "validate": "node src/cli.ts validate",
+    "experiment": "node src/cli.ts run",
+    "report": "node src/cli.ts report",
+    "prompts": "node src/cli.ts prompts",
+    "verify:study": "node scripts/verify-study.ts",
+    "continuity": "node scripts/run-continuity.ts",
+    "verify:continuity": "node scripts/verify-continuity.ts",
+    "methods": "node scripts/probe-skill-methods.ts",
+    "start": "node src/server.ts",
+    "mcp:call": "node scripts/mcp-call.ts",
+    "mcp:configure": "node scripts/configure-mcp.ts",
+    "mcp:bootstrap": "node scripts/bootstrap-runtime.ts",
+    "eval:mcp": "node scripts/evaluate-mcp.ts",
+    "verify:runtime": "node scripts/verify-runtime.ts"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.0.0",
+    "@types/node": "24.13.6",
+    "typescript": "7.0.2"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "zod": "4.6.5"
+  }
+}

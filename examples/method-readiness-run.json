@@ -1,0 +1,23 @@
+{
+  "name": "method_readiness",
+  "version": 1,
+  "items": [
+    {
+      "id": "future_method",
+      "data": {
+        "method": "Revise a hypothesis after an observed result contradicts its prediction. Requires an actual disconfirming result.",
+        "task": "Develop and revise explanations for patchy ceramic glaze.",
+        "observation": "A test is planned next week; there are no measurements yet."
+      }
+    },
+    {
+      "id": "ready_method",
+      "data": {
+        "method": "Revise a hypothesis after an observed result contradicts its prediction. Requires an actual disconfirming result.",
+        "task": "Develop and revise explanations for patchy ceramic glaze.",
+        "observation": "The completed controlled trial contradicted the predicted result. The measurement is recorded."
+      }
+    }
+  ],
+  "maxCalls": 4
+}

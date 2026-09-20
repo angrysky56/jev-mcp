@@ -1,0 +1,110 @@
+{
+  "b07": {
+    "declaredSourceCount": 2,
+    "uniqueDeclaredRoots": 2,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "b08": {
+    "declaredSourceCount": 2,
+    "uniqueDeclaredRoots": 2,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "b09": {
+    "declaredSourceCount": 2,
+    "uniqueDeclaredRoots": 2,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "b10": {
+    "declaredSourceCount": 3,
+    "uniqueDeclaredRoots": 1,
+    "repeatedDeclaredRoot": true,
+    "quotePresent": null
+  },
+  "b11": {
+    "declaredSourceCount": 1,
+    "uniqueDeclaredRoots": 1,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "b12": {
+    "declaredSourceCount": 2,
+    "uniqueDeclaredRoots": 2,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "q07": {
+    "declaredSourceCount": 0,
+    "uniqueDeclaredRoots": 0,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "q08": {
+    "declaredSourceCount": 0,
+    "uniqueDeclaredRoots": 0,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "q09": {
+    "declaredSourceCount": 0,
+    "uniqueDeclaredRoots": 0,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "q10": {
+    "declaredSourceCount": 0,
+    "uniqueDeclaredRoots": 0,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "q11": {
+    "declaredSourceCount": 0,
+    "uniqueDeclaredRoots": 0,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "q12": {
+    "declaredSourceCount": 0,
+    "uniqueDeclaredRoots": 0,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "a07": {
+    "declaredSourceCount": 0,
+    "uniqueDeclaredRoots": 0,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "a08": {
+    "declaredSourceCount": 0,
+    "uniqueDeclaredRoots": 0,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "a09": {
+    "declaredSourceCount": 0,
+    "uniqueDeclaredRoots": 0,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "a10": {
+    "declaredSourceCount": 0,
+    "uniqueDeclaredRoots": 0,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "a11": {
+    "declaredSourceCount": 0,
+    "uniqueDeclaredRoots": 0,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  },
+  "a12": {
+    "declaredSourceCount": 0,
+    "uniqueDeclaredRoots": 0,
+    "repeatedDeclaredRoot": false,
+    "quotePresent": null
+  }
+}

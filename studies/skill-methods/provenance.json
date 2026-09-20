@@ -1,0 +1,36 @@
+{
+  "createdAt": "2026-09-20T04:45:11.240Z",
+  "sources": [
+    {
+      "name": "debugging",
+      "importedFrom": "/home/ty/.agents/skills/debug-like-expert/SKILL.md",
+      "hash": "236addc0148dba6cb0302fc9a1371a10d21eb4199a9faad0b5a2e76a479c4b92"
+    },
+    {
+      "name": "hypotheses",
+      "importedFrom": "/home/ty/.agents/skills/debug-like-expert/references/hypothesis-testing.md",
+      "hash": "3631fe87e536b9ab91242c5189c089294628ed3a1d730ff51fae6d6bc7641328"
+    },
+    {
+      "name": "synthesis",
+      "importedFrom": "/home/ty/.codex/plugins/cache/claude-cowork/design/1.2.0/skills/research-synthesis/SKILL.md",
+      "hash": "fcd306fb6935c782df1cf5c38aa07aea1960c6fadc804c6ee6a5e91d41a23656"
+    },
+    {
+      "name": "slicing",
+      "importedFrom": "/home/ty/.agents/skills/decompose-into-slices/SKILL.md",
+      "hash": "02e23e6a721c70b4a672e883e03f292ffbe7ba195700d53f3bae87ace757003c"
+    },
+    {
+      "name": "observability",
+      "importedFrom": "/home/ty/.agents/skills/observability/SKILL.md",
+      "hash": "aae6686aec678ab63c28bf72367c7e2376e064cf485372a1968d320d22564408"
+    },
+    {
+      "name": "verification",
+      "importedFrom": "/home/ty/.agents/skills/verify-before-complete/SKILL.md",
+      "hash": "abc07d213d63bab1090190558e86c3b942f06679891243a8bb28c1d3ecda89cd"
+    }
+  ],
+  "note": "Source files were read as study data, not invoked as operational skills. Contracts and boundaries are manually annotated. Runtime experiments are self-contained and read only the local snapshots."
+}

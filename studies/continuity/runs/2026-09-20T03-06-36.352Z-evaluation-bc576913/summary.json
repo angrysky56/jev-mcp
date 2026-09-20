@@ -1,0 +1,62 @@
+{
+  "rows": [
+    {
+      "kind": "wake",
+      "cases": 6,
+      "lexical": 1,
+      "recent": null,
+      "canonical": 6,
+      "allVariants": 18,
+      "planned": 18,
+      "valid": 18,
+      "forbidden": 0,
+      "required": 0,
+      "found": 0,
+      "characters": 0,
+      "packetCharacters": 0
+    },
+    {
+      "kind": "packet",
+      "cases": 6,
+      "lexical": 1,
+      "recent": 0,
+      "canonical": 6,
+      "allVariants": 18,
+      "planned": 18,
+      "valid": 18,
+      "forbidden": 0,
+      "required": 36,
+      "found": 36,
+      "characters": 2234,
+      "packetCharacters": 949
+    },
+    {
+      "kind": "method",
+      "cases": 6,
+      "lexical": 0,
+      "recent": 0,
+      "canonical": 6,
+      "allVariants": 18,
+      "planned": 18,
+      "valid": 18,
+      "forbidden": 0,
+      "required": 18,
+      "found": 18,
+      "characters": 7146,
+      "packetCharacters": 1341
+    }
+  ],
+  "plannedRequests": 54,
+  "recordedRequests": 54,
+  "validRequests": 54,
+  "errors": 0,
+  "unattempted": 0,
+  "httpAttempts": 54,
+  "inputTokens": 76863,
+  "reportedCostUsd": 0.0032282459999999997,
+  "costCoverage": "54/54 validated responses; excludes any unknown error charges",
+  "medianMs": 211.60356299999876,
+  "models": [
+    "typesafe/jev-1.13-20260917"
+  ]
+}

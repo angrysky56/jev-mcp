@@ -1,0 +1,476 @@
+{
+  "createdAt": "2026-09-20T03:10:18.777Z",
+  "note": "Post-hoc baseline audit, not pre-registered: filter explicitly typed non-procedure records before lexical/recency retrieval. Same two-card budget, no API calls. This corrects an unnecessarily weak original baseline; it does not alter the frozen original reports.",
+  "rows": [
+    {
+      "caseId": "m1",
+      "split": "development",
+      "lexical": {
+        "status": "ready",
+        "selected": [
+          "M1",
+          "M2"
+        ],
+        "excluded": [
+          "M3",
+          "M4",
+          "M5",
+          "M6",
+          "M7",
+          "M8"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 238
+      },
+      "recent": {
+        "status": "ready",
+        "selected": [
+          "M8",
+          "M7"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M6"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 261
+      }
+    },
+    {
+      "caseId": "m2",
+      "split": "development",
+      "lexical": {
+        "status": "ready",
+        "selected": [
+          "M2",
+          "M1"
+        ],
+        "excluded": [
+          "M3",
+          "M4",
+          "M5",
+          "M6",
+          "M7",
+          "M8"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 238
+      },
+      "recent": {
+        "status": "ready",
+        "selected": [
+          "M8",
+          "M7"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M6"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 261
+      }
+    },
+    {
+      "caseId": "m3",
+      "split": "development",
+      "lexical": {
+        "status": "ready",
+        "selected": [
+          "M3",
+          "M1"
+        ],
+        "excluded": [
+          "M2",
+          "M4",
+          "M5",
+          "M6",
+          "M7",
+          "M8"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 277
+      },
+      "recent": {
+        "status": "ready",
+        "selected": [
+          "M8",
+          "M7"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M6"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 261
+      }
+    },
+    {
+      "caseId": "m4",
+      "split": "development",
+      "lexical": {
+        "status": "ready",
+        "selected": [
+          "M3",
+          "M4"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M5",
+          "M6",
+          "M7",
+          "M8"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 273
+      },
+      "recent": {
+        "status": "ready",
+        "selected": [
+          "M8",
+          "M7"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M6"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 261
+      }
+    },
+    {
+      "caseId": "m5",
+      "split": "development",
+      "lexical": {
+        "status": "ready",
+        "selected": [
+          "M2",
+          "M5"
+        ],
+        "excluded": [
+          "M1",
+          "M3",
+          "M4",
+          "M6",
+          "M7",
+          "M8"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 233
+      },
+      "recent": {
+        "status": "ready",
+        "selected": [
+          "M8",
+          "M7"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M6"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 261
+      }
+    },
+    {
+      "caseId": "m6",
+      "split": "development",
+      "lexical": {
+        "status": "ready",
+        "selected": [
+          "M6",
+          "M1"
+        ],
+        "excluded": [
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M7",
+          "M8"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 269
+      },
+      "recent": {
+        "status": "ready",
+        "selected": [
+          "M8",
+          "M7"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M6"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 261
+      }
+    },
+    {
+      "caseId": "m7",
+      "split": "evaluation",
+      "lexical": {
+        "status": "ready",
+        "selected": [
+          "M6",
+          "M1"
+        ],
+        "excluded": [
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M7",
+          "M8"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 269
+      },
+      "recent": {
+        "status": "ready",
+        "selected": [
+          "M8",
+          "M7"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M6"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 261
+      }
+    },
+    {
+      "caseId": "m8",
+      "split": "evaluation",
+      "lexical": {
+        "status": "ready",
+        "selected": [
+          "M6",
+          "M1"
+        ],
+        "excluded": [
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M7",
+          "M8"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 269
+      },
+      "recent": {
+        "status": "ready",
+        "selected": [
+          "M8",
+          "M7"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M6"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 261
+      }
+    },
+    {
+      "caseId": "m9",
+      "split": "evaluation",
+      "lexical": {
+        "status": "ready",
+        "selected": [
+          "M3",
+          "M4"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M5",
+          "M6",
+          "M7",
+          "M8"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 273
+      },
+      "recent": {
+        "status": "ready",
+        "selected": [
+          "M8",
+          "M7"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M6"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 261
+      }
+    },
+    {
+      "caseId": "m10",
+      "split": "evaluation",
+      "lexical": {
+        "status": "ready",
+        "selected": [
+          "M7",
+          "M8"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M6"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 261
+      },
+      "recent": {
+        "status": "ready",
+        "selected": [
+          "M8",
+          "M7"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M6"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 261
+      }
+    },
+    {
+      "caseId": "m11",
+      "split": "evaluation",
+      "lexical": {
+        "status": "ready",
+        "selected": [
+          "M8",
+          "M3"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M4",
+          "M5",
+          "M6",
+          "M7"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 300
+      },
+      "recent": {
+        "status": "ready",
+        "selected": [
+          "M8",
+          "M7"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M6"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 261
+      }
+    },
+    {
+      "caseId": "m12",
+      "split": "evaluation",
+      "lexical": {
+        "status": "ready",
+        "selected": [
+          "M1",
+          "M4"
+        ],
+        "excluded": [
+          "M2",
+          "M3",
+          "M5",
+          "M6",
+          "M7",
+          "M8"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 248
+      },
+      "recent": {
+        "status": "ready",
+        "selected": [
+          "M8",
+          "M7"
+        ],
+        "excluded": [
+          "M1",
+          "M2",
+          "M3",
+          "M4",
+          "M5",
+          "M6"
+        ],
+        "sourceCharacters": 1036,
+        "packetCharacters": 261
+      }
+    }
+  ],
+  "summary": [
+    {
+      "split": "development",
+      "cases": 6,
+      "lexical": 6,
+      "recent": 0
+    },
+    {
+      "split": "evaluation",
+      "cases": 6,
+      "lexical": 5,
+      "recent": 2
+    }
+  ]
+}

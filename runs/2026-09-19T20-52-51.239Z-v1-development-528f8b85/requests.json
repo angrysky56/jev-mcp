@@ -1,0 +1,2717 @@
+[
+  {
+    "caseId": "b01",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "The garden's wet grass was caused by the sprinkler, rather than rain.",
+        "prior_evidence": "The grass is wet. Both rain and the sprinkler could explain it.",
+        "observation": "An independently operated camera shows the sprinkler spraying this grass at the time it became wet; the street outside its reach stays dry.",
+        "source_roots": [
+          "garden-notebook",
+          "camera-recording"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+          "criteria": {
+            "supports": "The observation adds evidence in favor of the claim.",
+            "weakens": "The observation adds evidence against the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "insufficient": "There is not enough information to determine how the observation relates to the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b01",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "The garden's wet grass was caused by the sprinkler, rather than rain.",
+        "prior_evidence": "The grass is wet. Both rain and the sprinkler could explain it.",
+        "observation": "An independently operated camera shows the sprinkler spraying this grass at the time it became wet; the street outside its reach stays dry.",
+        "source_roots": [
+          "garden-notebook",
+          "camera-recording"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Relative to the evidence already recorded, what effect does the new observation have on support for the stated claim? Use this record alone.",
+          "criteria": {
+            "supports": "The observation adds evidence in favor of the claim.",
+            "weakens": "The observation adds evidence against the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "insufficient": "There is not enough information to determine how the observation relates to the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b01",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "The garden's wet grass was caused by the sprinkler, rather than rain.",
+        "prior_evidence": "The grass is wet. Both rain and the sprinkler could explain it.",
+        "observation": "An independently operated camera shows the sprinkler spraying this grass at the time it became wet; the street outside its reach stays dry.",
+        "source_roots": [
+          "garden-notebook",
+          "camera-recording"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+          "criteria": {
+            "insufficient": "There is not enough information to determine how the observation relates to the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "weakens": "The observation adds evidence against the claim.",
+            "supports": "The observation adds evidence in favor of the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b02",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "Only the sprinkler caused the garden's wet grass; no rain contributed.",
+        "prior_evidence": "A camera previously showed the sprinkler spraying the grass.",
+        "observation": "A separate rain gauge and camera show rain reaching the garden during the same wetting event.",
+        "source_roots": [
+          "camera-recording",
+          "rain-gauge"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+          "criteria": {
+            "supports": "The observation adds evidence in favor of the claim.",
+            "weakens": "The observation adds evidence against the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "insufficient": "There is not enough information to determine how the observation relates to the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b02",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "Only the sprinkler caused the garden's wet grass; no rain contributed.",
+        "prior_evidence": "A camera previously showed the sprinkler spraying the grass.",
+        "observation": "A separate rain gauge and camera show rain reaching the garden during the same wetting event.",
+        "source_roots": [
+          "camera-recording",
+          "rain-gauge"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Relative to the evidence already recorded, what effect does the new observation have on support for the stated claim? Use this record alone.",
+          "criteria": {
+            "supports": "The observation adds evidence in favor of the claim.",
+            "weakens": "The observation adds evidence against the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "insufficient": "There is not enough information to determine how the observation relates to the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b02",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "Only the sprinkler caused the garden's wet grass; no rain contributed.",
+        "prior_evidence": "A camera previously showed the sprinkler spraying the grass.",
+        "observation": "A separate rain gauge and camera show rain reaching the garden during the same wetting event.",
+        "source_roots": [
+          "camera-recording",
+          "rain-gauge"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+          "criteria": {
+            "insufficient": "There is not enough information to determine how the observation relates to the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "weakens": "The observation adds evidence against the claim.",
+            "supports": "The observation adds evidence in favor of the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b03",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "The sprinkler ran last night.",
+        "prior_evidence": "A neighborhood post asserts it ran but supplies no observation.",
+        "observation": "A second blog says it is confirmed by a newsletter. The newsletter's only source is that original neighborhood post. No writer observed the sprinkler.",
+        "source_roots": [
+          "original-post",
+          "original-post",
+          "original-post"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+          "criteria": {
+            "supports": "The observation adds evidence in favor of the claim.",
+            "weakens": "The observation adds evidence against the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "insufficient": "There is not enough information to determine how the observation relates to the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b03",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "The sprinkler ran last night.",
+        "prior_evidence": "A neighborhood post asserts it ran but supplies no observation.",
+        "observation": "A second blog says it is confirmed by a newsletter. The newsletter's only source is that original neighborhood post. No writer observed the sprinkler.",
+        "source_roots": [
+          "original-post",
+          "original-post",
+          "original-post"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Relative to the evidence already recorded, what effect does the new observation have on support for the stated claim? Use this record alone.",
+          "criteria": {
+            "supports": "The observation adds evidence in favor of the claim.",
+            "weakens": "The observation adds evidence against the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "insufficient": "There is not enough information to determine how the observation relates to the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b03",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "The sprinkler ran last night.",
+        "prior_evidence": "A neighborhood post asserts it ran but supplies no observation.",
+        "observation": "A second blog says it is confirmed by a newsletter. The newsletter's only source is that original neighborhood post. No writer observed the sprinkler.",
+        "source_roots": [
+          "original-post",
+          "original-post",
+          "original-post"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+          "criteria": {
+            "insufficient": "There is not enough information to determine how the observation relates to the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "weakens": "The observation adds evidence against the claim.",
+            "supports": "The observation adds evidence in favor of the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b04",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "An unmeasured underground heat source explains the warm stone.",
+        "prior_evidence": "The stone feels warm; sun exposure and underground heat are both untested possibilities.",
+        "observation": "Someone proposes calling the underground mechanism 'thermal memory'. No measurement or prediction has been added.",
+        "source_roots": [
+          "touch-report"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+          "criteria": {
+            "supports": "The observation adds evidence in favor of the claim.",
+            "weakens": "The observation adds evidence against the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "insufficient": "There is not enough information to determine how the observation relates to the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b04",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "An unmeasured underground heat source explains the warm stone.",
+        "prior_evidence": "The stone feels warm; sun exposure and underground heat are both untested possibilities.",
+        "observation": "Someone proposes calling the underground mechanism 'thermal memory'. No measurement or prediction has been added.",
+        "source_roots": [
+          "touch-report"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Relative to the evidence already recorded, what effect does the new observation have on support for the stated claim? Use this record alone.",
+          "criteria": {
+            "supports": "The observation adds evidence in favor of the claim.",
+            "weakens": "The observation adds evidence against the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "insufficient": "There is not enough information to determine how the observation relates to the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b04",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "An unmeasured underground heat source explains the warm stone.",
+        "prior_evidence": "The stone feels warm; sun exposure and underground heat are both untested possibilities.",
+        "observation": "Someone proposes calling the underground mechanism 'thermal memory'. No measurement or prediction has been added.",
+        "source_roots": [
+          "touch-report"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+          "criteria": {
+            "insufficient": "There is not enough information to determine how the observation relates to the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "weakens": "The observation adds evidence against the claim.",
+            "supports": "The observation adds evidence in favor of the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b05",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "The sample contains material Q.",
+        "prior_evidence": "The composition is unknown.",
+        "observation": "An instrument displays '7'. The instrument type, scale, detection rule, sample identity, and units are absent.",
+        "source_roots": [
+          "display-photo"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+          "criteria": {
+            "supports": "The observation adds evidence in favor of the claim.",
+            "weakens": "The observation adds evidence against the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "insufficient": "There is not enough information to determine how the observation relates to the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b05",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "The sample contains material Q.",
+        "prior_evidence": "The composition is unknown.",
+        "observation": "An instrument displays '7'. The instrument type, scale, detection rule, sample identity, and units are absent.",
+        "source_roots": [
+          "display-photo"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Relative to the evidence already recorded, what effect does the new observation have on support for the stated claim? Use this record alone.",
+          "criteria": {
+            "supports": "The observation adds evidence in favor of the claim.",
+            "weakens": "The observation adds evidence against the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "insufficient": "There is not enough information to determine how the observation relates to the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b05",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "The sample contains material Q.",
+        "prior_evidence": "The composition is unknown.",
+        "observation": "An instrument displays '7'. The instrument type, scale, detection rule, sample identity, and units are absent.",
+        "source_roots": [
+          "display-photo"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+          "criteria": {
+            "insufficient": "There is not enough information to determine how the observation relates to the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "weakens": "The observation adds evidence against the claim.",
+            "supports": "The observation adds evidence in favor of the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b06",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "Every blue token in the box is metal.",
+        "prior_evidence": "An inventory previously listed two blue metal tokens.",
+        "observation": "A verified inspection found a blue wooden token in that same box.",
+        "quote": "a blue wooden token",
+        "source_text": "The inspection found a blue wooden token among the metal tokens.",
+        "source_roots": [
+          "old-inventory",
+          "new-inspection"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+          "criteria": {
+            "supports": "The observation adds evidence in favor of the claim.",
+            "weakens": "The observation adds evidence against the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "insufficient": "There is not enough information to determine how the observation relates to the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b06",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "Every blue token in the box is metal.",
+        "prior_evidence": "An inventory previously listed two blue metal tokens.",
+        "observation": "A verified inspection found a blue wooden token in that same box.",
+        "quote": "a blue wooden token",
+        "source_text": "The inspection found a blue wooden token among the metal tokens.",
+        "source_roots": [
+          "old-inventory",
+          "new-inspection"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Relative to the evidence already recorded, what effect does the new observation have on support for the stated claim? Use this record alone.",
+          "criteria": {
+            "supports": "The observation adds evidence in favor of the claim.",
+            "weakens": "The observation adds evidence against the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "insufficient": "There is not enough information to determine how the observation relates to the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "b06",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "claim": "Every blue token in the box is metal.",
+        "prior_evidence": "An inventory previously listed two blue metal tokens.",
+        "observation": "A verified inspection found a blue wooden token in that same box.",
+        "quote": "a blue wooden token",
+        "source_text": "The inspection found a blue wooden token among the metal tokens.",
+        "source_roots": [
+          "old-inventory",
+          "new-inspection"
+        ]
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+          "criteria": {
+            "insufficient": "There is not enough information to determine how the observation relates to the claim.",
+            "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+            "weakens": "The observation adds evidence against the claim.",
+            "supports": "The observation adds evidence in favor of the claim."
+          }
+        },
+        "new_evidence": {
+          "type": "noul",
+          "instructions": "Does `observation` provide a new observation relevant to `claim` rather than repeating evidence in `prior_evidence` or merely restating an assertion?",
+          "criteria": {
+            "true": "It adds a relevant observation not already represented by the same source in prior evidence.",
+            "false": "It is repetition, circular assertion, unrelated information, or contains no observation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q01",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: the sprinkler alone wets the grass",
+          "H2: overnight rain wets the grass"
+        ],
+        "constraints": "Today we can inspect recorded camera footage and ask neighbors. No excavation.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Ask five people whether the grass is wet",
+            "predictions": "Both H1 and H2 predict wet grass.",
+            "requirements": "Neighbors are available."
+          },
+          {
+            "id": "B",
+            "action": "Inspect overnight footage of the street outside sprinkler reach",
+            "predictions": "H1 predicts a dry street throughout; H2 predicts rain visibly wetting it.",
+            "requirements": "The recorded footage is available and covers the relevant interval."
+          },
+          {
+            "id": "C",
+            "action": "Excavate the garden",
+            "predictions": "No discriminating prediction has been stated.",
+            "requirements": "Requires prohibited excavation."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_C": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate C in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_C": {
+          "type": "choice",
+          "instructions": "Can candidate C in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+          "criteria": {
+            "A": "Ask five people whether the grass is wet",
+            "B": "Inspect overnight footage of the street outside sprinkler reach",
+            "C": "Excavate the garden",
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q01",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: the sprinkler alone wets the grass",
+          "H2: overnight rain wets the grass"
+        ],
+        "constraints": "Today we can inspect recorded camera footage and ask neighbors. No excavation.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Ask five people whether the grass is wet",
+            "predictions": "Both H1 and H2 predict wet grass.",
+            "requirements": "Neighbors are available."
+          },
+          {
+            "id": "B",
+            "action": "Inspect overnight footage of the street outside sprinkler reach",
+            "predictions": "H1 predicts a dry street throughout; H2 predicts rain visibly wetting it.",
+            "requirements": "The recorded footage is available and covers the relevant interval."
+          },
+          {
+            "id": "C",
+            "action": "Excavate the garden",
+            "predictions": "No discriminating prediction has been stated.",
+            "requirements": "Requires prohibited excavation."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_C": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate C in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_C": {
+          "type": "choice",
+          "instructions": "Can candidate C in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Select the feasible candidate whose possible observation best separates the given competing explanations within the stated constraints. If this record justifies none, select insufficient. Rely on the predictions provided.",
+          "criteria": {
+            "A": "Ask five people whether the grass is wet",
+            "B": "Inspect overnight footage of the street outside sprinkler reach",
+            "C": "Excavate the garden",
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q01",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: the sprinkler alone wets the grass",
+          "H2: overnight rain wets the grass"
+        ],
+        "constraints": "Today we can inspect recorded camera footage and ask neighbors. No excavation.",
+        "candidates": [
+          {
+            "id": "C",
+            "action": "Excavate the garden",
+            "predictions": "No discriminating prediction has been stated.",
+            "requirements": "Requires prohibited excavation."
+          },
+          {
+            "id": "B",
+            "action": "Inspect overnight footage of the street outside sprinkler reach",
+            "predictions": "H1 predicts a dry street throughout; H2 predicts rain visibly wetting it.",
+            "requirements": "The recorded footage is available and covers the relevant interval."
+          },
+          {
+            "id": "A",
+            "action": "Ask five people whether the grass is wet",
+            "predictions": "Both H1 and H2 predict wet grass.",
+            "requirements": "Neighbors are available."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_C": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate C in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_C": {
+          "type": "choice",
+          "instructions": "Can candidate C in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+          "criteria": {
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record.",
+            "A": "Ask five people whether the grass is wet",
+            "B": "Inspect overnight footage of the street outside sprinkler reach",
+            "C": "Excavate the garden"
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q02",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: pigment causes the mark",
+          "H2: a shallow scratch causes the mark"
+        ],
+        "constraints": "The object cannot be touched or moved. A remote microscope is unavailable. Oblique illumination is available.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Use the remote microscope",
+            "predictions": "H1 shows pigment; H2 shows a groove.",
+            "requirements": "Remote microscope is unavailable."
+          },
+          {
+            "id": "B",
+            "action": "Inspect with oblique illumination without touching",
+            "predictions": "H1 shows a flat colored patch; H2 produces a groove shadow.",
+            "requirements": "The lamp and viewing position are available."
+          },
+          {
+            "id": "C",
+            "action": "Describe how striking the mark looks",
+            "predictions": "Both hypotheses permit a striking mark.",
+            "requirements": "Visual access is available."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_C": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate C in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_C": {
+          "type": "choice",
+          "instructions": "Can candidate C in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+          "criteria": {
+            "A": "Use the remote microscope",
+            "B": "Inspect with oblique illumination without touching",
+            "C": "Describe how striking the mark looks",
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q02",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: pigment causes the mark",
+          "H2: a shallow scratch causes the mark"
+        ],
+        "constraints": "The object cannot be touched or moved. A remote microscope is unavailable. Oblique illumination is available.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Use the remote microscope",
+            "predictions": "H1 shows pigment; H2 shows a groove.",
+            "requirements": "Remote microscope is unavailable."
+          },
+          {
+            "id": "B",
+            "action": "Inspect with oblique illumination without touching",
+            "predictions": "H1 shows a flat colored patch; H2 produces a groove shadow.",
+            "requirements": "The lamp and viewing position are available."
+          },
+          {
+            "id": "C",
+            "action": "Describe how striking the mark looks",
+            "predictions": "Both hypotheses permit a striking mark.",
+            "requirements": "Visual access is available."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_C": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate C in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_C": {
+          "type": "choice",
+          "instructions": "Can candidate C in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Select the feasible candidate whose possible observation best separates the given competing explanations within the stated constraints. If this record justifies none, select insufficient. Rely on the predictions provided.",
+          "criteria": {
+            "A": "Use the remote microscope",
+            "B": "Inspect with oblique illumination without touching",
+            "C": "Describe how striking the mark looks",
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q02",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: pigment causes the mark",
+          "H2: a shallow scratch causes the mark"
+        ],
+        "constraints": "The object cannot be touched or moved. A remote microscope is unavailable. Oblique illumination is available.",
+        "candidates": [
+          {
+            "id": "C",
+            "action": "Describe how striking the mark looks",
+            "predictions": "Both hypotheses permit a striking mark.",
+            "requirements": "Visual access is available."
+          },
+          {
+            "id": "B",
+            "action": "Inspect with oblique illumination without touching",
+            "predictions": "H1 shows a flat colored patch; H2 produces a groove shadow.",
+            "requirements": "The lamp and viewing position are available."
+          },
+          {
+            "id": "A",
+            "action": "Use the remote microscope",
+            "predictions": "H1 shows pigment; H2 shows a groove.",
+            "requirements": "Remote microscope is unavailable."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_C": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate C in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_C": {
+          "type": "choice",
+          "instructions": "Can candidate C in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+          "criteria": {
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record.",
+            "A": "Use the remote microscope",
+            "B": "Inspect with oblique illumination without touching",
+            "C": "Describe how striking the mark looks"
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q03",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: source A emitted the tone",
+          "H2: source B emitted the same tone"
+        ],
+        "constraints": "Only the already recorded tone may be inspected. No localization or new recordings are possible.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Ask whether a tone is present",
+            "predictions": "Both predict the identical recorded tone.",
+            "requirements": "Recording is available."
+          },
+          {
+            "id": "B",
+            "action": "Replay the same recording louder",
+            "predictions": "Both predict identical loud playback.",
+            "requirements": "Playback is available."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+          "criteria": {
+            "A": "Ask whether a tone is present",
+            "B": "Replay the same recording louder",
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q03",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: source A emitted the tone",
+          "H2: source B emitted the same tone"
+        ],
+        "constraints": "Only the already recorded tone may be inspected. No localization or new recordings are possible.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Ask whether a tone is present",
+            "predictions": "Both predict the identical recorded tone.",
+            "requirements": "Recording is available."
+          },
+          {
+            "id": "B",
+            "action": "Replay the same recording louder",
+            "predictions": "Both predict identical loud playback.",
+            "requirements": "Playback is available."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Select the feasible candidate whose possible observation best separates the given competing explanations within the stated constraints. If this record justifies none, select insufficient. Rely on the predictions provided.",
+          "criteria": {
+            "A": "Ask whether a tone is present",
+            "B": "Replay the same recording louder",
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q03",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: source A emitted the tone",
+          "H2: source B emitted the same tone"
+        ],
+        "constraints": "Only the already recorded tone may be inspected. No localization or new recordings are possible.",
+        "candidates": [
+          {
+            "id": "B",
+            "action": "Replay the same recording louder",
+            "predictions": "Both predict identical loud playback.",
+            "requirements": "Playback is available."
+          },
+          {
+            "id": "A",
+            "action": "Ask whether a tone is present",
+            "predictions": "Both predict the identical recorded tone.",
+            "requirements": "Recording is available."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+          "criteria": {
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record.",
+            "A": "Ask whether a tone is present",
+            "B": "Replay the same recording louder"
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q04",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: a controller opens the shutter at noon",
+          "H2: temperature opens the shutter independently of time"
+        ],
+        "constraints": "Clock time can be changed in a disconnected simulator. Temperature can be held constant; live hardware changes are prohibited.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Change the simulated time to noon at constant temperature",
+            "predictions": "H1 opens the shutter; H2 leaves its state unchanged.",
+            "requirements": "The disconnected simulator and temperature control are available."
+          },
+          {
+            "id": "B",
+            "action": "List reasons a controller might be clever",
+            "predictions": "Neither hypothesis entails any result of this description.",
+            "requirements": "A description can be written."
+          },
+          {
+            "id": "C",
+            "action": "Rewire the live shutter",
+            "predictions": "Different results might follow.",
+            "requirements": "Live hardware changes are prohibited."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_C": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate C in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_C": {
+          "type": "choice",
+          "instructions": "Can candidate C in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+          "criteria": {
+            "A": "Change the simulated time to noon at constant temperature",
+            "B": "List reasons a controller might be clever",
+            "C": "Rewire the live shutter",
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q04",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: a controller opens the shutter at noon",
+          "H2: temperature opens the shutter independently of time"
+        ],
+        "constraints": "Clock time can be changed in a disconnected simulator. Temperature can be held constant; live hardware changes are prohibited.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Change the simulated time to noon at constant temperature",
+            "predictions": "H1 opens the shutter; H2 leaves its state unchanged.",
+            "requirements": "The disconnected simulator and temperature control are available."
+          },
+          {
+            "id": "B",
+            "action": "List reasons a controller might be clever",
+            "predictions": "Neither hypothesis entails any result of this description.",
+            "requirements": "A description can be written."
+          },
+          {
+            "id": "C",
+            "action": "Rewire the live shutter",
+            "predictions": "Different results might follow.",
+            "requirements": "Live hardware changes are prohibited."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_C": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate C in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_C": {
+          "type": "choice",
+          "instructions": "Can candidate C in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Select the feasible candidate whose possible observation best separates the given competing explanations within the stated constraints. If this record justifies none, select insufficient. Rely on the predictions provided.",
+          "criteria": {
+            "A": "Change the simulated time to noon at constant temperature",
+            "B": "List reasons a controller might be clever",
+            "C": "Rewire the live shutter",
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q04",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: a controller opens the shutter at noon",
+          "H2: temperature opens the shutter independently of time"
+        ],
+        "constraints": "Clock time can be changed in a disconnected simulator. Temperature can be held constant; live hardware changes are prohibited.",
+        "candidates": [
+          {
+            "id": "C",
+            "action": "Rewire the live shutter",
+            "predictions": "Different results might follow.",
+            "requirements": "Live hardware changes are prohibited."
+          },
+          {
+            "id": "B",
+            "action": "List reasons a controller might be clever",
+            "predictions": "Neither hypothesis entails any result of this description.",
+            "requirements": "A description can be written."
+          },
+          {
+            "id": "A",
+            "action": "Change the simulated time to noon at constant temperature",
+            "predictions": "H1 opens the shutter; H2 leaves its state unchanged.",
+            "requirements": "The disconnected simulator and temperature control are available."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_C": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate C in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_C": {
+          "type": "choice",
+          "instructions": "Can candidate C in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+          "criteria": {
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record.",
+            "A": "Change the simulated time to noon at constant temperature",
+            "B": "List reasons a controller might be clever",
+            "C": "Rewire the live shutter"
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q05",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: a battery powers the lamp",
+          "H2: an unfamiliar light-harvesting layer powers the lamp"
+        ],
+        "constraints": "A supplied opaque cover may be used without touching internal parts. No disassembly.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Reject H2 because it sounds unfamiliar",
+            "predictions": "This produces no observation distinguishing the mechanisms.",
+            "requirements": "No tools needed."
+          },
+          {
+            "id": "B",
+            "action": "Cover only the proposed harvesting layer",
+            "predictions": "Under the stated test conditions H1 stays lit; H2 goes dark immediately.",
+            "requirements": "The suitable cover and layer access are available."
+          },
+          {
+            "id": "C",
+            "action": "Look again at the lit lamp",
+            "predictions": "Both predict it is lit before intervention.",
+            "requirements": "Visual access is available."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_C": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate C in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_C": {
+          "type": "choice",
+          "instructions": "Can candidate C in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+          "criteria": {
+            "A": "Reject H2 because it sounds unfamiliar",
+            "B": "Cover only the proposed harvesting layer",
+            "C": "Look again at the lit lamp",
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q05",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: a battery powers the lamp",
+          "H2: an unfamiliar light-harvesting layer powers the lamp"
+        ],
+        "constraints": "A supplied opaque cover may be used without touching internal parts. No disassembly.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Reject H2 because it sounds unfamiliar",
+            "predictions": "This produces no observation distinguishing the mechanisms.",
+            "requirements": "No tools needed."
+          },
+          {
+            "id": "B",
+            "action": "Cover only the proposed harvesting layer",
+            "predictions": "Under the stated test conditions H1 stays lit; H2 goes dark immediately.",
+            "requirements": "The suitable cover and layer access are available."
+          },
+          {
+            "id": "C",
+            "action": "Look again at the lit lamp",
+            "predictions": "Both predict it is lit before intervention.",
+            "requirements": "Visual access is available."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_C": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate C in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_C": {
+          "type": "choice",
+          "instructions": "Can candidate C in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Select the feasible candidate whose possible observation best separates the given competing explanations within the stated constraints. If this record justifies none, select insufficient. Rely on the predictions provided.",
+          "criteria": {
+            "A": "Reject H2 because it sounds unfamiliar",
+            "B": "Cover only the proposed harvesting layer",
+            "C": "Look again at the lit lamp",
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q05",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: a battery powers the lamp",
+          "H2: an unfamiliar light-harvesting layer powers the lamp"
+        ],
+        "constraints": "A supplied opaque cover may be used without touching internal parts. No disassembly.",
+        "candidates": [
+          {
+            "id": "C",
+            "action": "Look again at the lit lamp",
+            "predictions": "Both predict it is lit before intervention.",
+            "requirements": "Visual access is available."
+          },
+          {
+            "id": "B",
+            "action": "Cover only the proposed harvesting layer",
+            "predictions": "Under the stated test conditions H1 stays lit; H2 goes dark immediately.",
+            "requirements": "The suitable cover and layer access are available."
+          },
+          {
+            "id": "A",
+            "action": "Reject H2 because it sounds unfamiliar",
+            "predictions": "This produces no observation distinguishing the mechanisms.",
+            "requirements": "No tools needed."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_C": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate C in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_C": {
+          "type": "choice",
+          "instructions": "Can candidate C in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+          "criteria": {
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record.",
+            "A": "Reject H2 because it sounds unfamiliar",
+            "B": "Cover only the proposed harvesting layer",
+            "C": "Look again at the lit lamp"
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q06",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: the ink fluoresces",
+          "H2: the ink only reflects visible light"
+        ],
+        "constraints": "No equipment inventory or access permission is supplied.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Illuminate with a calibrated UV source",
+            "predictions": "H1 fluoresces; H2 does not.",
+            "requirements": "A calibrated UV source and access permission are necessary; their availability is unknown."
+          },
+          {
+            "id": "B",
+            "action": "Ask whether the ink is visible in daylight",
+            "predictions": "Both predict visibility.",
+            "requirements": "Daylight viewing is available."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+          "criteria": {
+            "A": "Illuminate with a calibrated UV source",
+            "B": "Ask whether the ink is visible in daylight",
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q06",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: the ink fluoresces",
+          "H2: the ink only reflects visible light"
+        ],
+        "constraints": "No equipment inventory or access permission is supplied.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Illuminate with a calibrated UV source",
+            "predictions": "H1 fluoresces; H2 does not.",
+            "requirements": "A calibrated UV source and access permission are necessary; their availability is unknown."
+          },
+          {
+            "id": "B",
+            "action": "Ask whether the ink is visible in daylight",
+            "predictions": "Both predict visibility.",
+            "requirements": "Daylight viewing is available."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Select the feasible candidate whose possible observation best separates the given competing explanations within the stated constraints. If this record justifies none, select insufficient. Rely on the predictions provided.",
+          "criteria": {
+            "A": "Illuminate with a calibrated UV source",
+            "B": "Ask whether the ink is visible in daylight",
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "q06",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypotheses": [
+          "H1: the ink fluoresces",
+          "H2: the ink only reflects visible light"
+        ],
+        "constraints": "No equipment inventory or access permission is supplied.",
+        "candidates": [
+          {
+            "id": "B",
+            "action": "Ask whether the ink is visible in daylight",
+            "predictions": "Both predict visibility.",
+            "requirements": "Daylight viewing is available."
+          },
+          {
+            "id": "A",
+            "action": "Illuminate with a calibrated UV source",
+            "predictions": "H1 fluoresces; H2 does not.",
+            "requirements": "A calibrated UV source and access permission are necessary; their availability is unknown."
+          }
+        ]
+      },
+      "questions": {
+        "discrimination_B": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate B in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_B": {
+          "type": "choice",
+          "instructions": "Can candidate B in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "discrimination_A": {
+          "type": "score",
+          "instructions": "Using only the stated hypotheses and predictions, how well would the observation for candidate A in `candidates` distinguish those hypotheses? Assess discrimination separately from feasibility.",
+          "criteria": [
+            "The predicted result is the same under all hypotheses, or is unrelated.",
+            "Some alternatives predict different results, but others remain indistinguishable.",
+            "The stated results distinguish every competing hypothesis."
+          ]
+        },
+        "feasibility_A": {
+          "type": "choice",
+          "instructions": "Can candidate A in `candidates` be carried out under `constraints` and its stated requirements?",
+          "criteria": {
+            "feasible": "The supplied record establishes that the requirements are available and constraints allow it.",
+            "blocked": "A stated requirement is unavailable or the action violates an explicit constraint.",
+            "unknown": "The record does not establish whether a requirement can be met."
+          }
+        },
+        "judgment": {
+          "type": "choice",
+          "instructions": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+          "criteria": {
+            "insufficient": "No supplied candidate can be justified as a feasible, distinguishing observation from this record.",
+            "A": "Illuminate with a calibrated UV source",
+            "B": "Ask whether the ink is visible in daylight"
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a01",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "Every sample from drawer D is magnetic.",
+        "observation": "A verified sample from D is not magnetic.",
+        "response": "The universal claim fails. I will restrict the claim to the tested subset and record this counterexample."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+          "criteria": {
+            "responsive": "The response revises its belief or proposes a test that could change it.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "insufficient": "The record does not establish whether the response permits disconfirmation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a01",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "Every sample from drawer D is magnetic.",
+        "observation": "A verified sample from D is not magnetic.",
+        "response": "The universal claim fails. I will restrict the claim to the tested subset and record this counterexample."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Given the hypothesis and the challenging observation in this record, which category best describes the response's handling of the challenge?",
+          "criteria": {
+            "responsive": "The response revises its belief or proposes a test that could change it.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "insufficient": "The record does not establish whether the response permits disconfirmation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a01",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "Every sample from drawer D is magnetic.",
+        "observation": "A verified sample from D is not magnetic.",
+        "response": "The universal claim fails. I will restrict the claim to the tested subset and record this counterexample."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+          "criteria": {
+            "insufficient": "The record does not establish whether the response permits disconfirmation.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "responsive": "The response revises its belief or proposes a test that could change it."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a02",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "An invisible regulator always controls the lamp.",
+        "observation": "The lamp stayed on after the supposed regulator was disconnected.",
+        "response": "If it switches off, the regulator is proven. If it stays on, the regulator is hiding its power, which also proves it. No result can count against it."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+          "criteria": {
+            "responsive": "The response revises its belief or proposes a test that could change it.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "insufficient": "The record does not establish whether the response permits disconfirmation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a02",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "An invisible regulator always controls the lamp.",
+        "observation": "The lamp stayed on after the supposed regulator was disconnected.",
+        "response": "If it switches off, the regulator is proven. If it stays on, the regulator is hiding its power, which also proves it. No result can count against it."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Given the hypothesis and the challenging observation in this record, which category best describes the response's handling of the challenge?",
+          "criteria": {
+            "responsive": "The response revises its belief or proposes a test that could change it.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "insufficient": "The record does not establish whether the response permits disconfirmation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a02",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "An invisible regulator always controls the lamp.",
+        "observation": "The lamp stayed on after the supposed regulator was disconnected.",
+        "response": "If it switches off, the regulator is proven. If it stays on, the regulator is hiding its power, which also proves it. No result can count against it."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+          "criteria": {
+            "insufficient": "The record does not establish whether the response permits disconfirmation.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "responsive": "The response revises its belief or proposes a test that could change it."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a03",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "Switch S activates the sensor.",
+        "observation": "The sensor did not respond, but the instrument reported a calibration fault.",
+        "response": "This trial is inconclusive because the calibration check failed. Repeat with a calibrated instrument. If it still fails under the specified conditions, lower support for the hypothesis."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+          "criteria": {
+            "responsive": "The response revises its belief or proposes a test that could change it.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "insufficient": "The record does not establish whether the response permits disconfirmation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a03",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "Switch S activates the sensor.",
+        "observation": "The sensor did not respond, but the instrument reported a calibration fault.",
+        "response": "This trial is inconclusive because the calibration check failed. Repeat with a calibrated instrument. If it still fails under the specified conditions, lower support for the hypothesis."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Given the hypothesis and the challenging observation in this record, which category best describes the response's handling of the challenge?",
+          "criteria": {
+            "responsive": "The response revises its belief or proposes a test that could change it.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "insufficient": "The record does not establish whether the response permits disconfirmation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a03",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "Switch S activates the sensor.",
+        "observation": "The sensor did not respond, but the instrument reported a calibration fault.",
+        "response": "This trial is inconclusive because the calibration check failed. Repeat with a calibrated instrument. If it still fails under the specified conditions, lower support for the hypothesis."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+          "criteria": {
+            "insufficient": "The record does not establish whether the response permits disconfirmation.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "responsive": "The response revises its belief or proposes a test that could change it."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a04",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "A temperature change caused the crack.",
+        "observation": "The temperature log appears constant.",
+        "response": "Interesting. We should look into that."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+          "criteria": {
+            "responsive": "The response revises its belief or proposes a test that could change it.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "insufficient": "The record does not establish whether the response permits disconfirmation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a04",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "A temperature change caused the crack.",
+        "observation": "The temperature log appears constant.",
+        "response": "Interesting. We should look into that."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Given the hypothesis and the challenging observation in this record, which category best describes the response's handling of the challenge?",
+          "criteria": {
+            "responsive": "The response revises its belief or proposes a test that could change it.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "insufficient": "The record does not establish whether the response permits disconfirmation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a04",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "A temperature change caused the crack.",
+        "observation": "The temperature log appears constant.",
+        "response": "Interesting. We should look into that."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+          "criteria": {
+            "insufficient": "The record does not establish whether the response permits disconfirmation.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "responsive": "The response revises its belief or proposes a test that could change it."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a05",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "The concealed timer causes every click.",
+        "observation": "Clicks continued when the timer was removed.",
+        "response": "I propose testing with a second timer. If clicks stop it supports the theory. If clicks continue it reveals a deeper timer that cannot be measured. Either outcome confirms the original claim."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+          "criteria": {
+            "responsive": "The response revises its belief or proposes a test that could change it.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "insufficient": "The record does not establish whether the response permits disconfirmation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a05",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "The concealed timer causes every click.",
+        "observation": "Clicks continued when the timer was removed.",
+        "response": "I propose testing with a second timer. If clicks stop it supports the theory. If clicks continue it reveals a deeper timer that cannot be measured. Either outcome confirms the original claim."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Given the hypothesis and the challenging observation in this record, which category best describes the response's handling of the challenge?",
+          "criteria": {
+            "responsive": "The response revises its belief or proposes a test that could change it.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "insufficient": "The record does not establish whether the response permits disconfirmation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a05",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "The concealed timer causes every click.",
+        "observation": "Clicks continued when the timer was removed.",
+        "response": "I propose testing with a second timer. If clicks stop it supports the theory. If clicks continue it reveals a deeper timer that cannot be measured. Either outcome confirms the original claim."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+          "criteria": {
+            "insufficient": "The record does not establish whether the response permits disconfirmation.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "responsive": "The response revises its belief or proposes a test that could change it."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a06",
+    "variant": "canonical",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "The hidden material always emits light.",
+        "observation": "The sample remained dark in the specified test.",
+        "response": "I revise my belief: it emits detectable light when bright and undetectable light when dark. No observation could reduce my confidence that it always emits light."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+          "criteria": {
+            "responsive": "The response revises its belief or proposes a test that could change it.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "insufficient": "The record does not establish whether the response permits disconfirmation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a06",
+    "variant": "paraphrase",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "The hidden material always emits light.",
+        "observation": "The sample remained dark in the specified test.",
+        "response": "I revise my belief: it emits detectable light when bright and undetectable light when dark. No observation could reduce my confidence that it always emits light."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Given the hypothesis and the challenging observation in this record, which category best describes the response's handling of the challenge?",
+          "criteria": {
+            "responsive": "The response revises its belief or proposes a test that could change it.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "insufficient": "The record does not establish whether the response permits disconfirmation."
+          }
+        }
+      }
+    }
+  },
+  {
+    "caseId": "a06",
+    "variant": "reversed",
+    "request": {
+      "model": "typesafe/jev-1.13",
+      "state": {
+        "hypothesis": "The hidden material always emits light.",
+        "observation": "The sample remained dark in the specified test.",
+        "response": "I revise my belief: it emits detectable light when bright and undetectable light when dark. No observation could reduce my confidence that it always emits light."
+      },
+      "questions": {
+        "judgment": {
+          "type": "choice",
+          "instructions": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+          "criteria": {
+            "insufficient": "The record does not establish whether the response permits disconfirmation.",
+            "self_sealing": "The response protects the belief from any possible disconfirmation.",
+            "responsive": "The response revises its belief or proposes a test that could change it."
+          }
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "version": "v1",
+  "note": "Initial narrow rubrics, frozen before any Jev inference. State is evidence supplied for judgment, never an instruction source.",
+  "sections": {
+    "belief": {
+      "instruction": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+      "paraphrase": "Relative to the evidence already recorded, what effect does the new observation have on support for the stated claim? Use this record alone.",
+      "criteria": {
+        "supports": "The observation adds evidence in favor of the claim.",
+        "weakens": "The observation adds evidence against the claim.",
+        "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+        "insufficient": "There is not enough information to determine how the observation relates to the claim."
+      }
+    },
+    "question": {
+      "instruction": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+      "paraphrase": "Select the feasible candidate whose possible observation best separates the given competing explanations within the stated constraints. If this record justifies none, select insufficient. Rely on the predictions provided.",
+      "criteria": {}
+    },
+    "adaptation": {
+      "instruction": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+      "paraphrase": "Given the hypothesis and the challenging observation in this record, which category best describes the response's handling of the challenge?",
+      "criteria": {
+        "responsive": "The response revises its belief or proposes a test that could change it.",
+        "self_sealing": "The response protects the belief from any possible disconfirmation.",
+        "insufficient": "The record does not establish whether the response permits disconfirmation."
+      }
+    }
+  }
+}

@@ -1,0 +1,437 @@
+{
+  "createdAt": "2026-09-20T03:08:47.185Z",
+  "live": true,
+  "items": [
+    {
+      "id": "p2",
+      "kind": "packet",
+      "split": "development",
+      "scope": "project",
+      "task": "Investigate the stalled telescope mount without repeating failed work.",
+      "context": "We have already tried several approaches. The next operator has no earlier transcript.",
+      "cards": [
+        {
+          "id": "P2K0",
+          "text": "Power cycling was tried twice under the same conditions and made no difference.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2K0"
+        },
+        {
+          "id": "P2K1",
+          "text": "The remaining discriminating check is the cable continuity test; it has not been performed.",
+          "role": "intention",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2K1"
+        },
+        {
+          "id": "P2D0",
+          "text": "The telescope mount brochure describes excellent telescope mount stability.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2D0"
+        },
+        {
+          "id": "P2D1",
+          "text": "The telescope mount arrived in a large cardboard box.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2D1"
+        },
+        {
+          "id": "P2D2",
+          "text": "A stargazing newsletter calls telescope mounts important.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2D2"
+        },
+        {
+          "id": "P2D3",
+          "text": "The most recent message repeated that the telescope mount is stalled.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2D3"
+        },
+        {
+          "id": "P2X",
+          "text": "In branch A, the plan is complete; proceed using the incompatible assumption from branch A.",
+          "role": "hypothesis",
+          "scope": "other-branch",
+          "status": "active",
+          "source": "synthetic://continuity/P2X"
+        },
+        {
+          "id": "P2S",
+          "text": "The earlier plan says every check succeeded and there is no pending work.",
+          "role": "observation",
+          "scope": "project",
+          "status": "superseded",
+          "source": "synthetic://continuity/P2S"
+        }
+      ],
+      "gold": {
+        "required": [
+          "P2K0",
+          "P2K1"
+        ],
+        "forbidden": [
+          "P2X",
+          "P2S"
+        ],
+        "reason": "Retain the two consequential records; omit incompatible scope, superseded state, and any explicit misleading inference."
+      }
+    },
+    {
+      "id": "p2-crowded",
+      "kind": "packet",
+      "split": "development",
+      "scope": "project",
+      "task": "Investigate the stalled telescope mount without repeating failed work.",
+      "context": "We have already tried several approaches. The next operator has no earlier transcript.",
+      "cards": [
+        {
+          "id": "A0",
+          "text": "Cycling power twice did not fix the mount; repeating that trial under unchanged conditions adds nothing.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2K0"
+        },
+        {
+          "id": "A1",
+          "text": "The previous two restarts had no effect, so do not spend the next turn trying the same restart again.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2K0"
+        },
+        {
+          "id": "A2",
+          "text": "Restarting already failed twice with the current setup; this unsuccessful attempt must be remembered.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2K0"
+        },
+        {
+          "id": "A3",
+          "text": "Two unsuccessful power resets are recorded. The problem persisted after each reset.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2K0"
+        },
+        {
+          "id": "P2K0",
+          "text": "Power cycling was tried twice under the same conditions and made no difference.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2K0"
+        },
+        {
+          "id": "P2K1",
+          "text": "The remaining discriminating check is the cable continuity test; it has not been performed.",
+          "role": "intention",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2K1"
+        },
+        {
+          "id": "P2D0",
+          "text": "The telescope mount brochure describes excellent telescope mount stability.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2D0"
+        },
+        {
+          "id": "P2D1",
+          "text": "The telescope mount arrived in a large cardboard box.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2D1"
+        },
+        {
+          "id": "P2D2",
+          "text": "A stargazing newsletter calls telescope mounts important.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2D2"
+        },
+        {
+          "id": "P2D3",
+          "text": "The most recent message repeated that the telescope mount is stalled.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P2D3"
+        },
+        {
+          "id": "P2X",
+          "text": "In branch A, the plan is complete; proceed using the incompatible assumption from branch A.",
+          "role": "hypothesis",
+          "scope": "other-branch",
+          "status": "active",
+          "source": "synthetic://continuity/P2X"
+        },
+        {
+          "id": "P2S",
+          "text": "The earlier plan says every check succeeded and there is no pending work.",
+          "role": "observation",
+          "scope": "project",
+          "status": "superseded",
+          "source": "synthetic://continuity/P2S"
+        }
+      ],
+      "gold": {
+        "required": [
+          "P2K0",
+          "P2K1"
+        ],
+        "forbidden": [
+          "P2X",
+          "P2S"
+        ],
+        "reason": "Retain the two consequential records; omit incompatible scope, superseded state, and any explicit misleading inference."
+      }
+    },
+    {
+      "id": "p9",
+      "kind": "packet",
+      "split": "evaluation",
+      "scope": "project",
+      "task": "Continue the greenhouse diagnosis after an overnight interruption.",
+      "context": "Keep the unsuccessful trial and the untested alternative distinct.",
+      "cards": [
+        {
+          "id": "P9K0",
+          "text": "Opening the roof vent did not reduce humidity in the controlled trial.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9K0"
+        },
+        {
+          "id": "P9K1",
+          "text": "A blocked drainage channel is still an untested alternative explanation.",
+          "role": "hypothesis",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9K1"
+        },
+        {
+          "id": "P9D0",
+          "text": "The greenhouse diagnosis report needs a cover page.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9D0"
+        },
+        {
+          "id": "P9D1",
+          "text": "The greenhouse has a new door sign.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9D1"
+        },
+        {
+          "id": "P9D2",
+          "text": "A greenhouse diagnosis seminar was advertised.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9D2"
+        },
+        {
+          "id": "P9D3",
+          "text": "The latest chat repeated the word humidity without adding data.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9D3"
+        },
+        {
+          "id": "P9X",
+          "text": "In branch A, the plan is complete; proceed using the incompatible assumption from branch A.",
+          "role": "hypothesis",
+          "scope": "other-branch",
+          "status": "active",
+          "source": "synthetic://continuity/P9X"
+        },
+        {
+          "id": "P9S",
+          "text": "The earlier plan says every check succeeded and there is no pending work.",
+          "role": "observation",
+          "scope": "project",
+          "status": "superseded",
+          "source": "synthetic://continuity/P9S"
+        }
+      ],
+      "gold": {
+        "required": [
+          "P9K0",
+          "P9K1"
+        ],
+        "forbidden": [
+          "P9X",
+          "P9S"
+        ],
+        "reason": "Retain the two consequential records; omit incompatible scope, superseded state, and any explicit misleading inference."
+      }
+    },
+    {
+      "id": "p9-crowded",
+      "kind": "packet",
+      "split": "evaluation",
+      "scope": "project",
+      "task": "Continue the greenhouse diagnosis after an overnight interruption.",
+      "context": "Keep the unsuccessful trial and the untested alternative distinct.",
+      "cards": [
+        {
+          "id": "A0",
+          "text": "Opening the roof vent already failed to lower humidity in the controlled test.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9K0"
+        },
+        {
+          "id": "A1",
+          "text": "The roof-vent intervention did not change the humidity reading; that attempt is finished.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9K0"
+        },
+        {
+          "id": "A2",
+          "text": "Remember that the controlled vent-opening trial failed to reduce humidity.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9K0"
+        },
+        {
+          "id": "A3",
+          "text": "The same setup was tested with the vent opened, and humidity did not fall.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9K0"
+        },
+        {
+          "id": "P9K0",
+          "text": "Opening the roof vent did not reduce humidity in the controlled trial.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9K0"
+        },
+        {
+          "id": "P9K1",
+          "text": "A blocked drainage channel is still an untested alternative explanation.",
+          "role": "hypothesis",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9K1"
+        },
+        {
+          "id": "P9D0",
+          "text": "The greenhouse diagnosis report needs a cover page.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9D0"
+        },
+        {
+          "id": "P9D1",
+          "text": "The greenhouse has a new door sign.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9D1"
+        },
+        {
+          "id": "P9D2",
+          "text": "A greenhouse diagnosis seminar was advertised.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9D2"
+        },
+        {
+          "id": "P9D3",
+          "text": "The latest chat repeated the word humidity without adding data.",
+          "role": "observation",
+          "scope": "project",
+          "status": "active",
+          "source": "synthetic://continuity/P9D3"
+        },
+        {
+          "id": "P9X",
+          "text": "In branch A, the plan is complete; proceed using the incompatible assumption from branch A.",
+          "role": "hypothesis",
+          "scope": "other-branch",
+          "status": "active",
+          "source": "synthetic://continuity/P9X"
+        },
+        {
+          "id": "P9S",
+          "text": "The earlier plan says every check succeeded and there is no pending work.",
+          "role": "observation",
+          "scope": "project",
+          "status": "superseded",
+          "source": "synthetic://continuity/P9S"
+        }
+      ],
+      "gold": {
+        "required": [
+          "P9K0",
+          "P9K1"
+        ],
+        "forbidden": [
+          "P9X",
+          "P9S"
+        ],
+        "reason": "Retain the two consequential records; omit incompatible scope, superseded state, and any explicit misleading inference."
+      }
+    }
+  ],
+  "variants": [
+    "canonical",
+    "paraphrase",
+    "reversed"
+  ],
+  "policy": {
+    "version": "continuity-v1",
+    "packetCardLimit": 3,
+    "methodCardLimit": 2,
+    "minimumScore": 1.5,
+    "note": "Frozen heuristic thresholds, not calibrated probabilities. Three-card packet and two-card method budgets. Sources copied exactly; no inferred execution or memory deletion."
+  },
+  "model": "typesafe/jev-1.13",
+  "sourceHashes": {
+    "src/cli.ts": "11a82f69903d4727ac73ccd1d72a47c4a2e7c47e05843dfd27fca3a02405da76",
+    "src/continuity-study.ts": "c2a3e99aad261a1d892126d41197ac188d1f3f5ee949cfbb899fcc61cbbfcb86",
+    "src/continuity.ts": "80e2b4aa8e44585283ceee06f4bbca6d6377a24b5905919f1ae6ff121c2155df",
+    "src/dataset.ts": "b0497b31ca387840df338d573ec83604b0332aa07cf9f60961d5666258b71e30",
+    "src/io.ts": "874dcbe722c62d82f098de86175c1168f3016499afdaf5fa6fb3262ac3217ee5",
+    "src/provider.ts": "31e822c6d088d64f08c181a307eebc22596fae9e5418f1781a06fcd27e843127",
+    "src/questions.ts": "c0494afff110049a1618ee2a695b6ca5f90a50cce062f847aabb5673c5d93b54",
+    "src/report.ts": "61bb1ea14aac4482937528f62ac37347790ef589dd596181696d13d4db6a8744",
+    "src/runner.ts": "ce2f4e5b2c3876890d90a9327ba3fd58fdd3adb9d09648b251bfba0fe56ccb40",
+    "src/types.ts": "6d66e05ae0f00e127e56fa68011cb259bb993a886ebbc91509aa87dbb80b1d52"
+  },
+  "scoring": "A required information item is present if any selected card cites its source. Duplicate aliases receive credit for the same information, but cannot substitute for a different required source.",
+  "comparison": "Compare current per-card packing with a code-only cap of one selected representative per identical source; both use the same raw Jev scores. No semantic equivalence is inferred by the source cap."
+}

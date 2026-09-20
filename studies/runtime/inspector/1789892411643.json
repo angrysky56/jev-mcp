@@ -1,0 +1,2178 @@
+{
+  "provider": "deterministic test fixture",
+  "toolCalls": 10,
+  "observations": [
+    {
+      "method": "tools/list",
+      "args": {},
+      "response": {
+        "result": {
+          "tools": [
+            {
+              "name": "jev_judge",
+              "description": "Ask agent-authored Choice, Score, or Noul questions over JSON state. Use this to try a new semantic predicate or scoring rubric; for repeated work, save a capability. Supplied state is available as item, and all questions here are independent.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "state": {
+                    "description": "JSON data. Use explicit fields and source references; never include API credentials.",
+                    "$ref": "#/$defs/__schema0"
+                  },
+                  "questions": {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                      "description": "Stable identifier, e.g. relevance or source_check."
+                    },
+                    "additionalProperties": {
+                      "oneOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "const": "noul",
+                              "description": "Probability that a described condition holds."
+                            },
+                            "instructions": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 4000,
+                              "description": "Complete yes/no judgment, e.g. Does item.text address context.query?"
+                            },
+                            "criteria": {
+                              "description": "Optional explicit yes/no definitions.",
+                              "type": "object",
+                              "properties": {
+                                "true": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 4000,
+                                  "description": "Meaning of yes."
+                                },
+                                "false": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 4000,
+                                  "description": "Meaning of no."
+                                }
+                              },
+                              "required": [
+                                "true",
+                                "false"
+                              ],
+                              "additionalProperties": false
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "instructions"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "const": "choice",
+                              "description": "Select one of the supplied labels."
+                            },
+                            "instructions": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 4000,
+                              "description": "Complete judgment to make from state."
+                            },
+                            "criteria": {
+                              "type": "object",
+                              "propertyNames": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                                "description": "Stable identifier, e.g. relevance or source_check."
+                              },
+                              "additionalProperties": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 4000
+                              },
+                              "description": "Labels and their meanings; include a no-match outcome when appropriate."
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "instructions",
+                            "criteria"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "const": "score",
+                              "description": "Expected position on ordered criteria."
+                            },
+                            "instructions": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 4000,
+                              "description": "Independent dimension to rate."
+                            },
+                            "criteria": {
+                              "minItems": 2,
+                              "maxItems": 8,
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 4000
+                              },
+                              "description": "Ordered definitions from lowest to highest; resulting score ranges from 0 to length minus 1."
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "instructions",
+                            "criteria"
+                          ]
+                        }
+                      ],
+                      "description": "One typed Jev question. IDs are bookkeeping; put all meaning in instructions and criteria."
+                    },
+                    "description": "Independent questions evaluated together over the same state."
+                  },
+                  "maxCalls": {
+                    "default": 32,
+                    "description": "Hard preflight limit on potential model calls; each may retry once on transient HTTP errors.",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 64
+                  },
+                  "useCache": {
+                    "default": false,
+                    "description": "Reuse successful identical requests for up to one hour; outputs clearly identify cache hits. Disable for fresh evaluation.",
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "state",
+                  "questions"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "outputSchema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "$ref": "#/$defs/__schema0"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "additionalProperties": false,
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "annotations": {
+                "readOnlyHint": false,
+                "destructiveHint": false,
+                "idempotentHint": false,
+                "openWorldHint": true
+              }
+            },
+            {
+              "name": "define_capability",
+              "description": "Save an agent-authored reusable Jev workflow with typed questions, conditional stages, selection, and ranking. A changed definition creates an immutable new version; an identical latest definition is reused. Definitions start unvalidated; evaluate examples before relying on them.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "definition": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                        "description": "Reusable capability name, e.g. research_relevance."
+                      },
+                      "description": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 4000,
+                        "description": "Purpose, intended use, and practical limitations."
+                      },
+                      "stages": {
+                        "minItems": 1,
+                        "maxItems": 4,
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                              "description": "Unique stage ID."
+                            },
+                            "questions": {
+                              "type": "object",
+                              "propertyNames": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                                "description": "Stable identifier, e.g. relevance or source_check."
+                              },
+                              "additionalProperties": {
+                                "oneOf": [
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "const": "noul",
+                                        "description": "Probability that a described condition holds."
+                                      },
+                                      "instructions": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 4000,
+                                        "description": "Complete yes/no judgment, e.g. Does item.text address context.query?"
+                                      },
+                                      "criteria": {
+                                        "description": "Optional explicit yes/no definitions.",
+                                        "type": "object",
+                                        "properties": {
+                                          "true": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "maxLength": 4000,
+                                            "description": "Meaning of yes."
+                                          },
+                                          "false": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "maxLength": 4000,
+                                            "description": "Meaning of no."
+                                          }
+                                        },
+                                        "required": [
+                                          "true",
+                                          "false"
+                                        ],
+                                        "additionalProperties": false
+                                      }
+                                    },
+                                    "required": [
+                                      "type",
+                                      "instructions"
+                                    ]
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "const": "choice",
+                                        "description": "Select one of the supplied labels."
+                                      },
+                                      "instructions": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 4000,
+                                        "description": "Complete judgment to make from state."
+                                      },
+                                      "criteria": {
+                                        "type": "object",
+                                        "propertyNames": {
+                                          "type": "string",
+                                          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                                          "description": "Stable identifier, e.g. relevance or source_check."
+                                        },
+                                        "additionalProperties": {
+                                          "type": "string",
+                                          "minLength": 1,
+                                          "maxLength": 4000
+                                        },
+                                        "description": "Labels and their meanings; include a no-match outcome when appropriate."
+                                      }
+                                    },
+                                    "required": [
+                                      "type",
+                                      "instructions",
+                                      "criteria"
+                                    ]
+                                  },
+                                  {
+                                    "type": "object",
+                                    "properties": {
+                                      "type": {
+                                        "type": "string",
+                                        "const": "score",
+                                        "description": "Expected position on ordered criteria."
+                                      },
+                                      "instructions": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 4000,
+                                        "description": "Independent dimension to rate."
+                                      },
+                                      "criteria": {
+                                        "minItems": 2,
+                                        "maxItems": 8,
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string",
+                                          "minLength": 1,
+                                          "maxLength": 4000
+                                        },
+                                        "description": "Ordered definitions from lowest to highest; resulting score ranges from 0 to length minus 1."
+                                      }
+                                    },
+                                    "required": [
+                                      "type",
+                                      "instructions",
+                                      "criteria"
+                                    ]
+                                  }
+                                ],
+                                "description": "One typed Jev question. IDs are bookkeeping; put all meaning in instructions and criteria."
+                              },
+                              "description": "Independent questions evaluated together over the same state."
+                            },
+                            "when": {
+                              "description": "All conditions must pass. Missing/skipped/error answers do not pass.",
+                              "minItems": 1,
+                              "maxItems": 8,
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "stage": {
+                                    "type": "string",
+                                    "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                                    "description": "Earlier stage whose answer supplies the value."
+                                  },
+                                  "question": {
+                                    "type": "string",
+                                    "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                                    "description": "Question ID within that stage."
+                                  },
+                                  "op": {
+                                    "type": "string",
+                                    "enum": [
+                                      "eq",
+                                      "gte",
+                                      "lte"
+                                    ],
+                                    "description": "Exact label equality or numeric threshold comparison."
+                                  },
+                                  "value": {
+                                    "anyOf": [
+                                      {
+                                        "type": "string",
+                                        "maxLength": 100
+                                      },
+                                      {
+                                        "type": "number"
+                                      }
+                                    ],
+                                    "description": "Choice label, Noul threshold in [0,1], or Score threshold."
+                                  }
+                                },
+                                "required": [
+                                  "stage",
+                                  "question",
+                                  "op",
+                                  "value"
+                                ],
+                                "additionalProperties": false
+                              }
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "questions"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "description": "Ordered stages. Each sees item, context, and prior stage answers. Later stages can depend on earlier results."
+                      },
+                      "select": {
+                        "description": "All conditions must pass to select an item; omitted means all successfully completed items.",
+                        "minItems": 1,
+                        "maxItems": 8,
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stage": {
+                              "type": "string",
+                              "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                              "description": "Earlier stage whose answer supplies the value."
+                            },
+                            "question": {
+                              "type": "string",
+                              "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                              "description": "Question ID within that stage."
+                            },
+                            "op": {
+                              "type": "string",
+                              "enum": [
+                                "eq",
+                                "gte",
+                                "lte"
+                              ],
+                              "description": "Exact label equality or numeric threshold comparison."
+                            },
+                            "value": {
+                              "anyOf": [
+                                {
+                                  "type": "string",
+                                  "maxLength": 100
+                                },
+                                {
+                                  "type": "number"
+                                }
+                              ],
+                              "description": "Choice label, Noul threshold in [0,1], or Score threshold."
+                            }
+                          },
+                          "required": [
+                            "stage",
+                            "question",
+                            "op",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      "rank": {
+                        "description": "Optional numeric ranking after all stages.",
+                        "type": "object",
+                        "properties": {
+                          "stage": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                            "description": "Stable identifier, e.g. relevance or source_check."
+                          },
+                          "question": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                            "description": "Stable identifier, e.g. relevance or source_check."
+                          },
+                          "direction": {
+                            "type": "string",
+                            "enum": [
+                              "asc",
+                              "desc"
+                            ],
+                            "description": "Numeric sort direction; missing values sort last."
+                          }
+                        },
+                        "required": [
+                          "stage",
+                          "question",
+                          "direction"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "notes": {
+                        "description": "Authored assumptions, provenance, or adaptation rationale; not evidence of effectiveness.",
+                        "type": "string",
+                        "maxLength": 4000
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "description",
+                      "stages"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "definition"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema"
+              },
+              "outputSchema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "$ref": "#/$defs/__schema0"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "additionalProperties": false,
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "annotations": {
+                "readOnlyHint": false,
+                "destructiveHint": false,
+                "idempotentHint": false,
+                "openWorldHint": false
+              }
+            },
+            {
+              "name": "get_capability",
+              "description": "Read an exact saved capability version, its questions, conditions, hash, and recent run/evaluation evidence. Omit version to retrieve latest; pin a returned version when comparing experiments. Reports remain attributed evidence rather than automatic validation.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                    "description": "Saved capability name."
+                  },
+                  "version": {
+                    "description": "Exact version; omit to resolve latest once at the beginning of the call.",
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema"
+              },
+              "outputSchema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "$ref": "#/$defs/__schema0"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "additionalProperties": false,
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "annotations": {
+                "readOnlyHint": true,
+                "destructiveHint": false,
+                "idempotentHint": true,
+                "openWorldHint": false
+              }
+            },
+            {
+              "name": "list_capabilities",
+              "description": "Find saved capabilities by name or description text. Returns current versions and an opaque cursor; reuse the same query with nextCursor to continue. Clear the cursor if the library changes.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "default": "",
+                    "description": "Name or description substring; empty lists all.",
+                    "type": "string",
+                    "maxLength": 200
+                  },
+                  "limit": {
+                    "default": 5,
+                    "description": "Maximum results per page.",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 20
+                  },
+                  "cursor": {
+                    "description": "Opaque nextCursor from the same query; omit for first page.",
+                    "type": "string",
+                    "maxLength": 3000
+                  }
+                },
+                "$schema": "https://json-schema.org/draft/2020-12/schema"
+              },
+              "outputSchema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "$ref": "#/$defs/__schema0"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "additionalProperties": false,
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "annotations": {
+                "readOnlyHint": true,
+                "destructiveHint": false,
+                "idempotentHint": true,
+                "openWorldHint": false
+              }
+            },
+            {
+              "name": "run_capability",
+              "description": "Apply a saved capability to a batch of source records, web results, memories, or arbitrary JSON items. Each item sees shared context and its own prior-stage answers. Returns selected IDs, ranks, cost, and runId; get_run retrieves all results or exact events. This makes Jev calls but executes no actions described in the data.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                    "description": "Saved capability name."
+                  },
+                  "version": {
+                    "description": "Exact version; omit to resolve latest once at the beginning of the call.",
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "items": {
+                    "minItems": 1,
+                    "maxItems": 20,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                          "description": "Unique stable item ID within a run."
+                        },
+                        "data": {
+                          "description": "JSON data. Use explicit fields and source references; never include API credentials.",
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "data"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "description": "Records with stable unique IDs and JSON data."
+                  },
+                  "context": {
+                    "default": {},
+                    "description": "JSON data. Use explicit fields and source references; never include API credentials.",
+                    "$ref": "#/$defs/__schema0"
+                  },
+                  "maxCalls": {
+                    "default": 32,
+                    "description": "Hard preflight limit on potential model calls; each may retry once on transient HTTP errors.",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 64
+                  },
+                  "useCache": {
+                    "default": false,
+                    "description": "Reuse successful identical requests for up to one hour; outputs clearly identify cache hits. Disable for fresh evaluation.",
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "name",
+                  "items"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "outputSchema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "$ref": "#/$defs/__schema0"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "additionalProperties": false,
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "annotations": {
+                "readOnlyHint": false,
+                "destructiveHint": false,
+                "idempotentHint": false,
+                "openWorldHint": true
+              }
+            },
+            {
+              "name": "evaluate_capability",
+              "description": "Test an exact capability against caller-authored examples using fresh Jev calls. Expected answer rules stay out of model input. Saves successes and failures against the pinned version; passing these examples does not independently validate the capability.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                    "description": "Saved capability name."
+                  },
+                  "version": {
+                    "description": "Exact version; omit to resolve latest once at the beginning of the call.",
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "cases": {
+                    "minItems": 1,
+                    "maxItems": 20,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                          "description": "Stable identifier, e.g. relevance or source_check."
+                        },
+                        "data": {
+                          "description": "JSON data. Use explicit fields and source references; never include API credentials.",
+                          "$ref": "#/$defs/__schema0"
+                        },
+                        "expected": {
+                          "minItems": 1,
+                          "maxItems": 16,
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "stage": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                                "description": "Earlier stage whose answer supplies the value."
+                              },
+                              "question": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                                "description": "Question ID within that stage."
+                              },
+                              "op": {
+                                "type": "string",
+                                "enum": [
+                                  "eq",
+                                  "gte",
+                                  "lte"
+                                ],
+                                "description": "Exact label equality or numeric threshold comparison."
+                              },
+                              "value": {
+                                "anyOf": [
+                                  {
+                                    "type": "string",
+                                    "maxLength": 100
+                                  },
+                                  {
+                                    "type": "number"
+                                  }
+                                ],
+                                "description": "Choice label, Noul threshold in [0,1], or Score threshold."
+                              }
+                            },
+                            "required": [
+                              "stage",
+                              "question",
+                              "op",
+                              "value"
+                            ],
+                            "additionalProperties": false
+                          },
+                          "description": "All expected answer comparisons must pass."
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "data",
+                        "expected"
+                      ]
+                    },
+                    "description": "Labelled examples, including negatives or boundary cases."
+                  },
+                  "context": {
+                    "default": {},
+                    "description": "JSON data. Use explicit fields and source references; never include API credentials.",
+                    "$ref": "#/$defs/__schema0"
+                  },
+                  "maxCalls": {
+                    "default": 32,
+                    "description": "Hard preflight limit on potential model calls; each may retry once on transient HTTP errors.",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 64
+                  }
+                },
+                "required": [
+                  "name",
+                  "cases"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "outputSchema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "$ref": "#/$defs/__schema0"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "additionalProperties": false,
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "annotations": {
+                "readOnlyHint": false,
+                "destructiveHint": false,
+                "idempotentHint": false,
+                "openWorldHint": true
+              }
+            },
+            {
+              "name": "store_records",
+              "description": "Store source passages, methods, plans, or observations with explicit scope and source. Changed records receive a new version while old contents remain in history. This performs no model inference or external publication; superseded and cancelled records are excluded from search.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "records": {
+                    "minItems": 1,
+                    "maxItems": 50,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                          "description": "Stable record ID within its scope."
+                        },
+                        "scope": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                          "description": "Explicit collection or inquiry scope, e.g. skill_methods."
+                        },
+                        "title": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 240,
+                          "description": "Short descriptive title."
+                        },
+                        "text": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 12000,
+                          "description": "Original source passage or record text."
+                        },
+                        "source": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 2000,
+                          "description": "Source URL, document reference, or observation identifier."
+                        },
+                        "kind": {
+                          "type": "string",
+                          "enum": [
+                            "source",
+                            "observation",
+                            "hypothesis",
+                            "method",
+                            "plan",
+                            "outcome"
+                          ],
+                          "description": "What the record represents; this role is preserved during retrieval."
+                        },
+                        "status": {
+                          "default": "active",
+                          "description": "Lifecycle gate; search returns active records only.",
+                          "type": "string",
+                          "enum": [
+                            "active",
+                            "superseded",
+                            "cancelled"
+                          ]
+                        },
+                        "metadata": {
+                          "description": "Optional provenance, dates, dependencies, or imported database fields.",
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "scope",
+                        "title",
+                        "text",
+                        "source",
+                        "kind"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "description": "Source-preserving records; IDs are unique within a scope."
+                  }
+                },
+                "required": [
+                  "records"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "outputSchema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "$ref": "#/$defs/__schema0"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "additionalProperties": false,
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "annotations": {
+                "readOnlyHint": false,
+                "destructiveHint": false,
+                "idempotentHint": false,
+                "openWorldHint": false
+              }
+            },
+            {
+              "name": "search_records",
+              "description": "Retrieve active records in one explicit scope using SQLite full-text search, optionally filtered by kind. Results preserve text, source, role, and version. Use empty query to browse, then run_capability for semantic filtering/ranking; this tool itself makes no Jev or embedding calls.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "scope": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,63}$",
+                    "description": "Stable identifier, e.g. relevance or source_check."
+                  },
+                  "query": {
+                    "default": "",
+                    "description": "Words to match; punctuation is treated as text, not query syntax.",
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "source",
+                      "observation",
+                      "hypothesis",
+                      "method",
+                      "plan",
+                      "outcome"
+                    ],
+                    "description": "What the record represents; this role is preserved during retrieval."
+                  },
+                  "limit": {
+                    "default": 5,
+                    "description": "Maximum results per page.",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 20
+                  },
+                  "cursor": {
+                    "description": "Opaque nextCursor from the same query; omit for first page.",
+                    "type": "string",
+                    "maxLength": 3000
+                  }
+                },
+                "required": [
+                  "scope"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema"
+              },
+              "outputSchema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "$ref": "#/$defs/__schema0"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "additionalProperties": false,
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "annotations": {
+                "readOnlyHint": true,
+                "destructiveHint": false,
+                "idempotentHint": true,
+                "openWorldHint": false
+              }
+            },
+            {
+              "name": "get_run",
+              "description": "Read a persisted run, pinned capability, costs, results, and reported outcomes. Paginate with nextCursor; set details=true for exact per-stage requests and responses. Use this to inspect failures, cache hits, or source-linked judgments before revising a capability.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "runId": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$",
+                    "description": "Run identifier returned by execution or evaluation."
+                  },
+                  "details": {
+                    "default": false,
+                    "description": "Include exact stored per-stage request/response events.",
+                    "type": "boolean"
+                  },
+                  "limit": {
+                    "default": 5,
+                    "description": "Maximum results per page.",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 20
+                  },
+                  "cursor": {
+                    "description": "Opaque nextCursor from the same query; omit for first page.",
+                    "type": "string",
+                    "maxLength": 3000
+                  }
+                },
+                "required": [
+                  "runId"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema"
+              },
+              "outputSchema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "$ref": "#/$defs/__schema0"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "additionalProperties": false,
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "annotations": {
+                "readOnlyHint": true,
+                "destructiveHint": false,
+                "idempotentHint": true,
+                "openWorldHint": false
+              }
+            },
+            {
+              "name": "record_outcome",
+              "description": "Attach observed or reported downstream outcomes to a specific run and capability version. Include evidence references and limitations; the record remains attributed to the reporter. Use these records to guide later revisions without overwriting earlier evidence.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {
+                  "runId": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$",
+                    "description": "Existing run to which this outcome belongs."
+                  },
+                  "outcome": {
+                    "type": "object",
+                    "properties": {
+                      "reporter": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200,
+                        "description": "Who or what supplied this report."
+                      },
+                      "description": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 8000,
+                        "description": "What happened, including failures and uncertainty."
+                      },
+                      "sources": {
+                        "minItems": 1,
+                        "maxItems": 20,
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 2000
+                        },
+                        "description": "Supporting observation, document, or tool-result references."
+                      },
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "success",
+                          "failure",
+                          "mixed",
+                          "unknown"
+                        ],
+                        "description": "Reporter assessment, not server validation."
+                      }
+                    },
+                    "required": [
+                      "reporter",
+                      "description",
+                      "sources",
+                      "status"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "runId",
+                  "outcome"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema"
+              },
+              "outputSchema": {
+                "type": "object",
+                "properties": {
+                  "result": {
+                    "$ref": "#/$defs/__schema0"
+                  }
+                },
+                "required": [
+                  "result"
+                ],
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "additionalProperties": false,
+                "$defs": {
+                  "__schema0": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string"
+                        },
+                        "additionalProperties": {
+                          "$ref": "#/$defs/__schema0"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              "annotations": {
+                "readOnlyHint": false,
+                "destructiveHint": false,
+                "idempotentHint": false,
+                "openWorldHint": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "tools/call",
+      "name": "define_capability",
+      "args": {
+        "definition": {
+          "name": "inspector_fixture",
+          "description": "Inspector protocol fixture; no live inference.",
+          "stages": [
+            {
+              "id": "check",
+              "questions": {
+                "yes": {
+                  "type": "noul",
+                  "instructions": "Is this a fixture?"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"result\":{\"name\":\"inspector_fixture\",\"version\":1,\"hash\":\"2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249\",\"definition\":{\"name\":\"inspector_fixture\",\"description\":\"Inspector protocol fixture; no live inference.\",\"stages\":[{\"id\":\"check\",\"questions\":{\"yes\":{\"type\":\"noul\",\"instructions\":\"Is this a fixture?\"}}}]},\"createdAt\":\"2026-09-20T08:20:07.328Z\",\"validation\":\"unvalidated\"}}"
+            }
+          ],
+          "structuredContent": {
+            "result": {
+              "name": "inspector_fixture",
+              "version": 1,
+              "hash": "2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249",
+              "definition": {
+                "name": "inspector_fixture",
+                "description": "Inspector protocol fixture; no live inference.",
+                "stages": [
+                  {
+                    "id": "check",
+                    "questions": {
+                      "yes": {
+                        "type": "noul",
+                        "instructions": "Is this a fixture?"
+                      }
+                    }
+                  }
+                ]
+              },
+              "createdAt": "2026-09-20T08:20:07.328Z",
+              "validation": "unvalidated"
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "tools/call",
+      "name": "get_capability",
+      "args": {
+        "name": "inspector_fixture"
+      },
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"result\":{\"name\":\"inspector_fixture\",\"version\":1,\"hash\":\"2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249\",\"definition\":{\"name\":\"inspector_fixture\",\"description\":\"Inspector protocol fixture; no live inference.\",\"stages\":[{\"id\":\"check\",\"questions\":{\"yes\":{\"type\":\"noul\",\"instructions\":\"Is this a fixture?\"}}}]},\"createdAt\":\"2026-09-20T08:20:07.328Z\",\"validation\":\"unvalidated\",\"recentRuns\":[]}}"
+            }
+          ],
+          "structuredContent": {
+            "result": {
+              "name": "inspector_fixture",
+              "version": 1,
+              "hash": "2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249",
+              "definition": {
+                "name": "inspector_fixture",
+                "description": "Inspector protocol fixture; no live inference.",
+                "stages": [
+                  {
+                    "id": "check",
+                    "questions": {
+                      "yes": {
+                        "type": "noul",
+                        "instructions": "Is this a fixture?"
+                      }
+                    }
+                  }
+                ]
+              },
+              "createdAt": "2026-09-20T08:20:07.328Z",
+              "validation": "unvalidated",
+              "recentRuns": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "tools/call",
+      "name": "list_capabilities",
+      "args": {},
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"result\":{\"items\":[{\"name\":\"inspector_fixture\",\"version\":1,\"hash\":\"2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249\",\"description\":\"Inspector protocol fixture; no live inference.\",\"validation\":\"unvalidated\"}],\"nextCursor\":null}}"
+            }
+          ],
+          "structuredContent": {
+            "result": {
+              "items": [
+                {
+                  "name": "inspector_fixture",
+                  "version": 1,
+                  "hash": "2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249",
+                  "description": "Inspector protocol fixture; no live inference.",
+                  "validation": "unvalidated"
+                }
+              ],
+              "nextCursor": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "tools/call",
+      "name": "jev_judge",
+      "args": {
+        "state": {},
+        "questions": {
+          "yes": {
+            "type": "noul",
+            "instructions": "Is this a fixture?"
+          }
+        }
+      },
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"result\":{\"runId\":\"d9678943-585d-43fe-bb93-7ebcdd117cc6\",\"status\":\"complete\",\"capability\":{\"name\":\"adhoc\",\"version\":0,\"hash\":\"59ea9d31f39144ae74ae97c5202772b697f8a788f044c353a6b03e5be32ce338\"},\"summary\":{\"modelCalls\":1,\"httpAttempts\":1,\"cacheHits\":0,\"reportedCostUsd\":0,\"unreportedCosts\":0,\"inputTokens\":0,\"outputTokens\":0,\"totalItems\":1,\"completedItems\":1,\"selectedIds\":[\"state\"]},\"results\":[{\"id\":\"state\",\"status\":\"complete\",\"stages\":{\"judge\":{\"status\":\"complete\",\"answers\":{\"yes\":{\"type\":\"noul\",\"noul\":0.9}},\"cached\":false}},\"selected\":true,\"rank\":null}],\"moreResults\":false}}"
+            }
+          ],
+          "structuredContent": {
+            "result": {
+              "runId": "d9678943-585d-43fe-bb93-7ebcdd117cc6",
+              "status": "complete",
+              "capability": {
+                "name": "adhoc",
+                "version": 0,
+                "hash": "59ea9d31f39144ae74ae97c5202772b697f8a788f044c353a6b03e5be32ce338"
+              },
+              "summary": {
+                "modelCalls": 1,
+                "httpAttempts": 1,
+                "cacheHits": 0,
+                "reportedCostUsd": 0,
+                "unreportedCosts": 0,
+                "inputTokens": 0,
+                "outputTokens": 0,
+                "totalItems": 1,
+                "completedItems": 1,
+                "selectedIds": [
+                  "state"
+                ]
+              },
+              "results": [
+                {
+                  "id": "state",
+                  "status": "complete",
+                  "stages": {
+                    "judge": {
+                      "status": "complete",
+                      "answers": {
+                        "yes": {
+                          "type": "noul",
+                          "noul": 0.9
+                        }
+                      },
+                      "cached": false
+                    }
+                  },
+                  "selected": true,
+                  "rank": null
+                }
+              ],
+              "moreResults": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "tools/call",
+      "name": "run_capability",
+      "args": {
+        "name": "inspector_fixture",
+        "items": [
+          {
+            "id": "one",
+            "data": {}
+          }
+        ]
+      },
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"result\":{\"runId\":\"e1154b21-6ef0-4a6f-8d2f-587920a17d9a\",\"status\":\"complete\",\"capability\":{\"name\":\"inspector_fixture\",\"version\":1,\"hash\":\"2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249\"},\"summary\":{\"modelCalls\":1,\"httpAttempts\":1,\"cacheHits\":0,\"reportedCostUsd\":0,\"unreportedCosts\":0,\"inputTokens\":0,\"outputTokens\":0,\"totalItems\":1,\"completedItems\":1,\"selectedIds\":[\"one\"]},\"results\":[{\"id\":\"one\",\"status\":\"complete\",\"stages\":{\"check\":{\"status\":\"complete\",\"answers\":{\"yes\":{\"type\":\"noul\",\"noul\":0.9}},\"cached\":false}},\"selected\":true,\"rank\":null}],\"moreResults\":false}}"
+            }
+          ],
+          "structuredContent": {
+            "result": {
+              "runId": "e1154b21-6ef0-4a6f-8d2f-587920a17d9a",
+              "status": "complete",
+              "capability": {
+                "name": "inspector_fixture",
+                "version": 1,
+                "hash": "2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249"
+              },
+              "summary": {
+                "modelCalls": 1,
+                "httpAttempts": 1,
+                "cacheHits": 0,
+                "reportedCostUsd": 0,
+                "unreportedCosts": 0,
+                "inputTokens": 0,
+                "outputTokens": 0,
+                "totalItems": 1,
+                "completedItems": 1,
+                "selectedIds": [
+                  "one"
+                ]
+              },
+              "results": [
+                {
+                  "id": "one",
+                  "status": "complete",
+                  "stages": {
+                    "check": {
+                      "status": "complete",
+                      "answers": {
+                        "yes": {
+                          "type": "noul",
+                          "noul": 0.9
+                        }
+                      },
+                      "cached": false
+                    }
+                  },
+                  "selected": true,
+                  "rank": null
+                }
+              ],
+              "moreResults": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "tools/call",
+      "name": "get_run",
+      "args": {
+        "runId": "e1154b21-6ef0-4a6f-8d2f-587920a17d9a"
+      },
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"result\":{\"runId\":\"e1154b21-6ef0-4a6f-8d2f-587920a17d9a\",\"status\":\"complete\",\"manifest\":{\"createdAt\":\"2026-09-20T08:20:09.199Z\",\"capability\":{\"name\":\"inspector_fixture\",\"version\":1,\"hash\":\"2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249\",\"definition\":{\"name\":\"inspector_fixture\",\"description\":\"Inspector protocol fixture; no live inference.\",\"stages\":[{\"id\":\"check\",\"questions\":{\"yes\":{\"type\":\"noul\",\"instructions\":\"Is this a fixture?\"}}}]},\"createdAt\":\"2026-09-20T08:20:07.328Z\",\"validation\":\"unvalidated\"},\"context\":{},\"provider\":\"openrouter\",\"model\":\"typesafe/jev-1.13\",\"plannedCalls\":1,\"options\":{\"maxCalls\":32,\"useCache\":false}},\"summary\":{\"modelCalls\":1,\"httpAttempts\":1,\"cacheHits\":0,\"reportedCostUsd\":0,\"unreportedCosts\":0,\"inputTokens\":0,\"outputTokens\":0,\"totalItems\":1,\"completedItems\":1,\"selectedIds\":[\"one\"]},\"items\":[{\"id\":\"one\",\"data\":{},\"result\":{\"id\":\"one\",\"status\":\"complete\",\"stages\":{\"check\":{\"status\":\"complete\",\"answers\":{\"yes\":{\"type\":\"noul\",\"noul\":0.9}},\"cached\":false}},\"selected\":true,\"rank\":null}}],\"nextCursor\":null,\"outcomes\":[]}}"
+            }
+          ],
+          "structuredContent": {
+            "result": {
+              "runId": "e1154b21-6ef0-4a6f-8d2f-587920a17d9a",
+              "status": "complete",
+              "manifest": {
+                "createdAt": "2026-09-20T08:20:09.199Z",
+                "capability": {
+                  "name": "inspector_fixture",
+                  "version": 1,
+                  "hash": "2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249",
+                  "definition": {
+                    "name": "inspector_fixture",
+                    "description": "Inspector protocol fixture; no live inference.",
+                    "stages": [
+                      {
+                        "id": "check",
+                        "questions": {
+                          "yes": {
+                            "type": "noul",
+                            "instructions": "Is this a fixture?"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "createdAt": "2026-09-20T08:20:07.328Z",
+                  "validation": "unvalidated"
+                },
+                "context": {},
+                "provider": "openrouter",
+                "model": "typesafe/jev-1.13",
+                "plannedCalls": 1,
+                "options": {
+                  "maxCalls": 32,
+                  "useCache": false
+                }
+              },
+              "summary": {
+                "modelCalls": 1,
+                "httpAttempts": 1,
+                "cacheHits": 0,
+                "reportedCostUsd": 0,
+                "unreportedCosts": 0,
+                "inputTokens": 0,
+                "outputTokens": 0,
+                "totalItems": 1,
+                "completedItems": 1,
+                "selectedIds": [
+                  "one"
+                ]
+              },
+              "items": [
+                {
+                  "id": "one",
+                  "data": {},
+                  "result": {
+                    "id": "one",
+                    "status": "complete",
+                    "stages": {
+                      "check": {
+                        "status": "complete",
+                        "answers": {
+                          "yes": {
+                            "type": "noul",
+                            "noul": 0.9
+                          }
+                        },
+                        "cached": false
+                      }
+                    },
+                    "selected": true,
+                    "rank": null
+                  }
+                }
+              ],
+              "nextCursor": null,
+              "outcomes": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "tools/call",
+      "name": "record_outcome",
+      "args": {
+        "runId": "e1154b21-6ef0-4a6f-8d2f-587920a17d9a",
+        "outcome": {
+          "reporter": "Inspector fixture",
+          "description": "Tool response decoded correctly.",
+          "sources": [
+            "fixture:inspector"
+          ],
+          "status": "success"
+        }
+      },
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"result\":{\"id\":\"f79294de-3654-4e76-8525-2a3579f14c79\",\"runId\":\"e1154b21-6ef0-4a6f-8d2f-587920a17d9a\",\"status\":\"recorded_as_reported\",\"note\":\"An outcome report is retained as supplied, not independently verified or automatically promoted to a reusable rule.\"}}"
+            }
+          ],
+          "structuredContent": {
+            "result": {
+              "id": "f79294de-3654-4e76-8525-2a3579f14c79",
+              "runId": "e1154b21-6ef0-4a6f-8d2f-587920a17d9a",
+              "status": "recorded_as_reported",
+              "note": "An outcome report is retained as supplied, not independently verified or automatically promoted to a reusable rule."
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "tools/call",
+      "name": "evaluate_capability",
+      "args": {
+        "name": "inspector_fixture",
+        "cases": [
+          {
+            "id": "one",
+            "data": {},
+            "expected": [
+              {
+                "stage": "check",
+                "question": "yes",
+                "op": "gte",
+                "value": 0.7
+              }
+            ]
+          }
+        ]
+      },
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"result\":{\"runId\":\"7cff7ecd-5e21-42ec-8a6e-4320213e2380\",\"status\":\"complete\",\"capability\":{\"name\":\"inspector_fixture\",\"version\":1,\"hash\":\"2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249\"},\"summary\":{\"modelCalls\":1,\"httpAttempts\":1,\"cacheHits\":0,\"reportedCostUsd\":0,\"unreportedCosts\":0,\"inputTokens\":0,\"outputTokens\":0,\"totalItems\":1,\"completedItems\":1,\"selectedIds\":[\"one\"]},\"results\":[{\"id\":\"one\",\"status\":\"complete\",\"stages\":{\"check\":{\"status\":\"complete\",\"answers\":{\"yes\":{\"type\":\"noul\",\"noul\":0.9}},\"cached\":false}},\"selected\":true,\"rank\":null}],\"moreResults\":false,\"evaluation\":{\"kind\":\"authored_test_evaluation\",\"capability\":{\"name\":\"inspector_fixture\",\"version\":1,\"hash\":\"2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249\"},\"checks\":[{\"id\":\"one\",\"passed\":true,\"failed\":[]}],\"passed\":1,\"total\":1,\"expected\":[{\"id\":\"one\",\"expected\":[{\"stage\":\"check\",\"question\":\"yes\",\"op\":\"gte\",\"value\":0.7}]}],\"note\":\"Labels are caller-authored. Passing them is evidence for these examples, not independent validation.\"}}}"
+            }
+          ],
+          "structuredContent": {
+            "result": {
+              "runId": "7cff7ecd-5e21-42ec-8a6e-4320213e2380",
+              "status": "complete",
+              "capability": {
+                "name": "inspector_fixture",
+                "version": 1,
+                "hash": "2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249"
+              },
+              "summary": {
+                "modelCalls": 1,
+                "httpAttempts": 1,
+                "cacheHits": 0,
+                "reportedCostUsd": 0,
+                "unreportedCosts": 0,
+                "inputTokens": 0,
+                "outputTokens": 0,
+                "totalItems": 1,
+                "completedItems": 1,
+                "selectedIds": [
+                  "one"
+                ]
+              },
+              "results": [
+                {
+                  "id": "one",
+                  "status": "complete",
+                  "stages": {
+                    "check": {
+                      "status": "complete",
+                      "answers": {
+                        "yes": {
+                          "type": "noul",
+                          "noul": 0.9
+                        }
+                      },
+                      "cached": false
+                    }
+                  },
+                  "selected": true,
+                  "rank": null
+                }
+              ],
+              "moreResults": false,
+              "evaluation": {
+                "kind": "authored_test_evaluation",
+                "capability": {
+                  "name": "inspector_fixture",
+                  "version": 1,
+                  "hash": "2cd839f45138b691aa6c4d0e7653e77da62e3c9736b6eafeca76a6b4114b4249"
+                },
+                "checks": [
+                  {
+                    "id": "one",
+                    "passed": true,
+                    "failed": []
+                  }
+                ],
+                "passed": 1,
+                "total": 1,
+                "expected": [
+                  {
+                    "id": "one",
+                    "expected": [
+                      {
+                        "stage": "check",
+                        "question": "yes",
+                        "op": "gte",
+                        "value": 0.7
+                      }
+                    ]
+                  }
+                ],
+                "note": "Labels are caller-authored. Passing them is evidence for these examples, not independent validation."
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "tools/call",
+      "name": "store_records",
+      "args": {
+        "records": [
+          {
+            "id": "one",
+            "scope": "inspector",
+            "title": "Record",
+            "text": "A searchable fixture record.",
+            "source": "fixture:one",
+            "kind": "source"
+          }
+        ]
+      },
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"result\":{\"records\":[{\"id\":\"one\",\"scope\":\"inspector\",\"version\":1,\"unchanged\":false}]}}"
+            }
+          ],
+          "structuredContent": {
+            "result": {
+              "records": [
+                {
+                  "id": "one",
+                  "scope": "inspector",
+                  "version": 1,
+                  "unchanged": false
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "method": "tools/call",
+      "name": "search_records",
+      "args": {
+        "scope": "inspector",
+        "query": "searchable"
+      },
+      "response": {
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"result\":{\"items\":[{\"id\":\"one\",\"scope\":\"inspector\",\"title\":\"Record\",\"text\":\"A searchable fixture record.\",\"source\":\"fixture:one\",\"kind\":\"source\",\"status\":\"active\",\"version\":1,\"lexicalRank\":-0.000001}],\"nextCursor\":null,\"retrieval\":\"sqlite_fts5\",\"query\":\"searchable\"}}"
+            }
+          ],
+          "structuredContent": {
+            "result": {
+              "items": [
+                {
+                  "id": "one",
+                  "scope": "inspector",
+                  "title": "Record",
+                  "text": "A searchable fixture record.",
+                  "source": "fixture:one",
+                  "kind": "source",
+                  "status": "active",
+                  "version": 1,
+                  "lexicalRank": -0.000001
+                }
+              ],
+              "nextCursor": null,
+              "retrieval": "sqlite_fts5",
+              "query": "searchable"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

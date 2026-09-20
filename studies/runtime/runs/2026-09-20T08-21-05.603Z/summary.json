@@ -1,0 +1,69 @@
+{
+  "passed": 10,
+  "total": 10,
+  "outcomes": [
+    {
+      "id": 1,
+      "passed": true,
+      "detail": "Acceptance checks passed."
+    },
+    {
+      "id": 2,
+      "passed": true,
+      "detail": "Acceptance checks passed."
+    },
+    {
+      "id": 3,
+      "passed": true,
+      "detail": "Acceptance checks passed."
+    },
+    {
+      "id": 4,
+      "passed": true,
+      "detail": "Acceptance checks passed."
+    },
+    {
+      "id": 5,
+      "passed": true,
+      "detail": "Acceptance checks passed."
+    },
+    {
+      "id": 6,
+      "passed": true,
+      "detail": "Acceptance checks passed."
+    },
+    {
+      "id": 7,
+      "passed": true,
+      "detail": "Acceptance checks passed."
+    },
+    {
+      "id": 8,
+      "passed": true,
+      "detail": "Acceptance checks passed."
+    },
+    {
+      "id": 9,
+      "passed": true,
+      "detail": "Acceptance checks passed."
+    },
+    {
+      "id": 10,
+      "passed": true,
+      "detail": "Acceptance checks passed."
+    }
+  ],
+  "runIds": [
+    "e8614cd1-aeba-4848-8207-da265aa56b5e",
+    "dbe346d4-396a-4332-a25f-1d641fd7a20a",
+    "ff72b5e3-a956-4b77-9ced-85b920808970",
+    "fd9ee4d0-55b1-4628-a0aa-632247e052f9",
+    "3d72a34b-949d-485d-954c-7e233b6a0efe",
+    "96ae5c9e-bb49-4811-a9a2-80b4f55dd616",
+    "814ebb4c-20dd-46ad-a079-5293bf9924c4"
+  ],
+  "modelCalls": 16,
+  "httpAttempts": 16,
+  "reportedCostUsd": 0.000327726,
+  "cacheHits": 3
+}

@@ -1,0 +1,25 @@
+{
+  "oldVersion": 1,
+  "newVersion": 2,
+  "newHash": "fbb31fb720e6766620c358f8f421814b6fdb27487aa803bc26347b6188908fca",
+  "baseline": {
+    "passed": 5,
+    "total": 6
+  },
+  "revised": {
+    "passed": 6,
+    "total": 6
+  },
+  "originalCasesAfterRevision": {
+    "passed": 3,
+    "total": 3
+  },
+  "modelCalls": 15,
+  "httpAttempts": 15,
+  "reportedCostUsd": 0.00028455,
+  "runIds": [
+    "615dcb25-cd54-4b6f-a3c4-d80b3b6f58b3",
+    "8bbbb423-6dfb-461e-b095-70753a30bcfc",
+    "3135daa3-135d-4c96-958e-32c2fa22f596"
+  ]
+}

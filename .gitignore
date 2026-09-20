@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Local database & state
+.jev/
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
+*.db
+
+# Host & MCP configs generated with local absolute paths
+.codex/
+.mcp.json
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build, types & test coverage
+dist/
+coverage/
+*.tsbuildinfo
+
+# Editors, AI workspaces & OS
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+

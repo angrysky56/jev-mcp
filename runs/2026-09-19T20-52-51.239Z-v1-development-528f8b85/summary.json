@@ -1,0 +1,60 @@
+{
+  "rows": [
+    {
+      "direction": "belief",
+      "cases": 6,
+      "unaided": 6,
+      "checklist": 6,
+      "canonicalCorrect": 6,
+      "canonicalValid": 6,
+      "allCorrect": 18,
+      "allPlanned": 18,
+      "failures": 0,
+      "changed": 0,
+      "comparisons": 12,
+      "harmful": 0
+    },
+    {
+      "direction": "question",
+      "cases": 6,
+      "unaided": 6,
+      "checklist": 6,
+      "canonicalCorrect": 6,
+      "canonicalValid": 6,
+      "allCorrect": 18,
+      "allPlanned": 18,
+      "failures": 0,
+      "changed": 0,
+      "comparisons": 12,
+      "harmful": 0
+    },
+    {
+      "direction": "adaptation",
+      "cases": 6,
+      "unaided": 6,
+      "checklist": 6,
+      "canonicalCorrect": 5,
+      "canonicalValid": 6,
+      "allCorrect": 15,
+      "allPlanned": 18,
+      "failures": 0,
+      "changed": 0,
+      "comparisons": 12,
+      "harmful": 0
+    }
+  ],
+  "plannedRequests": 54,
+  "recordedRequests": 54,
+  "successfulRequests": 54,
+  "failedRequests": 0,
+  "unattemptedRequests": 0,
+  "httpAttempts": 54,
+  "inputTokens": 39225,
+  "outputTokens": 5817,
+  "reportedCostUsd": 0.0016474499999999995,
+  "costCoverage": "54/54 validated responses; failed requests may have unrecorded charges",
+  "medianMs": 184.80977200000007,
+  "models": [
+    "typesafe/jev-1.13-20260917"
+  ]
+}

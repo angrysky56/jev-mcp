@@ -1,0 +1,482 @@
+[
+  {
+    "caseId": "w7",
+    "lexical": "wait"
+  },
+  {
+    "caseId": "w8",
+    "lexical": "wake"
+  },
+  {
+    "caseId": "w9",
+    "lexical": "wake"
+  },
+  {
+    "caseId": "w10",
+    "lexical": "wake"
+  },
+  {
+    "caseId": "w11",
+    "lexical": "wake"
+  },
+  {
+    "caseId": "w12",
+    "lexical": "wait"
+  },
+  {
+    "caseId": "p7",
+    "lexical": {
+      "status": "ready",
+      "selected": [
+        "P7K1",
+        "P7D0",
+        "P7D1"
+      ],
+      "excluded": [
+        "P7K0",
+        "P7D2",
+        "P7D3",
+        "P7X",
+        "P7S"
+      ],
+      "sourceCharacters": 362,
+      "packetCharacters": 173
+    },
+    "recent": {
+      "status": "ready",
+      "selected": [
+        "P7K1",
+        "P7D3",
+        "P7D2"
+      ],
+      "excluded": [
+        "P7K0",
+        "P7D0",
+        "P7D1",
+        "P7X",
+        "P7S"
+      ],
+      "sourceCharacters": 362,
+      "packetCharacters": 157
+    }
+  },
+  {
+    "caseId": "p8",
+    "lexical": {
+      "status": "ready",
+      "selected": [
+        "P8D0",
+        "P8K0",
+        "P8D1"
+      ],
+      "excluded": [
+        "P8K1",
+        "P8D2",
+        "P8D3",
+        "P8X",
+        "P8S"
+      ],
+      "sourceCharacters": 322,
+      "packetCharacters": 149
+    },
+    "recent": {
+      "status": "ready",
+      "selected": [
+        "P8D3",
+        "P8D2",
+        "P8D1"
+      ],
+      "excluded": [
+        "P8K0",
+        "P8K1",
+        "P8D0",
+        "P8X",
+        "P8S"
+      ],
+      "sourceCharacters": 322,
+      "packetCharacters": 167
+    }
+  },
+  {
+    "caseId": "p9",
+    "lexical": {
+      "status": "ready",
+      "selected": [
+        "P9D0",
+        "P9D2",
+        "P9K1"
+      ],
+      "excluded": [
+        "P9K0",
+        "P9D1",
+        "P9D3",
+        "P9X",
+        "P9S"
+      ],
+      "sourceCharacters": 337,
+      "packetCharacters": 169
+    },
+    "recent": {
+      "status": "ready",
+      "selected": [
+        "P9D3",
+        "P9D2",
+        "P9D1"
+      ],
+      "excluded": [
+        "P9K0",
+        "P9K1",
+        "P9D0",
+        "P9X",
+        "P9S"
+      ],
+      "sourceCharacters": 337,
+      "packetCharacters": 144
+    }
+  },
+  {
+    "caseId": "p10",
+    "lexical": {
+      "status": "ready",
+      "selected": [
+        "P10K0",
+        "P10K1",
+        "P10D0"
+      ],
+      "excluded": [
+        "P10D1",
+        "P10D2",
+        "P10D3",
+        "P10X",
+        "P10S"
+      ],
+      "sourceCharacters": 362,
+      "packetCharacters": 220
+    },
+    "recent": {
+      "status": "ready",
+      "selected": [
+        "P10D3",
+        "P10D2",
+        "P10D1"
+      ],
+      "excluded": [
+        "P10K0",
+        "P10K1",
+        "P10D0",
+        "P10X",
+        "P10S"
+      ],
+      "sourceCharacters": 362,
+      "packetCharacters": 142
+    }
+  },
+  {
+    "caseId": "p11",
+    "lexical": {
+      "status": "ready",
+      "selected": [
+        "P11K1",
+        "P11D0",
+        "P11D1"
+      ],
+      "excluded": [
+        "P11K0",
+        "P11D2",
+        "P11D3",
+        "P11X",
+        "P11S"
+      ],
+      "sourceCharacters": 393,
+      "packetCharacters": 198
+    },
+    "recent": {
+      "status": "ready",
+      "selected": [
+        "P11D3",
+        "P11D2",
+        "P11D1"
+      ],
+      "excluded": [
+        "P11K0",
+        "P11K1",
+        "P11D0",
+        "P11X",
+        "P11S"
+      ],
+      "sourceCharacters": 393,
+      "packetCharacters": 175
+    }
+  },
+  {
+    "caseId": "p12",
+    "lexical": {
+      "status": "ready",
+      "selected": [
+        "P12D0",
+        "P12D1",
+        "P12K0"
+      ],
+      "excluded": [
+        "P12K1",
+        "P12D2",
+        "P12D3",
+        "P12X",
+        "P12S"
+      ],
+      "sourceCharacters": 458,
+      "packetCharacters": 253
+    },
+    "recent": {
+      "status": "ready",
+      "selected": [
+        "P12D3",
+        "P12D2",
+        "P12D1"
+      ],
+      "excluded": [
+        "P12K0",
+        "P12K1",
+        "P12D0",
+        "P12X",
+        "P12S"
+      ],
+      "sourceCharacters": 458,
+      "packetCharacters": 151
+    }
+  },
+  {
+    "caseId": "m7",
+    "lexical": {
+      "status": "ready",
+      "selected": [
+        "T7",
+        "M6"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M7",
+        "M8"
+      ],
+      "sourceCharacters": 1191,
+      "packetCharacters": 298
+    },
+    "recent": {
+      "status": "ready",
+      "selected": [
+        "T7",
+        "M8"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7"
+      ],
+      "sourceCharacters": 1191,
+      "packetCharacters": 304
+    }
+  },
+  {
+    "caseId": "m8",
+    "lexical": {
+      "status": "ready",
+      "selected": [
+        "T8",
+        "M6"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M7",
+        "M8"
+      ],
+      "sourceCharacters": 1192,
+      "packetCharacters": 299
+    },
+    "recent": {
+      "status": "ready",
+      "selected": [
+        "T8",
+        "M8"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7"
+      ],
+      "sourceCharacters": 1192,
+      "packetCharacters": 305
+    }
+  },
+  {
+    "caseId": "m9",
+    "lexical": {
+      "status": "ready",
+      "selected": [
+        "T9",
+        "M3"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8"
+      ],
+      "sourceCharacters": 1192,
+      "packetCharacters": 307
+    },
+    "recent": {
+      "status": "ready",
+      "selected": [
+        "T9",
+        "M8"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7"
+      ],
+      "sourceCharacters": 1192,
+      "packetCharacters": 305
+    }
+  },
+  {
+    "caseId": "m10",
+    "lexical": {
+      "status": "ready",
+      "selected": [
+        "T10",
+        "M7"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M8"
+      ],
+      "sourceCharacters": 1186,
+      "packetCharacters": 262
+    },
+    "recent": {
+      "status": "ready",
+      "selected": [
+        "T10",
+        "M8"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7"
+      ],
+      "sourceCharacters": 1186,
+      "packetCharacters": 299
+    }
+  },
+  {
+    "caseId": "m11",
+    "lexical": {
+      "status": "ready",
+      "selected": [
+        "T11",
+        "M8"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7"
+      ],
+      "sourceCharacters": 1185,
+      "packetCharacters": 298
+    },
+    "recent": {
+      "status": "ready",
+      "selected": [
+        "T11",
+        "M8"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7"
+      ],
+      "sourceCharacters": 1185,
+      "packetCharacters": 298
+    }
+  },
+  {
+    "caseId": "m12",
+    "lexical": {
+      "status": "ready",
+      "selected": [
+        "T12",
+        "M1"
+      ],
+      "excluded": [
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8"
+      ],
+      "sourceCharacters": 1200,
+      "packetCharacters": 290
+    },
+    "recent": {
+      "status": "ready",
+      "selected": [
+        "T12",
+        "M8"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7"
+      ],
+      "sourceCharacters": 1200,
+      "packetCharacters": 313
+    }
+  }
+]

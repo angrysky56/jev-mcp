@@ -1,0 +1,30 @@
+{
+  "version": "v2",
+  "note": "One host-authored revision after development. Only adaptation changes; belief and question rubrics had no primary-label development errors. No evaluation output informed the revision.",
+  "sections": {
+    "belief": {
+      "instruction": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+      "paraphrase": "Relative to the evidence already recorded, what effect does the new observation have on support for the stated claim? Use this record alone.",
+      "criteria": {
+        "supports": "The observation adds evidence in favor of the claim.",
+        "weakens": "The observation adds evidence against the claim.",
+        "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+        "insufficient": "There is not enough information to determine how the observation relates to the claim."
+      }
+    },
+    "question": {
+      "instruction": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+      "paraphrase": "Select the feasible candidate whose possible observation best separates the given competing explanations within the stated constraints. If this record justifies none, select insufficient. Rely on the predictions provided.",
+      "criteria": {}
+    },
+    "adaptation": {
+      "instruction": "Classify the response by whether the record specifies an actual revision or an observation that could weaken the hypothesis. Inspect what outcomes are allowed to count against the belief. Do not equate willingness-to-investigate language with a specified test or belief update. Use only the supplied record.",
+      "paraphrase": "Does this response actually reduce or revise the challenged belief, identify a concrete possible observation that would weaken it, or make it immune to contrary outcomes? General interest in investigating does not establish a test or update. Classify only what the record makes explicit.",
+      "criteria": {
+        "responsive": "The response actually withdraws, weakens, or narrows the challenged claim, or gives a concrete test with a stated outcome that would weaken or reject it. A bounded instrument check or auxiliary explanation qualifies when it retains such a losing outcome.",
+        "self_sealing": "The response makes every relevant outcome confirm the claim, or explicitly excludes any possible observation from weakening it. A proposed test or verbal revision does not qualify as responsive when an escape clause makes disconfirmation impossible.",
+        "insufficient": "The response specifies neither an actual belief revision nor a concrete possible outcome that would weaken it, and does not explicitly immunize it. General curiosity, promises to investigate, tentative possibilities, and undefined criteria alone are insufficient."
+      }
+    }
+  }
+}

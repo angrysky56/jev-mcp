@@ -1,0 +1,2596 @@
+[
+  {
+    "caseId": "p1",
+    "variant": "canonical",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P1K0",
+        "P1K1"
+      ],
+      "excluded": [
+        "P1D0",
+        "P1D1",
+        "P1D2",
+        "P1D3",
+        "P1X",
+        "P1S"
+      ],
+      "sourceCharacters": 362,
+      "packetCharacters": 154
+    },
+    "packet": {
+      "task": "Resume preparing the museum panel for printing.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P1K0",
+          "role": "intention",
+          "status": "active",
+          "text": "The curator still must approve the exact revised wording before any printing.",
+          "source": "synthetic://continuity/P1K0",
+          "scope": "project"
+        },
+        {
+          "id": "P1K1",
+          "role": "observation",
+          "status": "active",
+          "text": "The current panel uses the corrected specimen name from the latest inventory.",
+          "source": "synthetic://continuity/P1K1",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P1D0",
+          "source": "synthetic://continuity/P1D0"
+        },
+        {
+          "id": "P1D1",
+          "source": "synthetic://continuity/P1D1"
+        },
+        {
+          "id": "P1D2",
+          "source": "synthetic://continuity/P1D2"
+        },
+        {
+          "id": "P1D3",
+          "source": "synthetic://continuity/P1D3"
+        },
+        {
+          "id": "P1X",
+          "source": "synthetic://continuity/P1X"
+        },
+        {
+          "id": "P1S",
+          "source": "synthetic://continuity/P1S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p1",
+    "variant": "paraphrase",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P1K0",
+        "P1K1"
+      ],
+      "excluded": [
+        "P1D0",
+        "P1D1",
+        "P1D2",
+        "P1D3",
+        "P1X",
+        "P1S"
+      ],
+      "sourceCharacters": 362,
+      "packetCharacters": 154
+    },
+    "packet": {
+      "task": "Resume preparing the museum panel for printing.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P1K0",
+          "role": "intention",
+          "status": "active",
+          "text": "The curator still must approve the exact revised wording before any printing.",
+          "source": "synthetic://continuity/P1K0",
+          "scope": "project"
+        },
+        {
+          "id": "P1K1",
+          "role": "observation",
+          "status": "active",
+          "text": "The current panel uses the corrected specimen name from the latest inventory.",
+          "source": "synthetic://continuity/P1K1",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P1D0",
+          "source": "synthetic://continuity/P1D0"
+        },
+        {
+          "id": "P1D1",
+          "source": "synthetic://continuity/P1D1"
+        },
+        {
+          "id": "P1D2",
+          "source": "synthetic://continuity/P1D2"
+        },
+        {
+          "id": "P1D3",
+          "source": "synthetic://continuity/P1D3"
+        },
+        {
+          "id": "P1X",
+          "source": "synthetic://continuity/P1X"
+        },
+        {
+          "id": "P1S",
+          "source": "synthetic://continuity/P1S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p1",
+    "variant": "reversed",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P1K0",
+        "P1K1"
+      ],
+      "excluded": [
+        "P1D0",
+        "P1D1",
+        "P1D2",
+        "P1D3",
+        "P1X",
+        "P1S"
+      ],
+      "sourceCharacters": 362,
+      "packetCharacters": 154
+    },
+    "packet": {
+      "task": "Resume preparing the museum panel for printing.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P1K0",
+          "role": "intention",
+          "status": "active",
+          "text": "The curator still must approve the exact revised wording before any printing.",
+          "source": "synthetic://continuity/P1K0",
+          "scope": "project"
+        },
+        {
+          "id": "P1K1",
+          "role": "observation",
+          "status": "active",
+          "text": "The current panel uses the corrected specimen name from the latest inventory.",
+          "source": "synthetic://continuity/P1K1",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P1D0",
+          "source": "synthetic://continuity/P1D0"
+        },
+        {
+          "id": "P1D1",
+          "source": "synthetic://continuity/P1D1"
+        },
+        {
+          "id": "P1D2",
+          "source": "synthetic://continuity/P1D2"
+        },
+        {
+          "id": "P1D3",
+          "source": "synthetic://continuity/P1D3"
+        },
+        {
+          "id": "P1X",
+          "source": "synthetic://continuity/P1X"
+        },
+        {
+          "id": "P1S",
+          "source": "synthetic://continuity/P1S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p2",
+    "variant": "canonical",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P2K1",
+        "P2K0"
+      ],
+      "excluded": [
+        "P2D0",
+        "P2D1",
+        "P2D2",
+        "P2D3",
+        "P2X",
+        "P2S"
+      ],
+      "sourceCharacters": 424,
+      "packetCharacters": 170
+    },
+    "packet": {
+      "task": "Investigate the stalled telescope mount without repeating failed work.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P2K1",
+          "role": "intention",
+          "status": "active",
+          "text": "The remaining discriminating check is the cable continuity test; it has not been performed.",
+          "source": "synthetic://continuity/P2K1",
+          "scope": "project"
+        },
+        {
+          "id": "P2K0",
+          "role": "observation",
+          "status": "active",
+          "text": "Power cycling was tried twice under the same conditions and made no difference.",
+          "source": "synthetic://continuity/P2K0",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P2D0",
+          "source": "synthetic://continuity/P2D0"
+        },
+        {
+          "id": "P2D1",
+          "source": "synthetic://continuity/P2D1"
+        },
+        {
+          "id": "P2D2",
+          "source": "synthetic://continuity/P2D2"
+        },
+        {
+          "id": "P2D3",
+          "source": "synthetic://continuity/P2D3"
+        },
+        {
+          "id": "P2X",
+          "source": "synthetic://continuity/P2X"
+        },
+        {
+          "id": "P2S",
+          "source": "synthetic://continuity/P2S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p2",
+    "variant": "paraphrase",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P2K1",
+        "P2K0"
+      ],
+      "excluded": [
+        "P2D0",
+        "P2D1",
+        "P2D2",
+        "P2D3",
+        "P2X",
+        "P2S"
+      ],
+      "sourceCharacters": 424,
+      "packetCharacters": 170
+    },
+    "packet": {
+      "task": "Investigate the stalled telescope mount without repeating failed work.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P2K1",
+          "role": "intention",
+          "status": "active",
+          "text": "The remaining discriminating check is the cable continuity test; it has not been performed.",
+          "source": "synthetic://continuity/P2K1",
+          "scope": "project"
+        },
+        {
+          "id": "P2K0",
+          "role": "observation",
+          "status": "active",
+          "text": "Power cycling was tried twice under the same conditions and made no difference.",
+          "source": "synthetic://continuity/P2K0",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P2D0",
+          "source": "synthetic://continuity/P2D0"
+        },
+        {
+          "id": "P2D1",
+          "source": "synthetic://continuity/P2D1"
+        },
+        {
+          "id": "P2D2",
+          "source": "synthetic://continuity/P2D2"
+        },
+        {
+          "id": "P2D3",
+          "source": "synthetic://continuity/P2D3"
+        },
+        {
+          "id": "P2X",
+          "source": "synthetic://continuity/P2X"
+        },
+        {
+          "id": "P2S",
+          "source": "synthetic://continuity/P2S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p2",
+    "variant": "reversed",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P2K1",
+        "P2K0"
+      ],
+      "excluded": [
+        "P2D0",
+        "P2D1",
+        "P2D2",
+        "P2D3",
+        "P2X",
+        "P2S"
+      ],
+      "sourceCharacters": 424,
+      "packetCharacters": 170
+    },
+    "packet": {
+      "task": "Investigate the stalled telescope mount without repeating failed work.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P2K1",
+          "role": "intention",
+          "status": "active",
+          "text": "The remaining discriminating check is the cable continuity test; it has not been performed.",
+          "source": "synthetic://continuity/P2K1",
+          "scope": "project"
+        },
+        {
+          "id": "P2K0",
+          "role": "observation",
+          "status": "active",
+          "text": "Power cycling was tried twice under the same conditions and made no difference.",
+          "source": "synthetic://continuity/P2K0",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P2D0",
+          "source": "synthetic://continuity/P2D0"
+        },
+        {
+          "id": "P2D1",
+          "source": "synthetic://continuity/P2D1"
+        },
+        {
+          "id": "P2D2",
+          "source": "synthetic://continuity/P2D2"
+        },
+        {
+          "id": "P2D3",
+          "source": "synthetic://continuity/P2D3"
+        },
+        {
+          "id": "P2X",
+          "source": "synthetic://continuity/P2X"
+        },
+        {
+          "id": "P2S",
+          "source": "synthetic://continuity/P2S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p3",
+    "variant": "canonical",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P3K1",
+        "P3K0"
+      ],
+      "excluded": [
+        "P3D0",
+        "P3D1",
+        "P3D2",
+        "P3D3",
+        "P3X",
+        "P3S"
+      ],
+      "sourceCharacters": 358,
+      "packetCharacters": 152
+    },
+    "packet": {
+      "task": "Continue the rainfall analysis using the provisional sensor correction.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P3K1",
+          "role": "observation",
+          "status": "active",
+          "text": "The suspected bias was observed only during the noon test; overnight readings agreed.",
+          "source": "synthetic://continuity/P3K1",
+          "scope": "project"
+        },
+        {
+          "id": "P3K0",
+          "role": "hypothesis",
+          "status": "active",
+          "text": "Hypothesis: the first sensor reads high during direct sun exposure.",
+          "source": "synthetic://continuity/P3K0",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P3D0",
+          "source": "synthetic://continuity/P3D0"
+        },
+        {
+          "id": "P3D1",
+          "source": "synthetic://continuity/P3D1"
+        },
+        {
+          "id": "P3D2",
+          "source": "synthetic://continuity/P3D2"
+        },
+        {
+          "id": "P3D3",
+          "source": "synthetic://continuity/P3D3"
+        },
+        {
+          "id": "P3X",
+          "source": "synthetic://continuity/P3X"
+        },
+        {
+          "id": "P3S",
+          "source": "synthetic://continuity/P3S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p3",
+    "variant": "paraphrase",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P3K1",
+        "P3K0"
+      ],
+      "excluded": [
+        "P3D0",
+        "P3D1",
+        "P3D2",
+        "P3D3",
+        "P3X",
+        "P3S"
+      ],
+      "sourceCharacters": 358,
+      "packetCharacters": 152
+    },
+    "packet": {
+      "task": "Continue the rainfall analysis using the provisional sensor correction.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P3K1",
+          "role": "observation",
+          "status": "active",
+          "text": "The suspected bias was observed only during the noon test; overnight readings agreed.",
+          "source": "synthetic://continuity/P3K1",
+          "scope": "project"
+        },
+        {
+          "id": "P3K0",
+          "role": "hypothesis",
+          "status": "active",
+          "text": "Hypothesis: the first sensor reads high during direct sun exposure.",
+          "source": "synthetic://continuity/P3K0",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P3D0",
+          "source": "synthetic://continuity/P3D0"
+        },
+        {
+          "id": "P3D1",
+          "source": "synthetic://continuity/P3D1"
+        },
+        {
+          "id": "P3D2",
+          "source": "synthetic://continuity/P3D2"
+        },
+        {
+          "id": "P3D3",
+          "source": "synthetic://continuity/P3D3"
+        },
+        {
+          "id": "P3X",
+          "source": "synthetic://continuity/P3X"
+        },
+        {
+          "id": "P3S",
+          "source": "synthetic://continuity/P3S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p3",
+    "variant": "reversed",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P3K1",
+        "P3K0"
+      ],
+      "excluded": [
+        "P3D0",
+        "P3D1",
+        "P3D2",
+        "P3D3",
+        "P3X",
+        "P3S"
+      ],
+      "sourceCharacters": 358,
+      "packetCharacters": 152
+    },
+    "packet": {
+      "task": "Continue the rainfall analysis using the provisional sensor correction.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P3K1",
+          "role": "observation",
+          "status": "active",
+          "text": "The suspected bias was observed only during the noon test; overnight readings agreed.",
+          "source": "synthetic://continuity/P3K1",
+          "scope": "project"
+        },
+        {
+          "id": "P3K0",
+          "role": "hypothesis",
+          "status": "active",
+          "text": "Hypothesis: the first sensor reads high during direct sun exposure.",
+          "source": "synthetic://continuity/P3K0",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P3D0",
+          "source": "synthetic://continuity/P3D0"
+        },
+        {
+          "id": "P3D1",
+          "source": "synthetic://continuity/P3D1"
+        },
+        {
+          "id": "P3D2",
+          "source": "synthetic://continuity/P3D2"
+        },
+        {
+          "id": "P3D3",
+          "source": "synthetic://continuity/P3D3"
+        },
+        {
+          "id": "P3X",
+          "source": "synthetic://continuity/P3X"
+        },
+        {
+          "id": "P3S",
+          "source": "synthetic://continuity/P3S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p4",
+    "variant": "canonical",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P4K0",
+        "P4K1"
+      ],
+      "excluded": [
+        "P4D0",
+        "P4D1",
+        "P4D2",
+        "P4D3",
+        "P4X",
+        "P4S"
+      ],
+      "sourceCharacters": 378,
+      "packetCharacters": 151
+    },
+    "packet": {
+      "task": "Resume work on the private exhibit catalog.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P4K0",
+          "role": "constraint",
+          "status": "active",
+          "text": "The user requires that identifying donor details remain local.",
+          "source": "synthetic://continuity/P4K0",
+          "scope": "project"
+        },
+        {
+          "id": "P4K1",
+          "role": "intention",
+          "status": "active",
+          "text": "The current goal is to produce a redacted catalog for internal review, not to publish it.",
+          "source": "synthetic://continuity/P4K1",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P4D0",
+          "source": "synthetic://continuity/P4D0"
+        },
+        {
+          "id": "P4D1",
+          "source": "synthetic://continuity/P4D1"
+        },
+        {
+          "id": "P4D2",
+          "source": "synthetic://continuity/P4D2"
+        },
+        {
+          "id": "P4D3",
+          "source": "synthetic://continuity/P4D3"
+        },
+        {
+          "id": "P4X",
+          "source": "synthetic://continuity/P4X"
+        },
+        {
+          "id": "P4S",
+          "source": "synthetic://continuity/P4S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p4",
+    "variant": "paraphrase",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P4K0",
+        "P4K1"
+      ],
+      "excluded": [
+        "P4D0",
+        "P4D1",
+        "P4D2",
+        "P4D3",
+        "P4X",
+        "P4S"
+      ],
+      "sourceCharacters": 378,
+      "packetCharacters": 151
+    },
+    "packet": {
+      "task": "Resume work on the private exhibit catalog.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P4K0",
+          "role": "constraint",
+          "status": "active",
+          "text": "The user requires that identifying donor details remain local.",
+          "source": "synthetic://continuity/P4K0",
+          "scope": "project"
+        },
+        {
+          "id": "P4K1",
+          "role": "intention",
+          "status": "active",
+          "text": "The current goal is to produce a redacted catalog for internal review, not to publish it.",
+          "source": "synthetic://continuity/P4K1",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P4D0",
+          "source": "synthetic://continuity/P4D0"
+        },
+        {
+          "id": "P4D1",
+          "source": "synthetic://continuity/P4D1"
+        },
+        {
+          "id": "P4D2",
+          "source": "synthetic://continuity/P4D2"
+        },
+        {
+          "id": "P4D3",
+          "source": "synthetic://continuity/P4D3"
+        },
+        {
+          "id": "P4X",
+          "source": "synthetic://continuity/P4X"
+        },
+        {
+          "id": "P4S",
+          "source": "synthetic://continuity/P4S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p4",
+    "variant": "reversed",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P4K0",
+        "P4K1"
+      ],
+      "excluded": [
+        "P4D0",
+        "P4D1",
+        "P4D2",
+        "P4D3",
+        "P4X",
+        "P4S"
+      ],
+      "sourceCharacters": 378,
+      "packetCharacters": 151
+    },
+    "packet": {
+      "task": "Resume work on the private exhibit catalog.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P4K0",
+          "role": "constraint",
+          "status": "active",
+          "text": "The user requires that identifying donor details remain local.",
+          "source": "synthetic://continuity/P4K0",
+          "scope": "project"
+        },
+        {
+          "id": "P4K1",
+          "role": "intention",
+          "status": "active",
+          "text": "The current goal is to produce a redacted catalog for internal review, not to publish it.",
+          "source": "synthetic://continuity/P4K1",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P4D0",
+          "source": "synthetic://continuity/P4D0"
+        },
+        {
+          "id": "P4D1",
+          "source": "synthetic://continuity/P4D1"
+        },
+        {
+          "id": "P4D2",
+          "source": "synthetic://continuity/P4D2"
+        },
+        {
+          "id": "P4D3",
+          "source": "synthetic://continuity/P4D3"
+        },
+        {
+          "id": "P4X",
+          "source": "synthetic://continuity/P4X"
+        },
+        {
+          "id": "P4S",
+          "source": "synthetic://continuity/P4S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p5",
+    "variant": "canonical",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P5K0",
+        "P5K1",
+        "P5D2"
+      ],
+      "excluded": [
+        "P5D0",
+        "P5D1",
+        "P5D3",
+        "P5X",
+        "P5S"
+      ],
+      "sourceCharacters": 401,
+      "packetCharacters": 234
+    },
+    "packet": {
+      "task": "Decide how to check the remote weather station before reporting it healthy.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P5K0",
+          "role": "observation",
+          "status": "active",
+          "text": "This session has no connection to the remote station; cached logs end before the fault report.",
+          "source": "synthetic://continuity/P5K0",
+          "scope": "project"
+        },
+        {
+          "id": "P5K1",
+          "role": "intention",
+          "status": "active",
+          "text": "A person onsite offered to take a fresh reading, but has not returned it yet.",
+          "source": "synthetic://continuity/P5K1",
+          "scope": "project"
+        },
+        {
+          "id": "P5D2",
+          "role": "observation",
+          "status": "active",
+          "text": "A draft response already contains the words station is healthy.",
+          "source": "synthetic://continuity/P5D2",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P5D0",
+          "source": "synthetic://continuity/P5D0"
+        },
+        {
+          "id": "P5D1",
+          "source": "synthetic://continuity/P5D1"
+        },
+        {
+          "id": "P5D3",
+          "source": "synthetic://continuity/P5D3"
+        },
+        {
+          "id": "P5X",
+          "source": "synthetic://continuity/P5X"
+        },
+        {
+          "id": "P5S",
+          "source": "synthetic://continuity/P5S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p5",
+    "variant": "paraphrase",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P5K0",
+        "P5K1",
+        "P5D2"
+      ],
+      "excluded": [
+        "P5D0",
+        "P5D1",
+        "P5D3",
+        "P5X",
+        "P5S"
+      ],
+      "sourceCharacters": 401,
+      "packetCharacters": 234
+    },
+    "packet": {
+      "task": "Decide how to check the remote weather station before reporting it healthy.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P5K0",
+          "role": "observation",
+          "status": "active",
+          "text": "This session has no connection to the remote station; cached logs end before the fault report.",
+          "source": "synthetic://continuity/P5K0",
+          "scope": "project"
+        },
+        {
+          "id": "P5K1",
+          "role": "intention",
+          "status": "active",
+          "text": "A person onsite offered to take a fresh reading, but has not returned it yet.",
+          "source": "synthetic://continuity/P5K1",
+          "scope": "project"
+        },
+        {
+          "id": "P5D2",
+          "role": "observation",
+          "status": "active",
+          "text": "A draft response already contains the words station is healthy.",
+          "source": "synthetic://continuity/P5D2",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P5D0",
+          "source": "synthetic://continuity/P5D0"
+        },
+        {
+          "id": "P5D1",
+          "source": "synthetic://continuity/P5D1"
+        },
+        {
+          "id": "P5D3",
+          "source": "synthetic://continuity/P5D3"
+        },
+        {
+          "id": "P5X",
+          "source": "synthetic://continuity/P5X"
+        },
+        {
+          "id": "P5S",
+          "source": "synthetic://continuity/P5S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p5",
+    "variant": "reversed",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P5K0",
+        "P5K1",
+        "P5D2"
+      ],
+      "excluded": [
+        "P5D0",
+        "P5D1",
+        "P5D3",
+        "P5X",
+        "P5S"
+      ],
+      "sourceCharacters": 401,
+      "packetCharacters": 234
+    },
+    "packet": {
+      "task": "Decide how to check the remote weather station before reporting it healthy.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P5K0",
+          "role": "observation",
+          "status": "active",
+          "text": "This session has no connection to the remote station; cached logs end before the fault report.",
+          "source": "synthetic://continuity/P5K0",
+          "scope": "project"
+        },
+        {
+          "id": "P5K1",
+          "role": "intention",
+          "status": "active",
+          "text": "A person onsite offered to take a fresh reading, but has not returned it yet.",
+          "source": "synthetic://continuity/P5K1",
+          "scope": "project"
+        },
+        {
+          "id": "P5D2",
+          "role": "observation",
+          "status": "active",
+          "text": "A draft response already contains the words station is healthy.",
+          "source": "synthetic://continuity/P5D2",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P5D0",
+          "source": "synthetic://continuity/P5D0"
+        },
+        {
+          "id": "P5D1",
+          "source": "synthetic://continuity/P5D1"
+        },
+        {
+          "id": "P5D3",
+          "source": "synthetic://continuity/P5D3"
+        },
+        {
+          "id": "P5X",
+          "source": "synthetic://continuity/P5X"
+        },
+        {
+          "id": "P5S",
+          "source": "synthetic://continuity/P5S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p6",
+    "variant": "canonical",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P6K1",
+        "P6K0"
+      ],
+      "excluded": [
+        "P6D0",
+        "P6D1",
+        "P6D2",
+        "P6D3",
+        "P6X",
+        "P6S"
+      ],
+      "sourceCharacters": 324,
+      "packetCharacters": 139
+    },
+    "packet": {
+      "task": "Continue exploration B of the lamp mechanism.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P6K1",
+          "role": "intention",
+          "status": "active",
+          "text": "Branch B should next test the non-contact shield under the recorded setup.",
+          "source": "synthetic://continuity/P6K1",
+          "scope": "project"
+        },
+        {
+          "id": "P6K0",
+          "role": "hypothesis",
+          "status": "active",
+          "text": "Branch B currently assumes a magnetic coupling; this is untested.",
+          "source": "synthetic://continuity/P6K0",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P6D0",
+          "source": "synthetic://continuity/P6D0"
+        },
+        {
+          "id": "P6D1",
+          "source": "synthetic://continuity/P6D1"
+        },
+        {
+          "id": "P6D2",
+          "source": "synthetic://continuity/P6D2"
+        },
+        {
+          "id": "P6D3",
+          "source": "synthetic://continuity/P6D3"
+        },
+        {
+          "id": "P6X",
+          "source": "synthetic://continuity/P6X"
+        },
+        {
+          "id": "P6S",
+          "source": "synthetic://continuity/P6S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p6",
+    "variant": "paraphrase",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P6K1",
+        "P6K0"
+      ],
+      "excluded": [
+        "P6D0",
+        "P6D1",
+        "P6D2",
+        "P6D3",
+        "P6X",
+        "P6S"
+      ],
+      "sourceCharacters": 324,
+      "packetCharacters": 139
+    },
+    "packet": {
+      "task": "Continue exploration B of the lamp mechanism.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P6K1",
+          "role": "intention",
+          "status": "active",
+          "text": "Branch B should next test the non-contact shield under the recorded setup.",
+          "source": "synthetic://continuity/P6K1",
+          "scope": "project"
+        },
+        {
+          "id": "P6K0",
+          "role": "hypothesis",
+          "status": "active",
+          "text": "Branch B currently assumes a magnetic coupling; this is untested.",
+          "source": "synthetic://continuity/P6K0",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P6D0",
+          "source": "synthetic://continuity/P6D0"
+        },
+        {
+          "id": "P6D1",
+          "source": "synthetic://continuity/P6D1"
+        },
+        {
+          "id": "P6D2",
+          "source": "synthetic://continuity/P6D2"
+        },
+        {
+          "id": "P6D3",
+          "source": "synthetic://continuity/P6D3"
+        },
+        {
+          "id": "P6X",
+          "source": "synthetic://continuity/P6X"
+        },
+        {
+          "id": "P6S",
+          "source": "synthetic://continuity/P6S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "p6",
+    "variant": "reversed",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "P6K0",
+        "P6K1"
+      ],
+      "excluded": [
+        "P6D0",
+        "P6D1",
+        "P6D2",
+        "P6D3",
+        "P6X",
+        "P6S"
+      ],
+      "sourceCharacters": 324,
+      "packetCharacters": 139
+    },
+    "packet": {
+      "task": "Continue exploration B of the lamp mechanism.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "P6K0",
+          "role": "hypothesis",
+          "status": "active",
+          "text": "Branch B currently assumes a magnetic coupling; this is untested.",
+          "source": "synthetic://continuity/P6K0",
+          "scope": "project"
+        },
+        {
+          "id": "P6K1",
+          "role": "intention",
+          "status": "active",
+          "text": "Branch B should next test the non-contact shield under the recorded setup.",
+          "source": "synthetic://continuity/P6K1",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "P6D0",
+          "source": "synthetic://continuity/P6D0"
+        },
+        {
+          "id": "P6D1",
+          "source": "synthetic://continuity/P6D1"
+        },
+        {
+          "id": "P6D2",
+          "source": "synthetic://continuity/P6D2"
+        },
+        {
+          "id": "P6D3",
+          "source": "synthetic://continuity/P6D3"
+        },
+        {
+          "id": "P6X",
+          "source": "synthetic://continuity/P6X"
+        },
+        {
+          "id": "P6S",
+          "source": "synthetic://continuity/P6S"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m1",
+    "variant": "canonical",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M1",
+        "M8"
+      ],
+      "excluded": [
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "T1"
+      ],
+      "sourceCharacters": 1234,
+      "packetCharacters": 275
+    },
+    "packet": {
+      "task": "Several biographies repeat an inventor story; decide how much independent historical support there is.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M1",
+          "role": "procedure",
+          "status": "active",
+          "text": "When several reports may descend from one observation, trace their source lineage before counting them as independent support.",
+          "source": "synthetic://continuity/M1",
+          "scope": "project"
+        },
+        {
+          "id": "M8",
+          "role": "procedure",
+          "status": "active",
+          "text": "Before claiming an action was performed or checked, inspect actual tool access and observed outcomes; an intention or draft report is not completion.",
+          "source": "synthetic://continuity/M8",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M4",
+          "source": "synthetic://continuity/M4"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M6",
+          "source": "synthetic://continuity/M6"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "T1",
+          "source": "synthetic://continuity/T1"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m1",
+    "variant": "paraphrase",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M1",
+        "M6"
+      ],
+      "excluded": [
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M7",
+        "M8",
+        "T1"
+      ],
+      "sourceCharacters": 1234,
+      "packetCharacters": 269
+    },
+    "packet": {
+      "task": "Several biographies repeat an inventor story; decide how much independent historical support there is.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M1",
+          "role": "procedure",
+          "status": "active",
+          "text": "When several reports may descend from one observation, trace their source lineage before counting them as independent support.",
+          "source": "synthetic://continuity/M1",
+          "scope": "project"
+        },
+        {
+          "id": "M6",
+          "role": "procedure",
+          "status": "active",
+          "text": "When records use different names for possibly the same thing, compare identifying attributes before combining them; preserve ambiguous matches.",
+          "source": "synthetic://continuity/M6",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M4",
+          "source": "synthetic://continuity/M4"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T1",
+          "source": "synthetic://continuity/T1"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m1",
+    "variant": "reversed",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M1",
+        "M6"
+      ],
+      "excluded": [
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M7",
+        "M8",
+        "T1"
+      ],
+      "sourceCharacters": 1234,
+      "packetCharacters": 269
+    },
+    "packet": {
+      "task": "Several biographies repeat an inventor story; decide how much independent historical support there is.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M1",
+          "role": "procedure",
+          "status": "active",
+          "text": "When several reports may descend from one observation, trace their source lineage before counting them as independent support.",
+          "source": "synthetic://continuity/M1",
+          "scope": "project"
+        },
+        {
+          "id": "M6",
+          "role": "procedure",
+          "status": "active",
+          "text": "When records use different names for possibly the same thing, compare identifying attributes before combining them; preserve ambiguous matches.",
+          "source": "synthetic://continuity/M6",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M4",
+          "source": "synthetic://continuity/M4"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T1",
+          "source": "synthetic://continuity/T1"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m2",
+    "variant": "canonical",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M2"
+      ],
+      "excluded": [
+        "M1",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8",
+        "T2"
+      ],
+      "sourceCharacters": 1185,
+      "packetCharacters": 112
+    },
+    "packet": {
+      "task": "Find why bread texture changed after a recipe update.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M2",
+          "role": "procedure",
+          "status": "active",
+          "text": "When several causes change together, vary one factor while holding the others fixed and compare the observation.",
+          "source": "synthetic://continuity/M2",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M1",
+          "source": "synthetic://continuity/M1"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M4",
+          "source": "synthetic://continuity/M4"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M6",
+          "source": "synthetic://continuity/M6"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T2",
+          "source": "synthetic://continuity/T2"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m2",
+    "variant": "paraphrase",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M2"
+      ],
+      "excluded": [
+        "M1",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8",
+        "T2"
+      ],
+      "sourceCharacters": 1185,
+      "packetCharacters": 112
+    },
+    "packet": {
+      "task": "Find why bread texture changed after a recipe update.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M2",
+          "role": "procedure",
+          "status": "active",
+          "text": "When several causes change together, vary one factor while holding the others fixed and compare the observation.",
+          "source": "synthetic://continuity/M2",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M1",
+          "source": "synthetic://continuity/M1"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M4",
+          "source": "synthetic://continuity/M4"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M6",
+          "source": "synthetic://continuity/M6"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T2",
+          "source": "synthetic://continuity/T2"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m2",
+    "variant": "reversed",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M2"
+      ],
+      "excluded": [
+        "M1",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8",
+        "T2"
+      ],
+      "sourceCharacters": 1185,
+      "packetCharacters": 112
+    },
+    "packet": {
+      "task": "Find why bread texture changed after a recipe update.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M2",
+          "role": "procedure",
+          "status": "active",
+          "text": "When several causes change together, vary one factor while holding the others fixed and compare the observation.",
+          "source": "synthetic://continuity/M2",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M1",
+          "source": "synthetic://continuity/M1"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M4",
+          "source": "synthetic://continuity/M4"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M6",
+          "source": "synthetic://continuity/M6"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T2",
+          "source": "synthetic://continuity/T2"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m3",
+    "variant": "canonical",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M3"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8",
+        "T3"
+      ],
+      "sourceCharacters": 1215,
+      "packetCharacters": 151
+    },
+    "packet": {
+      "task": "Pick an observation using either of two equivalent available measuring instruments.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M3",
+          "role": "procedure",
+          "status": "active",
+          "text": "When several available alternatives meet the requirements equally well, retain an acceptable set and use a simple tie rule; no unique winner is needed.",
+          "source": "synthetic://continuity/M3",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M1",
+          "source": "synthetic://continuity/M1"
+        },
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M4",
+          "source": "synthetic://continuity/M4"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M6",
+          "source": "synthetic://continuity/M6"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T3",
+          "source": "synthetic://continuity/T3"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m3",
+    "variant": "paraphrase",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M3"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8",
+        "T3"
+      ],
+      "sourceCharacters": 1215,
+      "packetCharacters": 151
+    },
+    "packet": {
+      "task": "Pick an observation using either of two equivalent available measuring instruments.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M3",
+          "role": "procedure",
+          "status": "active",
+          "text": "When several available alternatives meet the requirements equally well, retain an acceptable set and use a simple tie rule; no unique winner is needed.",
+          "source": "synthetic://continuity/M3",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M1",
+          "source": "synthetic://continuity/M1"
+        },
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M4",
+          "source": "synthetic://continuity/M4"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M6",
+          "source": "synthetic://continuity/M6"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T3",
+          "source": "synthetic://continuity/T3"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m3",
+    "variant": "reversed",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M3",
+        "M8"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "T3"
+      ],
+      "sourceCharacters": 1215,
+      "packetCharacters": 300
+    },
+    "packet": {
+      "task": "Pick an observation using either of two equivalent available measuring instruments.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M3",
+          "role": "procedure",
+          "status": "active",
+          "text": "When several available alternatives meet the requirements equally well, retain an acceptable set and use a simple tie rule; no unique winner is needed.",
+          "source": "synthetic://continuity/M3",
+          "scope": "project"
+        },
+        {
+          "id": "M8",
+          "role": "procedure",
+          "status": "active",
+          "text": "Before claiming an action was performed or checked, inspect actual tool access and observed outcomes; an intention or draft report is not completion.",
+          "source": "synthetic://continuity/M8",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M1",
+          "source": "synthetic://continuity/M1"
+        },
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M4",
+          "source": "synthetic://continuity/M4"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M6",
+          "source": "synthetic://continuity/M6"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "T3",
+          "source": "synthetic://continuity/T3"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m4",
+    "variant": "canonical",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M4"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M5",
+        "M6",
+        "M7",
+        "M8",
+        "T4"
+      ],
+      "sourceCharacters": 1190,
+      "packetCharacters": 122
+    },
+    "packet": {
+      "task": "Revisit a postponed language workshop at the right moment.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M4",
+          "role": "procedure",
+          "status": "active",
+          "text": "When progress depends on prerequisites, record each unmet requirement and revisit the plan when those requirements change.",
+          "source": "synthetic://continuity/M4",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M1",
+          "source": "synthetic://continuity/M1"
+        },
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M6",
+          "source": "synthetic://continuity/M6"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T4",
+          "source": "synthetic://continuity/T4"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m4",
+    "variant": "paraphrase",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M4"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M5",
+        "M6",
+        "M7",
+        "M8",
+        "T4"
+      ],
+      "sourceCharacters": 1190,
+      "packetCharacters": 122
+    },
+    "packet": {
+      "task": "Revisit a postponed language workshop at the right moment.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M4",
+          "role": "procedure",
+          "status": "active",
+          "text": "When progress depends on prerequisites, record each unmet requirement and revisit the plan when those requirements change.",
+          "source": "synthetic://continuity/M4",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M1",
+          "source": "synthetic://continuity/M1"
+        },
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M6",
+          "source": "synthetic://continuity/M6"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T4",
+          "source": "synthetic://continuity/T4"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m4",
+    "variant": "reversed",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M4",
+        "M8"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M5",
+        "M6",
+        "M7",
+        "T4"
+      ],
+      "sourceCharacters": 1190,
+      "packetCharacters": 271
+    },
+    "packet": {
+      "task": "Revisit a postponed language workshop at the right moment.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M4",
+          "role": "procedure",
+          "status": "active",
+          "text": "When progress depends on prerequisites, record each unmet requirement and revisit the plan when those requirements change.",
+          "source": "synthetic://continuity/M4",
+          "scope": "project"
+        },
+        {
+          "id": "M8",
+          "role": "procedure",
+          "status": "active",
+          "text": "Before claiming an action was performed or checked, inspect actual tool access and observed outcomes; an intention or draft report is not completion.",
+          "source": "synthetic://continuity/M8",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M1",
+          "source": "synthetic://continuity/M1"
+        },
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M6",
+          "source": "synthetic://continuity/M6"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "T4",
+          "source": "synthetic://continuity/T4"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m5",
+    "variant": "canonical",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M5",
+        "M4"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M6",
+        "M7",
+        "M8",
+        "T5"
+      ],
+      "sourceCharacters": 1194,
+      "packetCharacters": 243
+    },
+    "packet": {
+      "task": "Prepare a brief handoff for an interrupted conservation study.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M5",
+          "role": "procedure",
+          "status": "active",
+          "text": "When a summary budget is tight, preserve unresolved commitments and hard constraints before repetitive recent background.",
+          "source": "synthetic://continuity/M5",
+          "scope": "project"
+        },
+        {
+          "id": "M4",
+          "role": "procedure",
+          "status": "active",
+          "text": "When progress depends on prerequisites, record each unmet requirement and revisit the plan when those requirements change.",
+          "source": "synthetic://continuity/M4",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M1",
+          "source": "synthetic://continuity/M1"
+        },
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M6",
+          "source": "synthetic://continuity/M6"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T5",
+          "source": "synthetic://continuity/T5"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m5",
+    "variant": "paraphrase",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M5",
+        "M4"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M6",
+        "M7",
+        "M8",
+        "T5"
+      ],
+      "sourceCharacters": 1194,
+      "packetCharacters": 243
+    },
+    "packet": {
+      "task": "Prepare a brief handoff for an interrupted conservation study.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M5",
+          "role": "procedure",
+          "status": "active",
+          "text": "When a summary budget is tight, preserve unresolved commitments and hard constraints before repetitive recent background.",
+          "source": "synthetic://continuity/M5",
+          "scope": "project"
+        },
+        {
+          "id": "M4",
+          "role": "procedure",
+          "status": "active",
+          "text": "When progress depends on prerequisites, record each unmet requirement and revisit the plan when those requirements change.",
+          "source": "synthetic://continuity/M4",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M1",
+          "source": "synthetic://continuity/M1"
+        },
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M6",
+          "source": "synthetic://continuity/M6"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T5",
+          "source": "synthetic://continuity/T5"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m5",
+    "variant": "reversed",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M4",
+        "M5"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M6",
+        "M7",
+        "M8",
+        "T5"
+      ],
+      "sourceCharacters": 1194,
+      "packetCharacters": 243
+    },
+    "packet": {
+      "task": "Prepare a brief handoff for an interrupted conservation study.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M4",
+          "role": "procedure",
+          "status": "active",
+          "text": "When progress depends on prerequisites, record each unmet requirement and revisit the plan when those requirements change.",
+          "source": "synthetic://continuity/M4",
+          "scope": "project"
+        },
+        {
+          "id": "M5",
+          "role": "procedure",
+          "status": "active",
+          "text": "When a summary budget is tight, preserve unresolved commitments and hard constraints before repetitive recent background.",
+          "source": "synthetic://continuity/M5",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M1",
+          "source": "synthetic://continuity/M1"
+        },
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M6",
+          "source": "synthetic://continuity/M6"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T5",
+          "source": "synthetic://continuity/T5"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m6",
+    "variant": "canonical",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M6",
+        "M1"
+      ],
+      "excluded": [
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M7",
+        "M8",
+        "T6"
+      ],
+      "sourceCharacters": 1204,
+      "packetCharacters": 269
+    },
+    "packet": {
+      "task": "Combine records from two collections without merging distinct artifacts.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M6",
+          "role": "procedure",
+          "status": "active",
+          "text": "When records use different names for possibly the same thing, compare identifying attributes before combining them; preserve ambiguous matches.",
+          "source": "synthetic://continuity/M6",
+          "scope": "project"
+        },
+        {
+          "id": "M1",
+          "role": "procedure",
+          "status": "active",
+          "text": "When several reports may descend from one observation, trace their source lineage before counting them as independent support.",
+          "source": "synthetic://continuity/M1",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M4",
+          "source": "synthetic://continuity/M4"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T6",
+          "source": "synthetic://continuity/T6"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m6",
+    "variant": "paraphrase",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M6",
+        "M1"
+      ],
+      "excluded": [
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M7",
+        "M8",
+        "T6"
+      ],
+      "sourceCharacters": 1204,
+      "packetCharacters": 269
+    },
+    "packet": {
+      "task": "Combine records from two collections without merging distinct artifacts.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M6",
+          "role": "procedure",
+          "status": "active",
+          "text": "When records use different names for possibly the same thing, compare identifying attributes before combining them; preserve ambiguous matches.",
+          "source": "synthetic://continuity/M6",
+          "scope": "project"
+        },
+        {
+          "id": "M1",
+          "role": "procedure",
+          "status": "active",
+          "text": "When several reports may descend from one observation, trace their source lineage before counting them as independent support.",
+          "source": "synthetic://continuity/M1",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M4",
+          "source": "synthetic://continuity/M4"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M7",
+          "source": "synthetic://continuity/M7"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T6",
+          "source": "synthetic://continuity/T6"
+        }
+      ]
+    }
+  },
+  {
+    "caseId": "m6",
+    "variant": "reversed",
+    "selection": {
+      "status": "ready",
+      "selected": [
+        "M6",
+        "M7"
+      ],
+      "excluded": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M8",
+        "T6"
+      ],
+      "sourceCharacters": 1204,
+      "packetCharacters": 255
+    },
+    "packet": {
+      "task": "Combine records from two collections without merging distinct artifacts.",
+      "scope": "project",
+      "status": "ready",
+      "records": [
+        {
+          "id": "M6",
+          "role": "procedure",
+          "status": "active",
+          "text": "When records use different names for possibly the same thing, compare identifying attributes before combining them; preserve ambiguous matches.",
+          "source": "synthetic://continuity/M6",
+          "scope": "project"
+        },
+        {
+          "id": "M7",
+          "role": "procedure",
+          "status": "active",
+          "text": "When a result lacks a referent, units, or a meaning, obtain that missing context before interpreting the result.",
+          "source": "synthetic://continuity/M7",
+          "scope": "project"
+        }
+      ],
+      "archiveReferences": [
+        {
+          "id": "M1",
+          "source": "synthetic://continuity/M1"
+        },
+        {
+          "id": "M2",
+          "source": "synthetic://continuity/M2"
+        },
+        {
+          "id": "M3",
+          "source": "synthetic://continuity/M3"
+        },
+        {
+          "id": "M4",
+          "source": "synthetic://continuity/M4"
+        },
+        {
+          "id": "M5",
+          "source": "synthetic://continuity/M5"
+        },
+        {
+          "id": "M8",
+          "source": "synthetic://continuity/M8"
+        },
+        {
+          "id": "T6",
+          "source": "synthetic://continuity/T6"
+        }
+      ]
+    }
+  }
+]

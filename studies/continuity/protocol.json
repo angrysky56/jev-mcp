@@ -1,0 +1,16 @@
+{
+  "frozenAt": "2026-09-20T03:02:43.852Z",
+  "purpose": "Probe prospective reminders, bounded source-preserving memory selection, and retrieval of transferable methods.",
+  "design": "36 same-author synthetic stress cases, 12 per function, six development and six evaluation. No rubric tuning after seeing outputs. All labels and policy are frozen before the first call.",
+  "variants": [
+    "canonical",
+    "paraphrase",
+    "reversed"
+  ],
+  "baselines": [
+    "lexical: count shared non-stopword terms, same eligibility and budgets",
+    "recent: last records first, same eligibility and budgets",
+    "wake lexical: wake when trigger/event share at least two terms; otherwise wait"
+  ],
+  "limitations": "Fixtures intentionally stress topic echoes, recency, missing prerequisites, and branch contamination. They are not representative real conversations. Labels are author expectations, not independent outcomes. Measures are cue recognition and record selection, not end-to-end agent continuation, self-awareness, or successful action. Card and character budgets are not token measurements."
+}

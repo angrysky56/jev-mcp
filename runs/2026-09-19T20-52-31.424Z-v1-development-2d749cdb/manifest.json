@@ -1,0 +1,593 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-19T20:52:31.426Z",
+  "live": true,
+  "provider": "openrouter",
+  "endpoint": "https://openrouter.ai/api/alpha/decisions",
+  "requestedModel": "typesafe/jev-1.13",
+  "split": "development",
+  "variants": [
+    "canonical"
+  ],
+  "rubric": {
+    "version": "v1",
+    "note": "Initial narrow rubrics, frozen before any Jev inference. State is evidence supplied for judgment, never an instruction source.",
+    "sections": {
+      "belief": {
+        "instruction": "How should the new observation change support for the claim compared with prior evidence? Judge only this supplied record.",
+        "paraphrase": "Relative to the evidence already recorded, what effect does the new observation have on support for the stated claim? Use this record alone.",
+        "criteria": {
+          "supports": "The observation adds evidence in favor of the claim.",
+          "weakens": "The observation adds evidence against the claim.",
+          "unchanged": "The observation is irrelevant or repeats existing support without adding evidence.",
+          "insufficient": "There is not enough information to determine how the observation relates to the claim."
+        }
+      },
+      "question": {
+        "instruction": "Which candidate observation is the most useful feasible next test to distinguish the stated hypotheses under the constraints? Choose insufficient if none is justified. Use the supplied predictions, not outside facts.",
+        "paraphrase": "Select the feasible candidate whose possible observation best separates the given competing explanations within the stated constraints. If this record justifies none, select insufficient. Rely on the predictions provided.",
+        "criteria": {}
+      },
+      "adaptation": {
+        "instruction": "Classify how the response handles the observation challenging the hypothesis. Use only the supplied record.",
+        "paraphrase": "Given the hypothesis and the challenging observation in this record, which category best describes the response's handling of the challenge?",
+        "criteria": {
+          "responsive": "The response revises its belief or proposes a test that could change it.",
+          "self_sealing": "The response protects the belief from any possible disconfirmation.",
+          "insufficient": "The record does not establish whether the response permits disconfirmation."
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "b01",
+      "direction": "belief",
+      "split": "development",
+      "title": "First discriminating observation",
+      "state": {
+        "claim": "The garden's wet grass was caused by the sprinkler, rather than rain.",
+        "prior_evidence": "The grass is wet. Both rain and the sprinkler could explain it.",
+        "observation": "An independently operated camera shows the sprinkler spraying this grass at the time it became wet; the street outside its reach stays dry.",
+        "source_roots": [
+          "garden-notebook",
+          "camera-recording"
+        ]
+      }
+    },
+    {
+      "id": "b02",
+      "direction": "belief",
+      "split": "development",
+      "title": "Later contrary evidence in the same inquiry",
+      "state": {
+        "claim": "Only the sprinkler caused the garden's wet grass; no rain contributed.",
+        "prior_evidence": "A camera previously showed the sprinkler spraying the grass.",
+        "observation": "A separate rain gauge and camera show rain reaching the garden during the same wetting event.",
+        "source_roots": [
+          "camera-recording",
+          "rain-gauge"
+        ]
+      }
+    },
+    {
+      "id": "b03",
+      "direction": "belief",
+      "split": "development",
+      "title": "Circular corroboration",
+      "state": {
+        "claim": "The sprinkler ran last night.",
+        "prior_evidence": "A neighborhood post asserts it ran but supplies no observation.",
+        "observation": "A second blog says it is confirmed by a newsletter. The newsletter's only source is that original neighborhood post. No writer observed the sprinkler.",
+        "source_roots": [
+          "original-post",
+          "original-post",
+          "original-post"
+        ]
+      }
+    },
+    {
+      "id": "b04",
+      "direction": "belief",
+      "split": "development",
+      "title": "Novel mechanism with no test yet",
+      "state": {
+        "claim": "An unmeasured underground heat source explains the warm stone.",
+        "prior_evidence": "The stone feels warm; sun exposure and underground heat are both untested possibilities.",
+        "observation": "Someone proposes calling the underground mechanism 'thermal memory'. No measurement or prediction has been added.",
+        "source_roots": [
+          "touch-report"
+        ]
+      }
+    },
+    {
+      "id": "b05",
+      "direction": "belief",
+      "split": "development",
+      "title": "Missing measurement context",
+      "state": {
+        "claim": "The sample contains material Q.",
+        "prior_evidence": "The composition is unknown.",
+        "observation": "An instrument displays '7'. The instrument type, scale, detection rule, sample identity, and units are absent.",
+        "source_roots": [
+          "display-photo"
+        ]
+      }
+    },
+    {
+      "id": "b06",
+      "direction": "belief",
+      "split": "development",
+      "title": "Quote reverses source meaning",
+      "state": {
+        "claim": "Every blue token in the box is metal.",
+        "prior_evidence": "An inventory previously listed two blue metal tokens.",
+        "observation": "A verified inspection found a blue wooden token in that same box.",
+        "quote": "a blue wooden token",
+        "source_text": "The inspection found a blue wooden token among the metal tokens.",
+        "source_roots": [
+          "old-inventory",
+          "new-inspection"
+        ]
+      }
+    },
+    {
+      "id": "q01",
+      "direction": "question",
+      "split": "development",
+      "title": "Test cause rather than repeat symptom",
+      "state": {
+        "hypotheses": [
+          "H1: the sprinkler alone wets the grass",
+          "H2: overnight rain wets the grass"
+        ],
+        "constraints": "Today we can inspect recorded camera footage and ask neighbors. No excavation.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Ask five people whether the grass is wet",
+            "predictions": "Both H1 and H2 predict wet grass.",
+            "requirements": "Neighbors are available."
+          },
+          {
+            "id": "B",
+            "action": "Inspect overnight footage of the street outside sprinkler reach",
+            "predictions": "H1 predicts a dry street throughout; H2 predicts rain visibly wetting it.",
+            "requirements": "The recorded footage is available and covers the relevant interval."
+          },
+          {
+            "id": "C",
+            "action": "Excavate the garden",
+            "predictions": "No discriminating prediction has been stated.",
+            "requirements": "Requires prohibited excavation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q02",
+      "direction": "question",
+      "split": "development",
+      "title": "Excellent test but unavailable",
+      "state": {
+        "hypotheses": [
+          "H1: pigment causes the mark",
+          "H2: a shallow scratch causes the mark"
+        ],
+        "constraints": "The object cannot be touched or moved. A remote microscope is unavailable. Oblique illumination is available.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Use the remote microscope",
+            "predictions": "H1 shows pigment; H2 shows a groove.",
+            "requirements": "Remote microscope is unavailable."
+          },
+          {
+            "id": "B",
+            "action": "Inspect with oblique illumination without touching",
+            "predictions": "H1 shows a flat colored patch; H2 produces a groove shadow.",
+            "requirements": "The lamp and viewing position are available."
+          },
+          {
+            "id": "C",
+            "action": "Describe how striking the mark looks",
+            "predictions": "Both hypotheses permit a striking mark.",
+            "requirements": "Visual access is available."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q03",
+      "direction": "question",
+      "split": "development",
+      "title": "Every proposed observation is non-discriminating",
+      "state": {
+        "hypotheses": [
+          "H1: source A emitted the tone",
+          "H2: source B emitted the same tone"
+        ],
+        "constraints": "Only the already recorded tone may be inspected. No localization or new recordings are possible.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Ask whether a tone is present",
+            "predictions": "Both predict the identical recorded tone.",
+            "requirements": "Recording is available."
+          },
+          {
+            "id": "B",
+            "action": "Replay the same recording louder",
+            "predictions": "Both predict identical loud playback.",
+            "requirements": "Playback is available."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q04",
+      "direction": "question",
+      "split": "development",
+      "title": "Probe a protected explanation",
+      "state": {
+        "hypotheses": [
+          "H1: a controller opens the shutter at noon",
+          "H2: temperature opens the shutter independently of time"
+        ],
+        "constraints": "Clock time can be changed in a disconnected simulator. Temperature can be held constant; live hardware changes are prohibited.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Change the simulated time to noon at constant temperature",
+            "predictions": "H1 opens the shutter; H2 leaves its state unchanged.",
+            "requirements": "The disconnected simulator and temperature control are available."
+          },
+          {
+            "id": "B",
+            "action": "List reasons a controller might be clever",
+            "predictions": "Neither hypothesis entails any result of this description.",
+            "requirements": "A description can be written."
+          },
+          {
+            "id": "C",
+            "action": "Rewire the live shutter",
+            "predictions": "Different results might follow.",
+            "requirements": "Live hardware changes are prohibited."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q05",
+      "direction": "question",
+      "split": "development",
+      "title": "Preserve an unusual alternative",
+      "state": {
+        "hypotheses": [
+          "H1: a battery powers the lamp",
+          "H2: an unfamiliar light-harvesting layer powers the lamp"
+        ],
+        "constraints": "A supplied opaque cover may be used without touching internal parts. No disassembly.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Reject H2 because it sounds unfamiliar",
+            "predictions": "This produces no observation distinguishing the mechanisms.",
+            "requirements": "No tools needed."
+          },
+          {
+            "id": "B",
+            "action": "Cover only the proposed harvesting layer",
+            "predictions": "Under the stated test conditions H1 stays lit; H2 goes dark immediately.",
+            "requirements": "The suitable cover and layer access are available."
+          },
+          {
+            "id": "C",
+            "action": "Look again at the lit lamp",
+            "predictions": "Both predict it is lit before intervention.",
+            "requirements": "Visual access is available."
+          }
+        ]
+      }
+    },
+    {
+      "id": "q06",
+      "direction": "question",
+      "split": "development",
+      "title": "Unknown prerequisite",
+      "state": {
+        "hypotheses": [
+          "H1: the ink fluoresces",
+          "H2: the ink only reflects visible light"
+        ],
+        "constraints": "No equipment inventory or access permission is supplied.",
+        "candidates": [
+          {
+            "id": "A",
+            "action": "Illuminate with a calibrated UV source",
+            "predictions": "H1 fluoresces; H2 does not.",
+            "requirements": "A calibrated UV source and access permission are necessary; their availability is unknown."
+          },
+          {
+            "id": "B",
+            "action": "Ask whether the ink is visible in daylight",
+            "predictions": "Both predict visibility.",
+            "requirements": "Daylight viewing is available."
+          }
+        ]
+      }
+    },
+    {
+      "id": "a01",
+      "direction": "adaptation",
+      "split": "development",
+      "title": "Explicit update after a counterexample",
+      "state": {
+        "hypothesis": "Every sample from drawer D is magnetic.",
+        "observation": "A verified sample from D is not magnetic.",
+        "response": "The universal claim fails. I will restrict the claim to the tested subset and record this counterexample."
+      }
+    },
+    {
+      "id": "a02",
+      "direction": "adaptation",
+      "split": "development",
+      "title": "Every outcome protects the theory",
+      "state": {
+        "hypothesis": "An invisible regulator always controls the lamp.",
+        "observation": "The lamp stayed on after the supposed regulator was disconnected.",
+        "response": "If it switches off, the regulator is proven. If it stays on, the regulator is hiding its power, which also proves it. No result can count against it."
+      }
+    },
+    {
+      "id": "a03",
+      "direction": "adaptation",
+      "split": "development",
+      "title": "Legitimate instrument challenge",
+      "state": {
+        "hypothesis": "Switch S activates the sensor.",
+        "observation": "The sensor did not respond, but the instrument reported a calibration fault.",
+        "response": "This trial is inconclusive because the calibration check failed. Repeat with a calibrated instrument. If it still fails under the specified conditions, lower support for the hypothesis."
+      }
+    },
+    {
+      "id": "a04",
+      "direction": "adaptation",
+      "split": "development",
+      "title": "Ambiguous promise to investigate",
+      "state": {
+        "hypothesis": "A temperature change caused the crack.",
+        "observation": "The temperature log appears constant.",
+        "response": "Interesting. We should look into that."
+      }
+    },
+    {
+      "id": "a05",
+      "direction": "adaptation",
+      "split": "development",
+      "title": "A proposed test with an escape clause",
+      "state": {
+        "hypothesis": "The concealed timer causes every click.",
+        "observation": "Clicks continued when the timer was removed.",
+        "response": "I propose testing with a second timer. If clicks stop it supports the theory. If clicks continue it reveals a deeper timer that cannot be measured. Either outcome confirms the original claim."
+      }
+    },
+    {
+      "id": "a06",
+      "direction": "adaptation",
+      "split": "development",
+      "title": "Belief changes verbally but cannot lose support",
+      "state": {
+        "hypothesis": "The hidden material always emits light.",
+        "observation": "The sample remained dark in the specified test.",
+        "response": "I revise my belief: it emits detectable light when bright and undetectable light when dark. No observation could reduce my confidence that it always emits light."
+      }
+    }
+  ],
+  "gold": {
+    "b01": {
+      "labels": [
+        "supports"
+      ],
+      "reason": "New relevant camera evidence differentiates sprinkler operation from rain alone."
+    },
+    "b02": {
+      "labels": [
+        "weakens"
+      ],
+      "reason": "Direct rain evidence contradicts the claim that no rain contributed; it does not erase evidence of sprinkler operation."
+    },
+    "b03": {
+      "labels": [
+        "unchanged"
+      ],
+      "reason": "All citations trace to one unsupported post; no new observation."
+    },
+    "b04": {
+      "labels": [
+        "unchanged"
+      ],
+      "reason": "Naming a mechanism adds no evidence and does not falsify the novel possibility."
+    },
+    "b05": {
+      "labels": [
+        "insufficient"
+      ],
+      "reason": "An uninterpretable instrument value cannot be related to the claim."
+    },
+    "b06": {
+      "labels": [
+        "weakens"
+      ],
+      "reason": "One verified blue wooden token is a counterexample to the universal claim."
+    },
+    "q01": {
+      "labels": [
+        "B"
+      ],
+      "reason": "Available footage separates rain from sprinkler-only predictions."
+    },
+    "q02": {
+      "labels": [
+        "B"
+      ],
+      "reason": "Oblique illumination is available, non-contact, and discriminates; the microscope is unavailable."
+    },
+    "q03": {
+      "labels": [
+        "insufficient"
+      ],
+      "reason": "All candidates produce identical predictions under both hypotheses."
+    },
+    "q04": {
+      "labels": [
+        "A"
+      ],
+      "reason": "The disconnected simulator isolates time from temperature within the constraints."
+    },
+    "q05": {
+      "labels": [
+        "B"
+      ],
+      "reason": "The cover test distinguishes the supplied predictions and retains the unfamiliar hypothesis."
+    },
+    "q06": {
+      "labels": [
+        "insufficient"
+      ],
+      "reason": "The only discriminating test has unknown prerequisites, so feasibility is not established."
+    },
+    "a01": {
+      "labels": [
+        "responsive"
+      ],
+      "reason": "The universal belief is explicitly revised after a counterexample."
+    },
+    "a02": {
+      "labels": [
+        "self_sealing"
+      ],
+      "reason": "Both possible outcomes are made confirming and disconfirmation is explicitly forbidden."
+    },
+    "a03": {
+      "labels": [
+        "responsive"
+      ],
+      "reason": "A recorded calibration fault motivates a bounded repeat with a stated losing outcome."
+    },
+    "a04": {
+      "labels": [
+        "insufficient"
+      ],
+      "reason": "A vague intention to investigate specifies neither a losing outcome nor immunity."
+    },
+    "a05": {
+      "labels": [
+        "self_sealing"
+      ],
+      "reason": "The proposed test's escape clause makes all results confirm the original claim."
+    },
+    "a06": {
+      "labels": [
+        "self_sealing"
+      ],
+      "reason": "The verbal revision immunizes the claim against every observation."
+    }
+  },
+  "baselines": {
+    "author": "Connected Codex agent, September 19 2026; no separate model API call",
+    "createdAt": "2026-09-19T20:47:37Z",
+    "limitation": "Illustrative same-author judgments, written after authoring the cases and before any Jev results. They are not blind or independent. The unaided condition means no explicit checklist pass, not absence of exposure to this project's reasoning guidance. Evaluation cases are reserved from rubric revision, not hidden from the case author. Do not use this comparison to claim a causal Jev advantage.",
+    "unaided": {
+      "b01": "supports",
+      "b02": "weakens",
+      "b03": "unchanged",
+      "b04": "unchanged",
+      "b05": "insufficient",
+      "b06": "weakens",
+      "b07": "supports",
+      "b08": "weakens",
+      "b09": "unchanged",
+      "b10": "unchanged",
+      "b11": "insufficient",
+      "b12": "unchanged",
+      "q01": "B",
+      "q02": "B",
+      "q03": "insufficient",
+      "q04": "A",
+      "q05": "B",
+      "q06": "insufficient",
+      "q07": "A",
+      "q08": "B",
+      "q09": "insufficient",
+      "q10": "A",
+      "q11": "B",
+      "q12": "insufficient",
+      "a01": "responsive",
+      "a02": "self_sealing",
+      "a03": "responsive",
+      "a04": "insufficient",
+      "a05": "self_sealing",
+      "a06": "self_sealing",
+      "a07": "responsive",
+      "a08": "self_sealing",
+      "a09": "self_sealing",
+      "a10": "insufficient",
+      "a11": "responsive",
+      "a12": "insufficient"
+    },
+    "checklist": {
+      "b01": "supports",
+      "b02": "weakens",
+      "b03": "unchanged",
+      "b04": "unchanged",
+      "b05": "insufficient",
+      "b06": "weakens",
+      "b07": "supports",
+      "b08": "weakens",
+      "b09": "unchanged",
+      "b10": "unchanged",
+      "b11": "insufficient",
+      "b12": "unchanged",
+      "q01": "B",
+      "q02": "B",
+      "q03": "insufficient",
+      "q04": "A",
+      "q05": "B",
+      "q06": "insufficient",
+      "q07": "A",
+      "q08": "B",
+      "q09": "insufficient",
+      "q10": "A",
+      "q11": "B",
+      "q12": "insufficient",
+      "a01": "responsive",
+      "a02": "self_sealing",
+      "a03": "responsive",
+      "a04": "insufficient",
+      "a05": "self_sealing",
+      "a06": "self_sealing",
+      "a07": "responsive",
+      "a08": "self_sealing",
+      "a09": "self_sealing",
+      "a10": "insufficient",
+      "a11": "responsive",
+      "a12": "insufficient"
+    }
+  },
+  "hashes": {
+    "src/cli.ts": "fe530350f4857ff6573946a25315a709e235a3be8b26786607625fb0d932d9c8",
+    "src/dataset.ts": "b0497b31ca387840df338d573ec83604b0332aa07cf9f60961d5666258b71e30",
+    "src/io.ts": "874dcbe722c62d82f098de86175c1168f3016499afdaf5fa6fb3262ac3217ee5",
+    "src/provider.ts": "31e822c6d088d64f08c181a307eebc22596fae9e5418f1781a06fcd27e843127",
+    "src/questions.ts": "c0494afff110049a1618ee2a695b6ca5f90a50cce062f847aabb5673c5d93b54",
+    "src/report.ts": "61bb1ea14aac4482937528f62ac37347790ef589dd596181696d13d4db6a8744",
+    "src/runner.ts": "b7c60e9bee0fe8dd1dd1fcc33793dd3a0e21337c0e9d3d1236a42144db002d75",
+    "src/types.ts": "6d66e05ae0f00e127e56fa68011cb259bb993a886ebbc91509aa87dbb80b1d52",
+    "cases": "e2744a4330e2cd353ecf4bfd9f64edf86c3d327e16646bc7e6ed8d0aee96baab",
+    "gold": "4b4c5431292c74e2594f69bc96415b7e52c0072b018e74afb0fa7fadf434143e",
+    "baselines": "49472beb91162fd40309980bf8cfb9547fae6989adad2a7025770ea1f561d84a",
+    "rubric": "321beaa12262fc5cf75a532a5d7087018b5ee7cb6374283dbb6020630fbc68ab"
+  },
+  "plannedRequests": 18
+}

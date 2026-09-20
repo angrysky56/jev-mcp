@@ -1,0 +1,16 @@
+{
+  "runAt": "2026-09-20T03:08:47.095Z",
+  "gitVersion": "git version 2.55.0",
+  "baseCommit": "c2250fa98a2d8a9c5b4c8b584488680fe483a8f6",
+  "mergedCommit": "7f5e00950eb093e6d1d30ea5541bedb1533f287c",
+  "cleanGitMergeContainsBothIncompatibleAssumptions": true,
+  "branchASelection": [
+    "A"
+  ],
+  "branchBSelection": [
+    "B"
+  ],
+  "sharedScopeSelection": [],
+  "conclusion": "Git merges file history, not the meaning of assumptions. Explicit scope prevents cleanly merged hypothetical records from being treated as shared conclusions. Parent-child scope relationships still require application metadata.",
+  "fixtureOnly": true
+}

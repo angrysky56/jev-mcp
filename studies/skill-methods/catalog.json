@@ -1,0 +1,138 @@
+[
+  {
+    "id": "separate",
+    "skill": "research-synthesis",
+    "section": "Tips",
+    "excerpt": "1. **Include raw quotes** — Direct participant quotes make insights credible and memorable.\n2. **Separate observations from interpretations** — \"5 of 8 users clicked the wrong button\" is an observation. \"The button placement is confusing\" is an interpretation.\n3. **Quantify where possible** — \"Most users\" is vague. \"7 of 10 users\" is specific.",
+    "source": "synthesis",
+    "sourceHash": "fcd306fb6935c782df1cf5c38aa07aea1960c6fadc804c6ee6a5e91d41a23656",
+    "startLine": 90,
+    "endLine": 92,
+    "context": "Originally qualitative user research. Preserve quotations and denominators; separate observed statements from interpretation. Quotes establish what was said, not whether the reported event occurred.",
+    "requires": [
+      "raw_notes"
+    ],
+    "provides": [
+      "evidence_table"
+    ]
+  },
+  {
+    "id": "hypothesize",
+    "skill": "debug-like-expert",
+    "section": "Process for forming hypotheses",
+    "excerpt": "**Process for forming hypotheses**:\n\n1. **Observe the behavior precisely**\n   - Not \"it's broken\"\n   - But \"the counter shows 3 when clicking once, should show 1\"\n\n2. **Ask \"What could cause this?\"**\n   - List every possible cause you can think of\n   - Don't judge them yet, just brainstorm\n\n3. **Make each hypothesis specific**\n   - Not \"state is wrong\"\n   - But \"state is being updated twice because handleClick is called twice\"\n\n4. **Identify what evidence would support/refute each**\n   - If hypothesis X is true, I should see Y\n   - If hypothesis X is false, I should see Z",
+    "source": "hypotheses",
+    "sourceHash": "3631fe87e536b9ab91242c5189c089294628ed3a1d730ff51fae6d6bc7641328",
+    "startLine": 26,
+    "endLine": 42,
+    "context": "Parent skill is read-only diagnosis: propose tests and findings, do not modify code or execute an intervention through this fragment. It requires evidence before asserting a cause. Domain-specific software examples must be adapted; a test outcome is never supplied by a proposed test.",
+    "requires": [
+      "evidence_table"
+    ],
+    "provides": [
+      "hypotheses"
+    ]
+  },
+  {
+    "id": "experiment",
+    "skill": "debug-like-expert",
+    "section": "Experiment framework",
+    "excerpt": "For each hypothesis, design an experiment:\n\n**1. Prediction**: If hypothesis H is true, then I will observe X\n**2. Test setup**: What do I need to do to test this?\n**3. Measurement**: What exactly am I measuring?\n**4. Success criteria**: What result confirms H? What result refutes H?\n**5. Run the experiment**: Execute the test\n**6. Observe the result**: Record what actually happened\n**7. Conclude**: Does this support or refute H?",
+    "source": "hypotheses",
+    "sourceHash": "3631fe87e536b9ab91242c5189c089294628ed3a1d730ff51fae6d6bc7641328",
+    "startLine": 82,
+    "endLine": 90,
+    "context": "Parent skill is read-only diagnosis: propose tests and findings, do not modify code or execute an intervention through this fragment. It requires evidence before asserting a cause. Domain-specific software examples must be adapted; a test outcome is never supplied by a proposed test. This contract exposes a design-only adaptation of the source framework. The run/observe/conclude steps remain future obligations, not completed outputs.",
+    "requires": [
+      "hypotheses"
+    ],
+    "provides": [
+      "test_protocol"
+    ]
+  },
+  {
+    "id": "pilot",
+    "skill": "decompose-into-slices",
+    "section": "Vertical-slice rules",
+    "excerpt": "### Vertical-slice rules\n\n- Each slice cuts through every relevant layer (schema, API, UI, tests, whatever applies).\n- A completed slice is demoable or verifiable on its own.\n- Early slices should prove the hardest thing works — build through the uncertain path.\n- If a slice doesn't produce something testable end-to-end, it's probably a layer — restructure.\n- If the milestone crosses runtime boundaries (daemon + API + UI; bot + subprocess + service; extension + RPC), include an explicit final integration slice that exercises the assembled system.",
+    "source": "slicing",
+    "sourceHash": "02e23e6a721c70b4a672e883e03f292ffbe7ba195700d53f3bae87ace757003c",
+    "startLine": 51,
+    "endLine": 57,
+    "context": "Parent workflow requires agreed scope before decomposition; repository-specific roadmap formats and GitHub issue creation are not part of the transferable method. Each pilot must exercise one complete path with an observable outcome.",
+    "requires": [
+      "agreed_scope"
+    ],
+    "provides": [
+      "pilot_plan"
+    ]
+  },
+  {
+    "id": "trace",
+    "skill": "observability",
+    "section": "Structured logs at decision points",
+    "excerpt": "For each decision the code makes that could plausibly go wrong later:\n\n- **What decision?** (\"Dispatching unit X\", \"Retrying with backoff\", \"Skipping validation because flag set\")\n- **Why?** (\"status=pending\", \"previous attempt exit=1\", \"--dev flag set\")\n- **What would a future debugger want to know?** (The values that drove the choice.)",
+    "source": "observability",
+    "sourceHash": "aae6686aec678ab63c28bf72367c7e2376e064cf485372a1968d320d22564408",
+    "startLine": 46,
+    "endLine": 50,
+    "context": "Originally software instrumentation. Transfer the decision, reason, and driving-values structure, not project-specific log paths. Avoid secrets and unnecessary personal details. A proposed record format is not evidence of past events.",
+    "requires": [
+      "decision_process"
+    ],
+    "provides": [
+      "trace_schema"
+    ]
+  },
+  {
+    "id": "verify",
+    "skill": "verify-before-complete",
+    "section": "Identify the claim and its verification",
+    "excerpt": "## Step 1: Identify the claim\n\nWhat are you about to claim? Name it precisely:\n\n- \"Tests pass\" → which tests?\n- \"Build works\" → for which target?\n- \"Bug is fixed\" → which reproduction?\n- \"Task complete\" → which acceptance criteria?\n\n## Step 2: Identify the verification command\n\nMatch claim → command:\n\n| Claim | Verification |\n|---|---|\n| Tests pass | The specific test command the project uses (`npm test`, `cargo test`, `pytest`, etc.) — scoped to changed code if large suite. |\n| Build works | The project's build command, for real — not `tsc --noEmit` if the project needs a bundle. |\n| Lint clean | `lsp diagnostics` on edited files, plus the project's linter if CI runs one. |\n| Bug fixed | The reproduction steps from the bug report or test, freshly run. |\n| UI works | Browser verification via `browser_snapshot_refs` + `browser_assert` in a running app — not \"it looks right in the diff\". |\n| Slice complete | Every acceptance criterion in `S##-PLAN.md`, re-checked against live behavior. |\n\nIf no verification command exists, the task has not produced a falsifiable claim — it is not complete. Write the verification first (see the `tdd` or `test` skill).",
+    "source": "verification",
+    "sourceHash": "abc07d213d63bab1090190558e86c3b942f06679891243a8bb28c1d3ecda89cd",
+    "startLine": 30,
+    "endLine": 52,
+    "context": "Parent skill requires fresh evidence after the latest relevant change before claiming completion. This fragment maps claims to verification; adapting the software commands requires an actual domain-specific observable check. It never verifies by itself.",
+    "requires": [
+      "claim"
+    ],
+    "provides": [
+      "verification_plan"
+    ]
+  },
+  {
+    "id": "revise",
+    "skill": "debug-like-expert",
+    "section": "Recovery after disconfirmation",
+    "excerpt": "**When your hypothesis is disproven**:\n\n1. **Acknowledge it explicitly**\n   - \"This hypothesis was wrong because [evidence]\"\n   - Don't gloss over it or rationalize\n   - Intellectual honesty with yourself\n\n2. **Extract the learning**\n   - What did this experiment teach you?\n   - What did you rule out?\n   - What new information do you have?\n\n3. **Revise your understanding**\n   - Update your mental model\n   - What does the evidence actually suggest?\n\n4. **Form new hypotheses**\n   - Based on what you now know\n   - Avoid just moving to \"second-guess\" - use the evidence\n\n5. **Don't get attached to hypotheses**\n   - You're not your ideas\n   - Being wrong quickly is better than being wrong slowly",
+    "source": "hypotheses",
+    "sourceHash": "3631fe87e536b9ab91242c5189c089294628ed3a1d730ff51fae6d6bc7641328",
+    "startLine": 224,
+    "endLine": 246,
+    "context": "Parent skill is read-only diagnosis: propose tests and findings, do not modify code or execute an intervention through this fragment. It requires evidence before asserting a cause. Domain-specific software examples must be adapted; a test outcome is never supplied by a proposed test. Requires an observed disconfirming result; do not call an untested hypothesis disproven.",
+    "requires": [
+      "disconfirming_result"
+    ],
+    "provides": [
+      "revised_hypotheses"
+    ]
+  },
+  {
+    "id": "themes",
+    "skill": "research-synthesis",
+    "section": "Theme evidence template",
+    "excerpt": "#### Theme 1: [Name]\n**Prevalence:** [X of Y participants]\n**Summary:** [What this theme is about]\n**Supporting Evidence:**\n- \"[Quote]\" — P[X]\n- \"[Quote]\" — P[X]\n**Implication:** [What this means for the product]\n\n#### Theme 2: [Name]\n[Same format]",
+    "source": "synthesis",
+    "sourceHash": "fcd306fb6935c782df1cf5c38aa07aea1960c6fadc804c6ee6a5e91d41a23656",
+    "startLine": 40,
+    "endLine": 49,
+    "context": "Originally user research. Themes must retain source quotes and participant counts; reports are not independent confirmation of the events they describe.",
+    "requires": [
+      "interviews"
+    ],
+    "provides": [
+      "theme_summary"
+    ]
+  }
+]
