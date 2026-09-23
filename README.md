@@ -2,6 +2,39 @@
 
 A working TypeScript MCP runtime for creating, testing, composing, and retaining Jev-powered capabilities, alongside reproducible inquiry experiments.
 
+## Quick start (any MCP host)
+
+You need Node **24.12 or newer**, Git, and an API key for [OpenRouter](https://openrouter.ai) (default) or [TypeSafe](https://docs.typesafe.ai/api). No other MCP servers are required.
+
+```sh
+git clone https://github.com/angrysky56/jev-mcp.git
+cd jev-mcp
+npm ci
+cp .env.example .env        # then put your key in .env
+npm run mcp:configure       # writes .mcp.json and .codex/config.toml; prints a snippet for other hosts
+npm run mcp:bootstrap       # installs the starter capabilities; never replaces ones you have edited
+```
+
+1. **Connect your host.** Claude Code reads `.mcp.json` when opened in this folder, and Codex reads `.codex/config.toml`. For Claude Desktop or another stdio host, paste the snippet that `mcp:configure` printed into that host's MCP config. Then restart or reload the host.
+2. **Point your agent at the guide.** It is the MCP resource `jev://guide`. It covers the tools, the starter library, and suggested habits.
+3. **Optional: build your tool catalog.** `tool_router` suggests which of *your* MCP servers fit a task, so it needs one short record per server. Ask your agent to write them from its own tool list. `starters/tool-catalog.example.json` shows the format, and the guide explains the rest.
+
+**Starter library** (`starters/capabilities.json`):
+
+| Capability | What it does |
+| --- | --- |
+| `claim_router` | Sends a claim to the check its reasoning needs: a proof, a sample check, a rival-explanation test, a search, or asking for the basis |
+| `inference_warrant` | Flags overclaiming, scope gaps, and "I didn't see it, so it isn't there" |
+| `evidence_stance` | Sorts evidence for and against a claim and flags rival explanations |
+| `formalization_fidelity` | Checks whether a rewrite keeps the original's meaning |
+| `tool_router` | Suggests which of your MCP servers fit a task |
+
+These capabilities only label and rank. Your agent performs any check they suggest, using whatever tools it has. Their measured performance comes from the author's own studies (linked below). Those studies are small and use the author's own labels, so evaluate the capabilities on your own cases with `evaluate_capability` before relying on them.
+
+**Why a clone and not `npx`:** the server runs its TypeScript source directly on Node. Node refuses to do that for files inside `node_modules`, so an npm-installed copy would need a compiled build first.
+
+## Background and studies
+
 **Start with the [programmable MCP guide and results](docs/jev-programmable-mcp.md).** The server provides custom typed judgments, versioned capability definitions, conditional batch workflows, evaluations, and a local SQLite record store. The [original experiment findings](docs/jev-inquiry-experiments.md) retain earlier successes and failures.
 
 The newer [continuity, planning, and operational self-model study](docs/jev-continuity-and-agency.md) adds prospective reminders, bounded memory selection, method retrieval, and a real Git worktree probe. It includes a stronger baseline audit alongside the Jev results.

@@ -17,6 +17,13 @@ For a new task:
 6. Apply a pinned version through `run_capability`, optionally combining host web search, database retrieval, and ordinary transformations in a script.
 7. Inspect `get_run` and record observed downstream outcomes with sources. When a failure suggests a better question, save a new version and compare both on additional examples. Preserve the original failure.
 
+## Starter library and everyday use
+
+`npm run mcp:bootstrap` installs five starter capabilities from `starters/capabilities.json` if they are missing: `claim_router`, `inference_warrant`, `evidence_stance`, `formalization_fidelity` and `tool_router`. `jev://guide` explains each one. None of them assumes any other MCP server is installed.
+
+- **Before reporting findings,** run `claim_router` on the main claims, as `{claim, basis, action}`, and act on each route. For example, `prove` means use a prover if you have one, otherwise re-derive the argument step by step.
+- **Before a substantial task,** run `tool_router` if a catalog exists. The catalog describes the host's own servers: one record per server in scope `mcp_catalog`, written from their tool descriptions. Pass `context.baseline` listing what you can already do without them.
+
 Jev supplies typed judgments; the connected agent supplies language and inventions. A custom Noul is an authored yes/no predicate using the existing primitive, not a newly trained model. Saving a workflow does not dynamically register a new MCP tool name.
 
 Keep original records, source roles, and version references. Distinguish possible usefulness from readiness now, and reported completion from a verified result. Explicitly represent missing prerequisites. Do not let a relevance score substitute for a fact check.

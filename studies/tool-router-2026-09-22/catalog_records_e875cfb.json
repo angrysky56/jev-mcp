@@ -36,7 +36,7 @@
    "id": "wisdom_engine",
    "scope": "mcp_catalog",
    "title": "wisdom-engine",
-   "text": "Does: Keeps a persistent inquiry record: a case, sourced observations, candidate explanations (supplied by the host, not generated), predictions, checks, decisions and resolutions. Optionally asks Jev whether each observation supports, conflicts with, or doesn't bear on each explanation. When a record is corrected, it marks the judgments that depended on it as stale.\nGood for: Multi-step diagnosis or investigation where evidence arrives over time and conclusions must be revised; keeping track of which explanations have been tested against which facts; recording predictions before checking them.\nNot for: Generating rival explanations (the host must write them); one-shot questions; proving or refuting anything on its own.",
+   "text": "Does: Generates competing hypotheses for an observation from mechanism, narrative and constraint perspectives, eliminates them by constraints, ad hoc defences and explaining-away, then synthesizes the surviving explanation.\nGood for: Diagnosing why something happened; drafting rival explanations for a symptom or bug; stress-testing a favoured explanation.\nNot for: Tasks with a known answer or a fixed procedure. Its hypotheses often reword one cause, so it is a first draft of rivals, not a complete list. From Cowork only generate_hypotheses fits the 60 s limit; apply_via_negativa times out.",
    "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
    "kind": "mcp_server"
   },

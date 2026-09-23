@@ -1,0 +1,52 @@
+{
+  "records": [
+    {
+      "id": "filesystem",
+      "scope": "mcp_catalog",
+      "kind": "mcp_server",
+      "title": "Filesystem",
+      "source": "example catalog entry; rewrite from your own server's tool descriptions",
+      "text": "Does: Reads, writes, edits, moves and searches files inside the folders it was given access to.\nGood for: Changing files in a project; finding files by name; reading several files at once.\nNot for: Running programs or commands; anything outside the allowed folders."
+    },
+    {
+      "id": "fetch",
+      "scope": "mcp_catalog",
+      "kind": "mcp_server",
+      "title": "Fetch",
+      "source": "example catalog entry; rewrite from your own server's tool descriptions",
+      "text": "Does: Downloads a web page by URL and returns it as markdown or raw text.\nGood for: Reading a specific page, article or documentation URL you already have.\nNot for: Searching the web for pages you don't know yet; pages that need a login."
+    },
+    {
+      "id": "git",
+      "scope": "mcp_catalog",
+      "kind": "mcp_server",
+      "title": "Git",
+      "source": "example catalog entry; rewrite from your own server's tool descriptions",
+      "text": "Does: Reads and changes a local Git repository: status, diffs, log, branches, staging and commits.\nGood for: Reviewing what changed; committing work; inspecting history.\nNot for: GitHub pull requests, issues or other hosted features."
+    },
+    {
+      "id": "github",
+      "scope": "mcp_catalog",
+      "kind": "mcp_server",
+      "title": "GitHub",
+      "source": "example catalog entry; rewrite from your own server's tool descriptions",
+      "text": "Does: Works with GitHub through its API: repositories, files, issues, pull requests, reviews, branches and code search.\nGood for: Opening or reviewing pull requests; filing or triaging issues; searching code across repositories.\nNot for: Local files that haven't been pushed; running code."
+    },
+    {
+      "id": "memory",
+      "scope": "mcp_catalog",
+      "kind": "mcp_server",
+      "title": "Memory (knowledge graph)",
+      "source": "example catalog entry; rewrite from your own server's tool descriptions",
+      "text": "Does: Stores and retrieves entities, relations and observations in a small persistent knowledge graph.\nGood for: Remembering facts about people, projects or preferences across conversations.\nNot for: Large documents; semantic search over long texts."
+    },
+    {
+      "id": "sequential_thinking",
+      "scope": "mcp_catalog",
+      "kind": "mcp_server",
+      "title": "Sequential Thinking",
+      "source": "example catalog entry; rewrite from your own server's tool descriptions",
+      "text": "Does: Gives the assistant a structured scratchpad for step-by-step reasoning that can branch and revise earlier steps.\nGood for: Planning multi-step work; problems where early steps may need revising.\nNot for: Checking facts or running calculations."
+    }
+  ]
+}

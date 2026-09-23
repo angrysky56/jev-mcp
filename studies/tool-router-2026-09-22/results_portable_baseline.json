@@ -1,0 +1,270 @@
+{
+ "summary": {
+  "top1": 13,
+  "tasks": 14,
+  "negativeT12Clean": true,
+  "falseUseTotal": 0,
+  "falseUsePerTask": 0,
+  "failedItems": 0
+ },
+ "rows": [
+  {
+   "id": "T1",
+   "runId": "e6e89bd4-f471-418c-a789-29771c2e2591",
+   "top": [
+    "mcp_logic:0.53",
+    "jev:0.17",
+    "graph_of_thought:0.15"
+   ],
+   "use": [],
+   "consider": [
+    "mcp_logic"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T2",
+   "runId": "f79752ba-63b1-4679-817b-381b58564be8",
+   "top": [
+    "graph_of_thought:0.82",
+    "advanced_reasoning:0.48",
+    "jev:0.42"
+   ],
+   "use": [
+    "graph_of_thought"
+   ],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T3",
+   "runId": "4786649d-b213-48cd-bdb1-b32b45cf14eb",
+   "top": [
+    "pageindex:0.90",
+    "context_compressor:0.68",
+    "desktop_commander:0.30"
+   ],
+   "use": [
+    "pageindex",
+    "context_compressor"
+   ],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T4",
+   "runId": "ddeba61b-de27-48a6-9d64-53f800c18686",
+   "top": [
+    "ast_asg:0.89",
+    "context7:0.53",
+    "context_compressor:0.38"
+   ],
+   "use": [
+    "ast_asg"
+   ],
+   "consider": [
+    "context7"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T5",
+   "runId": "c548270c-23b2-4636-aaeb-6b42b830d8c2",
+   "top": [
+    "context7:0.61",
+    "shadcn_ui:0.43",
+    "ast_asg:0.35"
+   ],
+   "use": [
+    "context7"
+   ],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T6",
+   "runId": "20e97e8a-3ac5-4bf1-add1-6028426da968",
+   "top": [
+    "shadcn_ui:0.77",
+    "context7:0.54",
+    "graph_of_thought:0.36"
+   ],
+   "use": [
+    "shadcn_ui"
+   ],
+   "consider": [
+    "context7"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T7",
+   "runId": "9421b43a-3b9b-4bce-bad4-b6e999faf44e",
+   "top": [
+    "advanced_writer:0.79",
+    "graph_of_thought:0.67",
+    "project_synapse:0.24"
+   ],
+   "use": [
+    "advanced_writer",
+    "graph_of_thought"
+   ],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T8",
+   "runId": "ff54c2de-e740-4061-955b-637a9ed41194",
+   "top": [
+    "jev:0.87",
+    "graph_of_thought:0.53",
+    "context_compressor:0.28"
+   ],
+   "use": [
+    "jev"
+   ],
+   "consider": [
+    "graph_of_thought"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T9",
+   "runId": "8921bc06-96e7-4a6c-996c-ee10540ec2ca",
+   "top": [
+    "github:0.88",
+    "browser:0.58",
+    "desktop_commander:0.31"
+   ],
+   "use": [
+    "github"
+   ],
+   "consider": [
+    "browser"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T10",
+   "runId": "e991ad44-6d36-4611-91c8-1fd6cbccf80e",
+   "top": [
+    "desktop_commander:0.82",
+    "local_repl:0.69",
+    "wisdom_engine:0.69"
+   ],
+   "use": [
+    "local_repl",
+    "wisdom_engine",
+    "advanced_reasoning"
+   ],
+   "consider": [
+    "desktop_commander"
+   ],
+   "top1": false,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T11",
+   "runId": "56f9f54e-1cc3-40c8-8ec6-3c885f5a9b3b",
+   "top": [
+    "local_repl:0.88",
+    "desktop_commander:0.73",
+    "graph_of_thought:0.10"
+   ],
+   "use": [
+    "local_repl"
+   ],
+   "consider": [
+    "desktop_commander"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T12",
+   "runId": "cb4d6821-81e1-43d2-ae75-7b7e53e06f8c",
+   "top": [
+    "desktop_commander:0.15",
+    "graph_of_thought:0.11",
+    "context7:0.09"
+   ],
+   "use": [],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T13",
+   "runId": "eddde236-34ea-4e97-9a53-188b826e9a77",
+   "top": [
+    "project_synapse:0.92",
+    "advanced_reasoning:0.73",
+    "graph_of_thought:0.60"
+   ],
+   "use": [
+    "project_synapse",
+    "advanced_reasoning"
+   ],
+   "consider": [
+    "graph_of_thought",
+    "context_compressor",
+    "local_repl"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T14",
+   "runId": "ec5d4feb-f3e4-4674-bea1-9e8d54c23e75",
+   "top": [
+    "aseke_compass:0.80",
+    "wisdom_engine:0.62",
+    "graph_of_thought:0.32"
+   ],
+   "use": [
+    "aseke_compass",
+    "wisdom_engine"
+   ],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  }
+ ]
+}

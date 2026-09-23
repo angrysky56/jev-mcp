@@ -67,6 +67,33 @@ Each task names the server(s) that should come out on top, plus others that woul
   - **`apply_via_negativa` timed out** at the 60 s bridge limit (1 of 1 call; it runs several LLM stages in a row). It can't be used from Cowork as is.
 - **What this means for `test_rivals`:** usable as "wisdom-engine drafts rivals, Claude adds the ones it missed and removes restatements, then `evidence_stance` sorts them". wisdom-engine alone is not a full rival search.
 
+## Portable version (2026-09-23)
+
+jev-mcp has to work for people who don't have Ty's servers, so `tool_router` now ships as a starter (`starters/capabilities.json`) that no longer assumes a fixed setup.
+
+**What changed:**
+
+- The description no longer refers to Ty's servers.
+- The comparison baseline used to be fixed wording ("a sandbox shell, file editing in connected folders, and web search"). It now comes from `context.baseline`. If no baseline is given, Jev compares against an assistant that can only write text.
+
+**Re-run on the same 14 tasks and the same catalog** (`catalog_records_e875cfb.json`, the version committed before the wisdom-engine entry changed). One run of each; results are in `results_portable_*.json`.
+
+| Arm | Top-1 | T12 clean | Unneeded `use` routes | Failed items |
+| --- | --- | --- | --- | --- |
+| Earlier v2, fixed baseline | 13/14 | yes | 0 | 0 |
+| Portable, `baseline` = the old wording | 13/14 | yes | 0 | 0 |
+| Portable, no baseline | 12/14 | yes | 2 (browser on T9, local_repl on T13) | 3 of 280 (HTTP 529, provider overloaded, after one retry) |
+
+- **Giving the old wording as `context.baseline` reproduced the earlier result.** One run, so this shows no sign of a regression, not proof of none.
+- **Without a baseline:**
+  - T5's miss comes from a failed item: Context7 got no answer, so it could not rank first.
+  - The two unneeded `use` routes fit the expectation that a weaker baseline makes more servers look helpful. One run can't show that.
+- **Clean-copy check.** A copy of the repo with no `.env`, `.jev` or `node_modules`, plus the key copied in:
+  - `npm ci`, typecheck and 42/42 tests pass.
+  - `mcp:configure` works. Running `mcp:bootstrap` added all five starters, and running it again reported them "already current".
+  - The 6-server example catalog routed a GitHub pull-request task to `github` only (1 task).
+  - `claim_router` routed "never leaks memory; ran it ten minutes" to `search_first` (1 claim).
+
 ## Limits
 
 - **I wrote both the catalog and the tasks.** The "Good for" phrases overlap with the task wording, which makes hits easier than they'll be on real tasks. The real test is logging, over the next weeks, whether each suggested server actually helped.

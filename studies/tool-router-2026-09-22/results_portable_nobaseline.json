@@ -1,0 +1,293 @@
+{
+ "summary": {
+  "top1": 12,
+  "tasks": 14,
+  "negativeT12Clean": true,
+  "falseUseTotal": 2,
+  "falseUsePerTask": 0.14285714285714285,
+  "failedItems": 3
+ },
+ "rows": [
+  {
+   "id": "T1",
+   "runId": "1aac08cb-4d36-46f9-af01-44766290fbfc",
+   "top": [
+    "mcp_logic:0.44",
+    "jev:0.22",
+    "efh_core:0.13"
+   ],
+   "use": [],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [
+    "mcp_logic"
+   ],
+   "failed": []
+  },
+  {
+   "id": "T2",
+   "runId": "b79828ce-22ce-4688-80fb-ffc19dccf0ab",
+   "top": [
+    "graph_of_thought:0.85",
+    "jev:0.53",
+    "advanced_reasoning:0.50"
+   ],
+   "use": [
+    "graph_of_thought"
+   ],
+   "consider": [
+    "jev",
+    "advanced_reasoning"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T3",
+   "runId": "ae43e13f-3733-4109-a561-885de8135683",
+   "top": [
+    "pageindex:0.94",
+    "context_compressor:0.85",
+    "desktop_commander:0.46"
+   ],
+   "use": [
+    "pageindex",
+    "context_compressor"
+   ],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T4",
+   "runId": "2e09f55c-d19e-4a5d-a7e9-7d0deaff9d22",
+   "top": [
+    "ast_asg:0.93",
+    "context7:0.66",
+    "desktop_commander:0.62"
+   ],
+   "use": [
+    "ast_asg"
+   ],
+   "consider": [
+    "context7",
+    "desktop_commander",
+    "graph_of_thought"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T5",
+   "runId": "8b658aa5-6ee6-4aae-aff5-7f8e380105c4",
+   "top": [
+    "github:0.68",
+    "shadcn_ui:0.62",
+    "browser:0.56"
+   ],
+   "use": [],
+   "consider": [
+    "github",
+    "shadcn_ui",
+    "browser",
+    "ast_asg"
+   ],
+   "top1": false,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": [
+    "context7",
+    "context_compressor"
+   ]
+  },
+  {
+   "id": "T6",
+   "runId": "8df0b053-e7a4-4b5f-96c8-79aa004ed946",
+   "top": [
+    "shadcn_ui:0.87",
+    "context7:0.78",
+    "graph_of_thought:0.50"
+   ],
+   "use": [
+    "shadcn_ui"
+   ],
+   "consider": [
+    "context7",
+    "graph_of_thought"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T7",
+   "runId": "e389cdd1-82c6-4543-9c31-11266e6f5fb3",
+   "top": [
+    "advanced_writer:0.71",
+    "graph_of_thought:0.67",
+    "aseke_compass:0.22"
+   ],
+   "use": [
+    "advanced_writer",
+    "graph_of_thought"
+   ],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T8",
+   "runId": "143e4cfe-9ff8-4621-84d8-1438ec7b9bd9",
+   "top": [
+    "jev:0.87",
+    "graph_of_thought:0.54",
+    "context_compressor:0.23"
+   ],
+   "use": [
+    "jev"
+   ],
+   "consider": [
+    "graph_of_thought"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T9",
+   "runId": "76f622b1-7bbb-467c-90cb-995f38cca921",
+   "top": [
+    "github:0.94",
+    "browser:0.73",
+    "desktop_commander:0.51"
+   ],
+   "use": [
+    "github",
+    "browser"
+   ],
+   "consider": [
+    "desktop_commander"
+   ],
+   "top1": true,
+   "falseUse": [
+    "browser"
+   ],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T10",
+   "runId": "6a33228e-a012-49c6-a279-da2001561d2e",
+   "top": [
+    "desktop_commander:0.83",
+    "advanced_reasoning:0.81",
+    "wisdom_engine:0.79"
+   ],
+   "use": [
+    "desktop_commander",
+    "advanced_reasoning",
+    "wisdom_engine",
+    "local_repl"
+   ],
+   "consider": [
+    "context_compressor",
+    "graph_of_thought"
+   ],
+   "top1": false,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T11",
+   "runId": "11731f73-e145-400f-90a1-4c41feccdaaa",
+   "top": [
+    "local_repl:0.91",
+    "desktop_commander:0.76",
+    "graph_of_thought:0.12"
+   ],
+   "use": [
+    "local_repl"
+   ],
+   "consider": [
+    "desktop_commander"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": [
+    "context_compressor"
+   ]
+  },
+  {
+   "id": "T12",
+   "runId": "d3610c5d-9cb7-4a6f-8102-faa8606f6458",
+   "top": [
+    "desktop_commander:0.20",
+    "graph_of_thought:0.13",
+    "local_repl:0.10"
+   ],
+   "use": [],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T13",
+   "runId": "2eea8ba3-ec4d-4f88-997b-a756fd505f9e",
+   "top": [
+    "project_synapse:0.94",
+    "advanced_reasoning:0.80",
+    "context_compressor:0.69"
+   ],
+   "use": [
+    "project_synapse",
+    "advanced_reasoning",
+    "local_repl"
+   ],
+   "consider": [
+    "context_compressor",
+    "graph_of_thought",
+    "desktop_commander",
+    "efh_core"
+   ],
+   "top1": true,
+   "falseUse": [
+    "local_repl"
+   ],
+   "missedCore": [],
+   "failed": []
+  },
+  {
+   "id": "T14",
+   "runId": "2482fd92-d008-429f-9b03-f0cfd7d8c92a",
+   "top": [
+    "aseke_compass:0.75",
+    "wisdom_engine:0.70",
+    "graph_of_thought:0.35"
+   ],
+   "use": [
+    "aseke_compass",
+    "wisdom_engine"
+   ],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": [],
+   "failed": []
+  }
+ ]
+}

@@ -17,3 +17,6 @@ await writeIfMissing(`${root}/.codex/config.toml`,[
   '',
 ].join('\n'));
 console.log('No key values are stored. Codex config forwards named environment variables; other hosts must configure equivalent forwarding.');
+// Hosts such as Claude Desktop keep their config outside the project, so print a snippet to paste rather than editing it.
+console.log('\nFor Claude Desktop or any other stdio MCP host, add this under "mcpServers" in its config. The key is read from this project\'s .env (copy .env.example), so none goes in the host config:');
+console.log(JSON.stringify({jev:{command:process.execPath,args:[`${root}src/server.ts`]}},null,2));
