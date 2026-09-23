@@ -6,6 +6,12 @@ A working TypeScript MCP runtime for creating, testing, composing, and retaining
 
 The newer [continuity, planning, and operational self-model study](docs/jev-continuity-and-agency.md) adds prospective reminders, bounded memory selection, method retrieval, and a real Git worktree probe. It includes a stronger baseline audit alongside the Jev results.
 
+[Claim router](studies/claim-router-2026-09-22/README.md) makes the four TypeSafe patterns (fan-out, composite scoring, confidence gates, routing) part of how a capability is defined, and routes claims by reasoning mode to a prover, a sample check, or a rival-explanation test. It also documents a transport issue: some hosts stringify `context` and sort item keys.
+
+[Jev as the scorer inside Graph of Thoughts](studies/got-jev-scorer-2026-09-22/README.md) compares Jev with GoT's own LLM scorer on 36 GoT-generated rewrites and a counting control, and lists GoT/bridge bugs found along the way.
+
+[Jev as a reasoning auditor](docs/jev-reasoning-audit.md) turns the Peirce-based "Reasoning and Beliefs" notes into two capabilities (`inference_warrant`, `evidence_stance`) and tests them on the agent's own past mistakes, including an idea that failed.
+
 [Skills as connected methods](docs/jev-skills-as-methods.md) explores reusing actual skill passages across domains and composing them into workflows. Its live probe includes no-match cases, premature method suggestions, and a correction for omitted workflow checks.
 
 The connected agent supplies ideas, explanations, and host-side scripts. The server calls only Jev, through OpenRouter or TypeSafe. SQLite runs locally; no database service, generative model API, or other local project is required. Native Qdrant/Chroma adapters and embeddings are not implemented; their records can be supplied through the shared JSON batch interface.

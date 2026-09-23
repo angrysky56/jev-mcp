@@ -1,0 +1,227 @@
+{
+ "definition": {
+  "name": "claim_router",
+  "description": "Route a claim to the check that suits how it was reasoned (Peirce: deduction, induction, abduction), using all four TypeSafe patterns: one fan-out stage asks every question at once; composites weight the warning signs; confidence gates send unclear cases to a second opinion; routes name the next check for the host to run. item = {claim, basis, action?} where action is what will be done if the claim is believed. The server only labels; the host runs the check. Judges wording and stated basis, not truth.",
+  "notes": "v1, 2026-09-22. Built from inference_warrant v3 questions (verbatim) plus a stakes score. Findings carried over: overclaim fires on most flat statements, so it is weighted and not a route by itself; absence_as_evidence was the cleanest signal, so it routes directly; rivals cannot be judged without supplied candidates, so abduction routes to test_rivals (host lists rivals, evidence_stance judges them). Thresholds (0.6, 0.45, 0.35, 0.8) are authored guesses to be evaluated.",
+  "stages": [
+   {
+    "id": "triage",
+    "questions": {
+     "mode": {
+      "type": "choice",
+      "instructions": "How does item.claim relate to item.basis? Judge the logical relationship, not the topic or the confidence words.",
+      "criteria": {
+       "deduction": "item.basis states a general rule plus a specific case, and item.claim is exactly what that rule implies for that case. The claim would be necessarily true if the basis is true.",
+       "induction": "item.basis reports observed instances, counts, tests, or measurements, and item.claim generalizes them into a pattern, rule, or prediction about cases not observed.",
+       "abduction": "item.basis reports an observation or symptom, and item.claim proposes a cause, explanation, or hidden state that would account for it.",
+       "recommendation": "item.claim says what should be done, decided, or how something should be read or treated, rather than stating what is true.",
+       "unsupported": "item.basis is empty, says '(none)', or gives no reason that actually connects to item.claim."
+      }
+     },
+     "certainty": {
+      "type": "score",
+      "instructions": "How much certainty does the wording of item.claim itself express? Look only at item.claim's own words.",
+      "criteria": [
+       "Explicitly tentative: might, possibly, one hypothesis, a guess",
+       "Probable: probably, likely, suggests, plausibly, most likely",
+       "Stated as plain fact with no hedge",
+       "Absolute: always, never, certainly, proves, impossible, nothing else could"
+      ]
+     },
+     "overclaim": {
+      "type": "noul",
+      "instructions": "Is item.claim worded with more certainty than item.basis can license? Rules: a strict derivation from a stated general rule and case may be stated as certain. A generalization from observed instances may be stated at most as probable, and less so the fewer the instances. A proposed explanation of an observation may be stated at most as plausible, never as the only possibility. A recommendation is fine if item.basis gives a reason for it. A claim with no connecting reason may not be stated as fact at all.",
+      "criteria": {
+       "true": "item.claim asserts as fact, certainty, 'always', or 'the only explanation' something that item.basis only makes probable, plausible, or does not support.",
+       "false": "item.claim's wording is at or below the confidence that item.basis supports, or it is a recommendation that item.basis gives a reason for."
+      }
+     },
+     "scope_gap": {
+      "type": "noul",
+      "instructions": "Is item.claim about a broader or different subject than the thing item.basis actually measured or observed? Example: the basis measured one component, one tool, one channel, one machine, or one sample, while the claim speaks about a whole system, all users, or a different component. Compare the subject of item.claim with the subject of item.basis word by word.",
+      "criteria": {
+       "true": "The subject of item.claim is wider than, or different from, what item.basis measured or observed.",
+       "false": "item.claim is about the same thing item.basis measured or observed."
+      }
+     },
+     "absence_as_evidence": {
+      "type": "noul",
+      "instructions": "Does item.basis support item.claim mainly by not having seen, noticed, or found something, without describing a search thorough enough that it would have found it if it existed?",
+      "criteria": {
+       "true": "item.basis rests on 'I have not seen / did not notice / am not aware of' something, with no systematic search described.",
+       "false": "item.basis reports positive observations, or describes a search that would have found the thing if it existed."
+      }
+     },
+     "stakes": {
+      "type": "score",
+      "instructions": "If item.claim were false and someone went ahead with item.action (or relied on item.claim, if no action is given), how bad would the result be?",
+      "criteria": [
+       "Low: harmless or trivially undone, such as a wording choice or a log message",
+       "Medium: wasted time, rework, or a confusing result that someone would notice and fix",
+       "High: lost data, money, security, safety, or trust, or something hard to undo such as removing a safeguard or shipping to production"
+      ]
+     }
+    }
+   }
+  ],
+  "composites": {
+   "warrant_risk": {
+    "description": "How far the wording outruns the stated basis, weighted toward the clearest signals.",
+    "terms": [
+     {
+      "stage": "triage",
+      "question": "overclaim",
+      "weight": 0.4
+     },
+     {
+      "stage": "triage",
+      "question": "scope_gap",
+      "weight": 0.3
+     },
+     {
+      "stage": "triage",
+      "question": "absence_as_evidence",
+      "weight": 0.3
+     }
+    ]
+   },
+   "priority": {
+    "description": "What to check first: warning signs plus stakes.",
+    "terms": [
+     {
+      "stage": "triage",
+      "question": "overclaim",
+      "weight": 0.3
+     },
+     {
+      "stage": "triage",
+      "question": "scope_gap",
+      "weight": 0.2
+     },
+     {
+      "stage": "triage",
+      "question": "absence_as_evidence",
+      "weight": 0.2
+     },
+     {
+      "stage": "triage",
+      "question": "stakes",
+      "weight": 0.3
+     }
+    ]
+   }
+  },
+  "routes": [
+   {
+    "id": "ask_for_basis",
+    "when": [
+     {
+      "stage": "triage",
+      "question": "mode",
+      "op": "eq",
+      "value": "unsupported"
+     }
+    ],
+    "description": "No reason given. Ask for or find the basis before anything else."
+   },
+   {
+    "id": "search_first",
+    "when": [
+     {
+      "stage": "triage",
+      "question": "absence_as_evidence",
+      "op": "gte",
+      "value": 0.6
+     }
+    ],
+    "description": "Rests on not having seen something. Run a search that would find it (docs, web, repo) before asserting."
+   },
+   {
+    "id": "second_opinion",
+    "when": [
+     {
+      "stage": "triage",
+      "question": "mode",
+      "field": "confidence",
+      "op": "lte",
+      "value": 0.45
+     }
+    ],
+    "description": "Jev cannot tell what kind of reasoning this is. Have another judge or a person classify it."
+   },
+   {
+    "id": "accept",
+    "when": [
+     {
+      "composite": "warrant_risk",
+      "op": "lte",
+      "value": 0.35
+     },
+     {
+      "stage": "triage",
+      "question": "stakes",
+      "op": "lte",
+      "value": 0.8
+     }
+    ],
+    "description": "Wording fits the basis and little is at stake. No further check."
+   },
+   {
+    "id": "prove",
+    "when": [
+     {
+      "stage": "triage",
+      "question": "mode",
+      "op": "eq",
+      "value": "deduction"
+     }
+    ],
+    "description": "Deduction: check the derivation with a prover (mcp-logic prove, efh-core verify_implication) or by re-deriving it."
+   },
+   {
+    "id": "check_sample",
+    "when": [
+     {
+      "stage": "triage",
+      "question": "mode",
+      "op": "eq",
+      "value": "induction"
+     }
+    ],
+    "description": "Induction: check sample size, representativeness, and whether the claim is hedged to match."
+   },
+   {
+    "id": "test_rivals",
+    "when": [
+     {
+      "stage": "triage",
+      "question": "mode",
+      "op": "eq",
+      "value": "abduction"
+     }
+    ],
+    "description": "Abduction: list rival explanations, then run evidence_stance with them as items and the observations in context."
+   },
+   {
+    "id": "check_reasons",
+    "when": [
+     {
+      "stage": "triage",
+      "question": "mode",
+      "op": "eq",
+      "value": "recommendation"
+     }
+    ],
+    "description": "Recommendation: check that the stated reasons actually support the action and its stakes."
+   },
+   {
+    "id": "manual_review",
+    "description": "Nothing else matched."
+   }
+  ],
+  "rank": {
+   "composite": "priority",
+   "direction": "desc"
+  }
+ }
+}

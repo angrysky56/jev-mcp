@@ -72,7 +72,7 @@ Across the primary study and crowding probe, **120 Jev calls** cost **$0.0074774
 - [Crowding probe](../studies/continuity/crowding/2026-09-20T03-08-47.183Z/summary.json)
 - [Git worktree experiment](../studies/continuity/git-branch-demo.json)
 
-`npm run continuity` prepares a dry run. Add `-- --live --split development` or `-- --live --split evaluation` for OpenRouter calls. `--provider typesafe` selects the direct API with its own key. Results live under `studies/continuity/runs`, separate from the original inquiry study.
+`npm run continuity` prepares a development dry run using the latest alias. Add `-- --live --split development` for OpenRouter calls. Evaluation runs (dry or live) require a concrete model, for example `npm run continuity -- --split evaluation --model typesafe/jev-1.13-20260917`; add `--live` for inference. `--provider typesafe` selects the direct API with its own key and model slug. Floating evaluation aliases are refused before any files or requests are created. Results live under `studies/continuity/runs`, separate from the original inquiry study.
 
 `npm run verify:continuity` checks saved requests, responses, fingerprints, source snapshots, packets, reported counts, and crowding coverage without inference. `npm run check` and `npm test` validate the code. `npm run verify:study` still verifies the original inquiry study.
 

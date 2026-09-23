@@ -1,0 +1,166 @@
+{
+ "name": "count_check_probe",
+ "version": 1,
+ "context": {
+  "text": "The festival in Peru drew visitors from Japan and Chile. Traders from France met buyers from Norway. The festival in Norway drew visitors from France and Norway. A ship left France bound for France. Prices in France rose while Peru held steady. A delegation from Japan toured France. Traders from Peru met buyers from Chile. A delegation from France toured Norway. Prices in France rose while Peru held steady. A delegation from Peru toured Kenya."
+ },
+ "maxCalls": 12,
+ "items": [
+  {
+   "id": "k09",
+   "data": {
+    "counts": {
+     "France": 8,
+     "Peru": 5,
+     "Kenya": 2,
+     "Japan": 3,
+     "Norway": 3,
+     "Chile": 2
+    }
+   }
+  },
+  {
+   "id": "k08",
+   "data": {
+    "counts": {
+     "France": 8,
+     "Peru": 7,
+     "Kenya": 1,
+     "Japan": 2,
+     "Norway": 6,
+     "Chile": 2
+    }
+   }
+  },
+  {
+   "id": "k04",
+   "data": {
+    "counts": {
+     "France": 8,
+     "Peru": 5,
+     "Kenya": 1,
+     "Japan": 2,
+     "Norway": 5,
+     "Chile": 2
+    }
+   }
+  },
+  {
+   "id": "k03",
+   "data": {
+    "counts": {
+     "France": 8,
+     "Peru": 3,
+     "Kenya": 1,
+     "Japan": 2,
+     "Norway": 4,
+     "Chile": 2
+    }
+   }
+  },
+  {
+   "id": "k10",
+   "data": {
+    "counts": {
+     "France": 9,
+     "Peru": 6,
+     "Kenya": 3,
+     "Japan": 2,
+     "Norway": 4,
+     "Chile": 4
+    }
+   }
+  },
+  {
+   "id": "k11",
+   "data": {
+    "counts": {
+     "France": 9,
+     "Peru": 5,
+     "Kenya": 3,
+     "Japan": 1,
+     "Norway": 3,
+     "Chile": 2
+    }
+   }
+  },
+  {
+   "id": "k02",
+   "data": {
+    "counts": {
+     "France": 8,
+     "Peru": 5,
+     "Kenya": 1,
+     "Japan": 2,
+     "Norway": 4,
+     "Chile": 2
+    }
+   }
+  },
+  {
+   "id": "k05",
+   "data": {
+    "counts": {
+     "France": 8,
+     "Peru": 5,
+     "Kenya": 1,
+     "Japan": 2,
+     "Norway": 3,
+     "Chile": 2
+    }
+   }
+  },
+  {
+   "id": "k01",
+   "data": {
+    "counts": {
+     "France": 8,
+     "Peru": 5,
+     "Kenya": 1,
+     "Japan": 2,
+     "Norway": 4,
+     "Chile": 2
+    }
+   }
+  },
+  {
+   "id": "k00",
+   "data": {
+    "counts": {
+     "France": 8,
+     "Peru": 5,
+     "Kenya": 1,
+     "Japan": 2,
+     "Norway": 4,
+     "Chile": 2
+    }
+   }
+  },
+  {
+   "id": "k06",
+   "data": {
+    "counts": {
+     "France": 7,
+     "Peru": 5,
+     "Kenya": 1,
+     "Japan": 2,
+     "Norway": 5,
+     "Chile": 2
+    }
+   }
+  },
+  {
+   "id": "k07",
+   "data": {
+    "counts": {
+     "France": 6,
+     "Peru": 5,
+     "Kenya": 1,
+     "Japan": 2,
+     "Norway": 2,
+     "Chile": 2
+    }
+   }
+  }
+ ]
+}

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { mkdtemp, readFile, readdir, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { readJson, root, hash } from '../src/io.ts';
@@ -81,7 +81,31 @@ test('continuity run is frozen, replayable, credential-free, and visibly incompl
     assert.equal(events[0].fingerprint,hash(events[0].request));
     assert.equal(JSON.stringify(events).includes('dummy-secret'),false);
     assert.equal(await readFile(`${dir}/report.md`,'utf8'),continuityReport(manifest,events));
-    const dry = await runContinuity({provider:'openrouter',split:'evaluation',live:false,outputRoot});
+    const dry = await runContinuity({provider:'openrouter',split:'evaluation',live:false,outputRoot,model:'typesafe/jev-1.13-20260917'});
     assert.match(await readFile(`${dry}/report.md`,'utf8'),/DRY RUN, NO INFERENCE/);
   } finally { await rm(outputRoot,{recursive:true,force:true}); }
+});
+
+test('continuity evaluation pins its model before writes or inference, including dry runs', async () => {
+  const outputRoot = await mkdtemp(join(tmpdir(), 'jev-continuity-pin-'));
+  let calls = 0;
+  const fetcher: typeof fetch = async () => { calls++; return new Response('denied', {status: 401}); };
+  try {
+    for (const live of [false, true]) for (const provider of ['openrouter', 'typesafe'] as const) {
+      for (const model of [undefined, provider === 'openrouter' ? '~typesafe/jev-latest' : 'jev-latest']) {
+        await assert.rejects(runContinuity({provider, split:'evaluation', live, model, apiKey:'dummy', outputRoot, fetcher}), /concrete model/);
+        assert.deepEqual(await readdir(outputRoot), []);
+      }
+    }
+    assert.equal(calls, 0);
+    const model = 'typesafe/jev-1.13-20260917';
+    const dir = await runContinuity({provider:'openrouter',split:'evaluation',live:true,model,apiKey:'dummy',outputRoot,fetcher});
+    assert.equal(calls, 1);
+    const manifest = await readJson<ContinuityManifest>(join(dir, 'manifest.json'));
+    assert.equal(manifest.model, model);
+    const requests = await readJson<Array<{request: Request}>>(join(dir, 'requests.json'));
+    assert.ok(requests.every(row => row.request.model === model));
+    const dev = await runContinuity({provider:'openrouter',split:'development',live:false,outputRoot});
+    assert.equal((await readJson<ContinuityManifest>(join(dev, 'manifest.json'))).model, '~typesafe/jev-latest');
+  } finally { await rm(outputRoot, {recursive:true,force:true}); }
 });

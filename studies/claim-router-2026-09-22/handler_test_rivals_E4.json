@@ -1,0 +1,41 @@
+{
+ "name": "evidence_stance",
+ "version": 2,
+ "maxCalls": 5,
+ "context": {
+  "claim": "The server failed because the host did not pass the API key.",
+  "observations": "Every inference tool returned missing_key, while the key is exported in ~/.bashrc."
+ },
+ "items": [
+  {
+   "id": "r_gui_env",
+   "data": {
+    "text": "GUI-launched desktop apps do not source ~/.bashrc, so variables exported there never reach an MCP server the app starts."
+   }
+  },
+  {
+   "id": "r_provider",
+   "data": {
+    "text": "The .env sets JEV_PROVIDER=typesafe, so the server looks for TYPESAFE_API_KEY, while ~/.bashrc exports OPENROUTER_API_KEY."
+   }
+  },
+  {
+   "id": "r_typo",
+   "data": {
+    "text": "The variable in ~/.bashrc is spelled OPENROUTER_APIKEY, without the underscore the server expects."
+   }
+  },
+  {
+   "id": "r_quota",
+   "data": {
+    "text": "The account ran out of credit, so the provider rejected every request."
+   }
+  },
+  {
+   "id": "r_unrelated",
+   "data": {
+    "text": "The project's README was last updated in September."
+   }
+  }
+ ]
+}

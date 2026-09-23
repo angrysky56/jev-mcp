@@ -1,0 +1,136 @@
+{
+ "name": "claim_router",
+ "maxCalls": 10,
+ "cases": [
+  {
+   "id": "E1_ded_low",
+   "data": {
+    "claim": "This function returns a string.",
+    "basis": "The TypeScript signature declares the return type as string, and the project compiles under strict mode, which rejects any function that returns a different type.",
+    "action": "Use the return value in a debug log message."
+   },
+   "expected": [
+    {
+     "route": "accept"
+    }
+   ]
+  },
+  {
+   "id": "E2_ded_high",
+   "data": {
+    "claim": "Since every commit requires a proof and this claim has no proof, it cannot be committed.",
+    "basis": "Rule: every commit requires a proof. Case: this claim has no proof.",
+    "action": "Remove the manual review step, relying on the proof requirement to block unproved claims."
+   },
+   "expected": [
+    {
+     "route": "prove"
+    }
+   ]
+  },
+  {
+   "id": "E3_ind_high",
+   "data": {
+    "claim": "The retry path always handles 429 responses correctly.",
+    "basis": "In 3 test runs that hit a 429 response, all 3 retried and succeeded.",
+    "action": "Ship to production and remove the retry monitoring alert."
+   },
+   "expected": [
+    {
+     "route": "check_sample"
+    }
+   ]
+  },
+  {
+   "id": "E4_abd",
+   "data": {
+    "claim": "The server failed because the host did not pass the API key; nothing else could explain it.",
+    "basis": "Every inference tool returned missing_key, while the key is exported in ~/.bashrc.",
+    "action": "Rewrite how the server loads its environment."
+   },
+   "expected": [
+    {
+     "route": "test_rivals"
+    }
+   ]
+  },
+  {
+   "id": "E5_unsup",
+   "data": {
+    "claim": "Jev is the most accurate judgment model available today.",
+    "basis": "(none)",
+    "action": "Replace every other judge in the stack with Jev."
+   },
+   "expected": [
+    {
+     "route": "ask_for_basis"
+    }
+   ]
+  },
+  {
+   "id": "E6_rec",
+   "data": {
+    "claim": "Until the floor is calibrated, a score near 0.6 should be read as unsettled, not passed.",
+    "basis": "Faithful glosses cluster around 0.65 and unfaithful around 0.13; three samples of one pair cannot justify moving the threshold.",
+    "action": "Change the gate so scores near 0.6 are re-sampled instead of accepted."
+   },
+   "expected": [
+    {
+     "route": "check_reasons"
+    }
+   ]
+  },
+  {
+   "id": "E7_monitor",
+   "data": {
+    "claim": "The consistency monitor is blind to contradiction.",
+    "basis": "Measured pairwise on nomic-embed-text, contradictions average 0.108 embedding distance and paraphrases 0.095; 'all ravens are black' vs 'no ravens are black' scored 0.0589, closer than a real paraphrase.",
+    "action": "Report the monitor as broken in the project write-up."
+   },
+   "expected": [
+    {
+     "route": "second_opinion"
+    }
+   ]
+  },
+  {
+   "id": "E8_skim",
+   "data": {
+    "claim": "The config file has no syntax errors.",
+    "basis": "I didn't notice any errors when I skimmed it.",
+    "action": "Deploy the config to the production server."
+   },
+   "expected": [
+    {
+     "route": "search_first"
+    }
+   ]
+  },
+  {
+   "id": "E9_ind_low",
+   "data": {
+    "claim": "The test suite probably passes on this branch.",
+    "basis": "It passed on the last 20 CI runs of this branch, with no code changes since.",
+    "action": "Start writing the next feature on this branch."
+   },
+   "expected": [
+    {
+     "route": "accept"
+    }
+   ]
+  },
+  {
+   "id": "E10_tilde",
+   "data": {
+    "claim": "The correct OpenRouter identifier is typesafe/jev-latest; the leading tilde in ~typesafe/jev-latest is someone's shorthand, not the real model id.",
+    "basis": "OpenRouter model pages list the model as typesafe/jev-1.13, and I have not seen a tilde prefix on OpenRouter model slugs before.",
+    "action": "Change the default model id in the config."
+   },
+   "expected": [
+    {
+     "route": "search_first"
+    }
+   ]
+  }
+ ]
+}

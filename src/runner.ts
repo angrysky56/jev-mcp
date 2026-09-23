@@ -4,7 +4,7 @@ import { randomUUID } from 'node:crypto';
 import { loadDataset } from './dataset.ts';
 import { hash, readJson, root, writeJson } from './io.ts';
 import { buildRequest, sourceChecks } from './questions.ts';
-import { callProvider, defaultModels, endpoints, isFloatingModel } from './provider.ts';
+import { callProvider, endpoints, studyModel } from './provider.ts';
 import { renderReport, summarize } from './report.ts';
 import type { Event, Manifest, Provider, Rubric, Split, Variant } from './types.ts';
 
@@ -15,6 +15,7 @@ export interface RunOptions {
 }
 
 export async function runExperiment(options: RunOptions): Promise<string> {
+  const requestedModel = studyModel(options.provider, options.split, options.model);
   const rubric = await readJson<Rubric>(`${root}/experiments/rubrics/${options.rubricVersion}.json`);
   const data = await loadDataset(rubric);
   if (options.split === 'evaluation') {
@@ -33,10 +34,6 @@ export async function runExperiment(options: RunOptions): Promise<string> {
   if (!options.variants.length || new Set(options.variants).size !== options.variants.length || !options.variants.includes('canonical')) throw new Error('Variants must be unique and include canonical.');
   if (plannedRequests > (options.maxRequests ?? 108)) throw new Error('Planned calls exceed the experiment request limit.');
   if (options.live && !options.apiKey) throw new Error(`Missing ${options.provider === 'typesafe' ? 'TYPESAFE_API_KEY' : 'OPENROUTER_API_KEY'} in the launching shell. No calls made.`);
-  const requestedModel = options.model ?? defaultModels[options.provider];
-  // Evaluation runs are the frozen comparison; they reject a changed rubric, cases, or baselines,
-  // and for the same reason they reject a model identifier that can change underneath them.
-  if (options.split === 'evaluation' && isFloatingModel(requestedModel)) throw new Error(`Evaluation runs require a concrete model, not the floating alias ${requestedModel}. Pass --model with an exact slug, e.g. typesafe/jev-1.13.`);
   const runDir = join(options.outputRoot ?? `${root}/runs`, `${new Date().toISOString().replaceAll(':', '-')}-${options.rubricVersion}-${options.split}-${randomUUID().slice(0, 8)}`);
   await mkdir(runDir, { recursive: true });
   const codeFiles = (await readdir(`${root}/src`)).filter(f => f.endsWith('.ts')).sort();

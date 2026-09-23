@@ -1,0 +1,16 @@
+{
+ "spearman_score_vs_true_errors": 0.642,
+ "spearman_score_vs_table_total": 0.584,
+ "noul_on_correct": [
+  0.42,
+  0.5,
+  0.43
+ ],
+ "correct_accepted_at_0.5": 1,
+ "wrong_rejected_at_0.5": 6,
+ "wrong_total": 9,
+ "conf_range": [
+  0,
+  0.17
+ ]
+}

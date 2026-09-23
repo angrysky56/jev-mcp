@@ -1,0 +1,113 @@
+{
+ "name": "evidence_stance",
+ "version": 2,
+ "context": {
+  "claim": "It rained at this house overnight.",
+  "observations": "The lawn was soaking wet at 7am."
+ },
+ "maxCalls": 20,
+ "cases": [
+  {
+   "id": "sprinkler",
+   "data": {
+    "text": "The neighbour's sprinkler timer is set to run at 5am and sprays across the lawn."
+   },
+   "expected": [
+    {
+     "stage": "stance",
+     "question": "rival_explanation",
+     "op": "gte",
+     "value": 0.5
+    }
+   ]
+  },
+  {
+   "id": "irrigation",
+   "data": {
+    "text": "The house's in-ground irrigation system was serviced last week and now runs every night at 4am."
+   },
+   "expected": [
+    {
+     "stage": "stance",
+     "question": "rival_explanation",
+     "op": "gte",
+     "value": 0.5
+    }
+   ]
+  },
+  {
+   "id": "dew",
+   "data": {
+    "text": "Overnight the temperature fell to the dew point and heavy dew formed on grass across the valley."
+   },
+   "expected": [
+    {
+     "stage": "stance",
+     "question": "rival_explanation",
+     "op": "gte",
+     "value": 0.5
+    }
+   ]
+  },
+  {
+   "id": "birdbath",
+   "data": {
+    "text": "The bird bath, which was half full yesterday evening, was overflowing this morning."
+   },
+   "expected": [
+    {
+     "stage": "stance",
+     "question": "stance",
+     "op": "eq",
+     "value": "supports"
+    },
+    {
+     "stage": "stance",
+     "question": "rival_explanation",
+     "op": "lte",
+     "value": 0.5
+    }
+   ]
+  },
+  {
+   "id": "storm_drain",
+   "data": {
+    "text": "The storm drain in front of the house was bone dry at 7am."
+   },
+   "expected": [
+    {
+     "stage": "stance",
+     "question": "stance",
+     "op": "eq",
+     "value": "contradicts"
+    },
+    {
+     "stage": "stance",
+     "question": "rival_explanation",
+     "op": "lte",
+     "value": 0.5
+    }
+   ]
+  },
+  {
+   "id": "grass_type",
+   "data": {
+    "text": "The lawn is Kentucky bluegrass, planted in 2019."
+   },
+   "expected": [
+    {
+     "stage": "stance",
+     "question": "stance",
+     "op": "eq",
+     "value": "irrelevant"
+    },
+    {
+     "stage": "stance",
+     "question": "rival_explanation",
+     "op": "lte",
+     "value": 0.5
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "spearman_score_vs_true_errors": 0.67,
+ "spearman_noul_vs_true_errors": -0.425,
+ "noul_on_correct_tables": [
+  0.4,
+  0.43,
+  0.45
+ ],
+ "noul_on_wrong_tables_range": [
+  0.32,
+  0.52
+ ],
+ "all_correct_accepted_at_0.5": 0,
+ "wrong_rejected_at_0.5": 7,
+ "score_confidence_range": [
+  0,
+  0.24
+ ]
+}

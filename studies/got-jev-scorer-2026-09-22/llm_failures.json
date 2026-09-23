@@ -1,0 +1,31 @@
+{
+ "C1_manager": [
+  "score step returned None (1024-token cap); retry",
+  "retry ok"
+ ],
+ "C2_ten_year_old": [
+  "score None; retry",
+  "retry ok"
+ ],
+ "C3_headline": [
+  "score parsed as 1010.0 (out of 0-10 range, accepted silently); retry",
+  "retry: 10"
+ ],
+ "C4_code_comment": [
+  "score None; retry",
+  "retry ok"
+ ],
+ "C4_manager": [
+  "score None; retry",
+  "retry ok"
+ ],
+ "C6_ten_year_old": [
+  "score None",
+  "retry ok"
+ ],
+ "C6_skeptic": [
+  "score None",
+  "score None",
+  "retry ok"
+ ]
+}

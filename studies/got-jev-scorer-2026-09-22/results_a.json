@@ -1,0 +1,274 @@
+{
+ "jev": {
+  "accuracy": 0.781,
+  "faithful_accepted": "23/23",
+  "unfaithful_rejected": "2/9",
+  "false_accepts": 7,
+  "false_rejects": 0,
+  "auc": 0.785
+ },
+ "llm": {
+  "accuracy": 0.812,
+  "faithful_accepted": "22/23",
+  "unfaithful_rejected": "4/9",
+  "false_accepts": 5,
+  "false_rejects": 1,
+  "auc": 0.686
+ },
+ "best_of_6": {
+  "C1": {
+   "jev": {
+    "top": [
+     "logician",
+     "headline"
+    ],
+    "labels": [
+     "F",
+     "F"
+    ]
+   },
+   "llm": {
+    "top": [
+     "logician",
+     "code_comment",
+     "headline",
+     "manager",
+     "skeptic"
+    ],
+    "labels": [
+     "F",
+     "F",
+     "F",
+     "A",
+     "A"
+    ]
+   }
+  },
+  "C2": {
+   "jev": {
+    "top": [
+     "logician"
+    ],
+    "labels": [
+     "F"
+    ]
+   },
+   "llm": {
+    "top": [
+     "logician",
+     "ten_year_old",
+     "manager",
+     "skeptic"
+    ],
+    "labels": [
+     "F",
+     "F",
+     "U",
+     "U"
+    ]
+   }
+  },
+  "C3": {
+   "jev": {
+    "top": [
+     "logician"
+    ],
+    "labels": [
+     "F"
+    ]
+   },
+   "llm": {
+    "top": [
+     "logician",
+     "code_comment",
+     "ten_year_old",
+     "headline",
+     "manager",
+     "skeptic"
+    ],
+    "labels": [
+     "F",
+     "F",
+     "F",
+     "F",
+     "F",
+     "F"
+    ]
+   }
+  },
+  "C4": {
+   "jev": {
+    "top": [
+     "ten_year_old",
+     "skeptic"
+    ],
+    "labels": [
+     "A",
+     "U"
+    ]
+   },
+   "llm": {
+    "top": [
+     "logician",
+     "ten_year_old",
+     "skeptic"
+    ],
+    "labels": [
+     "F",
+     "A",
+     "U"
+    ]
+   }
+  },
+  "C5": {
+   "jev": {
+    "top": [
+     "logician"
+    ],
+    "labels": [
+     "F"
+    ]
+   },
+   "llm": {
+    "top": [
+     "logician",
+     "code_comment",
+     "ten_year_old",
+     "headline",
+     "manager",
+     "skeptic"
+    ],
+    "labels": [
+     "F",
+     "F",
+     "F",
+     "U",
+     "F",
+     "F"
+    ]
+   }
+  },
+  "C6": {
+   "jev": {
+    "top": [
+     "logician"
+    ],
+    "labels": [
+     "F"
+    ]
+   },
+   "llm": {
+    "top": [
+     "logician",
+     "code_comment",
+     "ten_year_old",
+     "headline"
+    ],
+    "labels": [
+     "F",
+     "U",
+     "F",
+     "F"
+    ]
+   }
+  }
+ },
+ "unfaithful_detail": [
+  {
+   "id": "C2_headline",
+   "note": "drops 'registered': stronger",
+   "jev": 0.54,
+   "jev_rel": "equivalent",
+   "llm": 0
+  },
+  {
+   "id": "C2_manager",
+   "note": "mild: adds 'automatically guaranteed' (modal strengthening)",
+   "jev": 0.61,
+   "jev_rel": "gloss_stronger",
+   "llm": 10
+  },
+  {
+   "id": "C2_skeptic",
+   "note": "mild: 'one check' reads as exactly one",
+   "jev": 0.66,
+   "jev_rel": "equivalent",
+   "llm": 10
+  },
+  {
+   "id": "C4_code_comment",
+   "note": "code condition parses as textAgree && (scalarAgree==false) by precedence",
+   "jev": 0.2,
+   "jev_rel": "contradicts",
+   "llm": 0
+  },
+  {
+   "id": "C4_manager",
+   "note": "'only if' reverses conditional direction",
+   "jev": 0.81,
+   "jev_rel": "equivalent",
+   "llm": 0
+  },
+  {
+   "id": "C4_skeptic",
+   "note": "'only when' reverses direction",
+   "jev": 0.83,
+   "jev_rel": "equivalent",
+   "llm": 10
+  },
+  {
+   "id": "C5_headline",
+   "note": "drops 'instead of returning a score': weaker",
+   "jev": 0.88,
+   "jev_rel": "equivalent",
+   "llm": 10
+  },
+  {
+   "id": "C6_code_comment",
+   "note": "adds 'false positives': not confirmed != false",
+   "jev": 0.82,
+   "jev_rel": "equivalent",
+   "llm": 10
+  },
+  {
+   "id": "C6_skeptic",
+   "note": "'turned out to be false' is stronger than unconfirmed",
+   "jev": 0.86,
+   "jev_rel": "equivalent",
+   "llm": 0
+  }
+ ],
+ "ambiguous_detail": [
+  {
+   "id": "C1_ten_year_old",
+   "jev": 0.67,
+   "llm": 9
+  },
+  {
+   "id": "C1_manager",
+   "jev": 0.63,
+   "llm": 10
+  },
+  {
+   "id": "C1_skeptic",
+   "jev": 0.77,
+   "llm": 10
+  },
+  {
+   "id": "C4_ten_year_old",
+   "jev": 0.83,
+   "llm": 10
+  }
+ ],
+ "llm_score_distribution": {
+  "0": 4,
+  "3": 1,
+  "8": 1,
+  "9": 2,
+  "10": 28
+ },
+ "jev_min_max_on_F": [
+  0.71,
+  0.98
+ ]
+}

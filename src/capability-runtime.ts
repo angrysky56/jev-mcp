@@ -1,14 +1,15 @@
 import { hash } from './io.ts';
 import { callProvider, defaultModels } from './provider.ts';
 import type { CallResult } from './provider.ts';
-import { answerValue, matches, RuntimeError, validateCapability } from './runtime-contracts.ts';
-import type { Capability, WorkItem, Rule } from './runtime-contracts.ts';
+import { answerValue, computeComposites, matches, routeFor, RuntimeError, validateCapability, validateExpectations } from './runtime-contracts.ts';
+import type { Capability, Expectation, Rule, WorkItem } from './runtime-contracts.ts';
 import { RuntimeStore } from './runtime-store.ts';
 import type { CapabilityVersion } from './runtime-store.ts';
 import type { Answer, Json, Provider, Request } from './types.ts';
 
 export interface StageResult {status:'complete'|'skipped'|'error'|'cancelled';answers?:Record<string,Answer>;error?:CallResult['error'];cached?:boolean;}
-export interface ItemResult {id:string;status:'complete'|'partial'|'cancelled';selected:boolean;rank:number|null;stages:Record<string,StageResult>;}
+/** composites and route are computed in code after all stages; route is null unless every stage completed or was skipped. */
+export interface ItemResult {id:string;status:'complete'|'partial'|'cancelled';selected:boolean;rank:number|null;composites?:Record<string,number|null>;route?:string|null;stages:Record<string,StageResult>;}
 export interface RunOptions {maxCalls:number;useCache:boolean;signal?:AbortSignal;}
 type Caller = (provider:Provider,request:Request,options:{apiKey:string;signal?:AbortSignal})=>Promise<CallResult>;
 
@@ -78,8 +79,12 @@ export class CapabilityRuntime {
             }
           }
           const status=Object.values(stages).some(s=>s.status==='error')?'partial':Object.values(stages).some(s=>s.status==='cancelled')?'cancelled':'complete';
-          const value=definition.rank?answerValue(prior[definition.rank.stage]?.[definition.rank.question]):undefined;
-          const result:ItemResult={id:item.id,status,stages,selected:status==='complete'&&(definition.select?definition.select.every(r=>matches(r,prior)):Object.values(stages).some(s=>s.status==='complete')),rank:typeof value==='number'?value:null};
+          const composites=computeComposites(definition,prior);
+          const rank=definition.rank;
+          const value=!rank?undefined:'composite' in rank?composites[rank.composite]:answerValue(prior[rank.stage]?.[rank.question]);
+          const result:ItemResult={id:item.id,status,stages,selected:status==='complete'&&(definition.select?definition.select.every(r=>matches(r,prior,composites)):Object.values(stages).some(s=>s.status==='complete')),rank:typeof value==='number'?value:null};
+          if(definition.composites)result.composites=composites;
+          if(definition.routes)result.route=status==='complete'?routeFor(definition,prior,composites):null;
           this.store.finishItem(runId!,item.id,result);results.push(result);
         }
       };
@@ -91,7 +96,9 @@ export class CapabilityRuntime {
         return (definition.rank?.direction==='asc'?1:-1)*((a.rank??0)-(b.rank??0))||a.id.localeCompare(b.id);
       }).map(r=>r.id);
       const status=results.every(r=>r.status==='complete')?'complete':results.some(r=>r.status==='complete')?'partial':'failed';
-      const summary={...costs,totalItems:items.length,completedItems:results.filter(r=>r.status==='complete').length,selectedIds:selected};
+      const routes:Record<string,string[]>={};
+      if(definition.routes)for(const r of [...results].sort((a,b)=>a.id.localeCompare(b.id)))if(r.route)(routes[r.route]??=[]).push(r.id);
+      const summary={...costs,totalItems:items.length,completedItems:results.filter(r=>r.status==='complete').length,selectedIds:selected,...(definition.routes?{routes}:{})};
       this.store.finishRun(runId,status,summary);
       return {runId,status,capability:{name:version.name,version:version.version,hash:version.hash},summary,results:results.sort((a,b)=>items.findIndex(i=>i.id===a.id)-items.findIndex(i=>i.id===b.id)).slice(0,5),moreResults:results.length>5};
     }catch(error){
@@ -104,15 +111,17 @@ export class CapabilityRuntime {
     const definition:Capability={name:'adhoc',description:'One-off authored judgment; state is available as item.',stages:[{id:'judge',questions}]};
     return this.run({name:'adhoc',version:0,hash:hash(definition),definition,createdAt:new Date().toISOString(),validation:'unvalidated'},[{id:'state',data:state}],{},options);
   }
-  async evaluate(version:CapabilityVersion,cases:{id:string;data:Json;expected:Rule[]}[],context:Json,maxCalls:number,signal?:AbortSignal){
+  async evaluate(version:CapabilityVersion,cases:{id:string;data:Json;expected:Expectation[]}[],context:Json,maxCalls:number,signal?:AbortSignal){
     // Check expected references without sending labels to Jev or mutating the definition.
-    for(const c of cases)validateCapability({...version.definition,select:c.expected});
+    const definition=validateCapability(version.definition);
+    for(const c of cases)validateExpectations(definition,c.expected);
     const run=await this.run(version,cases.map(c=>({id:c.id,data:c.data})),context,{maxCalls,useCache:false,signal});
     const page=this.store.getRun(run.runId,20);
     const checks=cases.map(c=>{
       const result=page.items.find(i=>i.id===c.id)?.result as ItemResult|undefined;
       const answers=Object.fromEntries(Object.entries(result?.stages??{}).flatMap(([id,s])=>s.answers?[[id,s.answers]]:[]));
-      const failed=c.expected.filter(r=>!matches(r,answers));
+      const composites=computeComposites(definition,answers);
+      const failed=c.expected.filter(e=>'route' in e?result?.route!==e.route:!matches(e as Rule,answers,composites));
       return {id:c.id,passed:result?.status==='complete'&&!failed.length,failed};
     });
     const evaluation={kind:'authored_test_evaluation',capability:run.capability,checks,passed:checks.filter(c=>c.passed).length,total:cases.length,expected:cases.map(c=>({id:c.id,expected:c.expected})),note:'Labels are caller-authored. Passing them is evidence for these examples, not independent validation.'};

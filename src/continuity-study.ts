@@ -1,7 +1,7 @@
 import { readFile, readdir, mkdir, appendFile, writeFile } from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
 import { hash, root, readJson, writeJson } from './io.ts';
-import { callProvider, defaultModels } from './provider.ts';
+import { callProvider, studyModel } from './provider.ts';
 import { baselineScores, buildContinuityRequest, continuityPolicy, eligible, makePacket, overlap, scoreSelection, selectCards, selectionFromResponse, wakeFromResponse } from './continuity.ts';
 import type { ContinuityCase, ContinuityVariant, Selection } from './continuity.ts';
 import type { Provider, Request } from './types.ts';
@@ -98,7 +98,8 @@ export function continuityReport(manifest: ContinuityManifest, events: Continuit
   return lines.join('\n');
 }
 
-export async function runContinuity(options: { live: boolean; provider: Provider; split: ContinuityCase['split']; outputRoot?: string; apiKey?: string; fetcher?: typeof fetch }): Promise<string> {
+export async function runContinuity(options: { live: boolean; provider: Provider; split: ContinuityCase['split']; model?: string; outputRoot?: string; apiKey?: string; fetcher?: typeof fetch }): Promise<string> {
+  const model = studyModel(options.provider, options.split, options.model);
   const cases = await readJson<ContinuityCase[]>(`${root}/studies/continuity/cases.json`);
   const protocol = await readJson(`${root}/studies/continuity/protocol.json`);
   validateContinuityCases(cases);
@@ -107,7 +108,7 @@ export async function runContinuity(options: { live: boolean; provider: Provider
   const variants: ContinuityVariant[] = ['canonical','paraphrase','reversed'];
   const sources = Object.fromEntries(await Promise.all((await readdir(`${root}/src`)).filter(f => f.endsWith('.ts')).map(async f => [`src/${f}`, await readFile(`${root}/src/${f}`, 'utf8')])));
   const manifest: ContinuityManifest = {
-    createdAt: new Date().toISOString(), live: options.live, provider: options.provider, model: defaultModels[options.provider], split: options.split, variants,
+    createdAt: new Date().toISOString(), live: options.live, provider: options.provider, model, split: options.split, variants,
     policy: continuityPolicy, protocol, cases: selected, plannedRequests: selected.length * variants.length,
     hashes: { cases: hash(cases), protocol: hash(protocol), policy: hash(continuityPolicy), ...Object.fromEntries(Object.entries(sources).map(([f, s]) => [f, hash(s)])) },
   };

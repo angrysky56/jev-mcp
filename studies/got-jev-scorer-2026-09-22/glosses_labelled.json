@@ -1,0 +1,362 @@
+[
+ {
+  "id": "C1_logician",
+  "claim_id": "C1",
+  "claim": "A claim is committed only if its proof succeeds.",
+  "audience": "logician",
+  "gloss": "For any proposition, being committed to it entails that its proof is successful.",
+  "label": "F",
+  "note": "",
+  "batch": "6-per-call"
+ },
+ {
+  "id": "C1_code_comment",
+  "claim_id": "C1",
+  "claim": "A claim is committed only if its proof succeeds.",
+  "audience": "code_comment",
+  "gloss": "// Do not commit to a claim unless its proof has succeeded.",
+  "label": "F",
+  "note": "code-comment imperative describes behaviour; direction preserved",
+  "batch": "6-per-call"
+ },
+ {
+  "id": "C1_ten_year_old",
+  "claim_id": "C1",
+  "claim": "A claim is committed only if its proof succeeds.",
+  "audience": "ten_year_old",
+  "gloss": "You should only believe something for real when you have a proof that it works.",
+  "label": "A",
+  "note": "normative 'should' + believe vs committed",
+  "batch": "6-per-call"
+ },
+ {
+  "id": "C1_headline",
+  "claim_id": "C1",
+  "claim": "A claim is committed only if its proof succeeds.",
+  "audience": "headline",
+  "gloss": "No proof success means no commitment.",
+  "label": "F",
+  "note": "contrapositive",
+  "batch": "6-per-call"
+ },
+ {
+  "id": "C1_manager",
+  "claim_id": "C1",
+  "claim": "A claim is committed only if its proof succeeds.",
+  "audience": "manager",
+  "gloss": "We should only commit to a claim if its proof succeeds.",
+  "label": "A",
+  "note": "normative 'should'",
+  "batch": "6-per-call"
+ },
+ {
+  "id": "C1_skeptic",
+  "claim_id": "C1",
+  "claim": "A claim is committed only if its proof succeeds.",
+  "audience": "skeptic",
+  "gloss": "If the proof doesn't work, don't commit.",
+  "label": "A",
+  "note": "normative imperative",
+  "batch": "6-per-call"
+ },
+ {
+  "id": "C2_logician",
+  "claim_id": "C2",
+  "claim": "Every registered agent receives at least one consistency check.",
+  "audience": "logician",
+  "gloss": "∀x (RegisteredAgent(x) → ∃y (ConsistencyCheck(y) ∧ Receives(x, y)))",
+  "label": "F",
+  "note": "",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C2_code_comment",
+  "claim_id": "C2",
+  "claim": "Every registered agent receives at least one consistency check.",
+  "audience": "code_comment",
+  "gloss": "// Every registered agent must receive at least one consistency check.",
+  "label": "F",
+  "note": "code-comment 'must'",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C2_ten_year_old",
+  "claim_id": "C2",
+  "claim": "Every registered agent receives at least one consistency check.",
+  "audience": "ten_year_old",
+  "gloss": "Every person who signs up as an agent gets checked at least one time to make sure everything is okay.",
+  "label": "F",
+  "note": "loose but same quantifiers",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C2_headline",
+  "claim_id": "C2",
+  "claim": "Every registered agent receives at least one consistency check.",
+  "audience": "headline",
+  "gloss": "Every agent gets a consistency check.",
+  "label": "U",
+  "note": "drops 'registered': stronger",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C2_manager",
+  "claim_id": "C2",
+  "claim": "Every registered agent receives at least one consistency check.",
+  "audience": "manager",
+  "gloss": "All registered agents are automatically guaranteed at least one consistency check, ensuring no one is missed.",
+  "label": "U",
+  "note": "mild: adds 'automatically guaranteed' (modal strengthening)",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C2_skeptic",
+  "claim_id": "C2",
+  "claim": "Every registered agent receives at least one consistency check.",
+  "audience": "skeptic",
+  "gloss": "Each registered agent gets one check for consistency.",
+  "label": "U",
+  "note": "mild: 'one check' reads as exactly one",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C3_logician",
+  "claim_id": "C3",
+  "claim": "No formalization whose fidelity was not measured can pass the gate.",
+  "audience": "logician",
+  "gloss": "For any formalization, if its fidelity has not been measured, then it cannot pass the gate.",
+  "label": "F",
+  "note": "",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C3_code_comment",
+  "claim_id": "C3",
+  "claim": "No formalization whose fidelity was not measured can pass the gate.",
+  "audience": "code_comment",
+  "gloss": "// Only formalizations with measured fidelity may pass the gate.",
+  "label": "F",
+  "note": "only-measured may pass = pass->measured",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C3_ten_year_old",
+  "claim_id": "C3",
+  "claim": "No formalization whose fidelity was not measured can pass the gate.",
+  "audience": "ten_year_old",
+  "gloss": "If you didn't check how well something matches the real thing, it can't go through the gate.",
+  "label": "F",
+  "note": "loose",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C3_headline",
+  "claim_id": "C3",
+  "claim": "No formalization whose fidelity was not measured can pass the gate.",
+  "audience": "headline",
+  "gloss": "Unmeasured formalization fidelity cannot pass gate.",
+  "label": "F",
+  "note": "headline compression, natural reading same",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C3_manager",
+  "claim_id": "C3",
+  "claim": "No formalization whose fidelity was not measured can pass the gate.",
+  "audience": "manager",
+  "gloss": "A formalization can pass the gate only if its fidelity has been measured.",
+  "label": "F",
+  "note": "",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C3_skeptic",
+  "claim_id": "C3",
+  "claim": "No formalization whose fidelity was not measured can pass the gate.",
+  "audience": "skeptic",
+  "gloss": "If fidelity wasn't measured, it doesn't pass.",
+  "label": "F",
+  "note": "'doesn't' vs 'can't' pass, natural reading same",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C4_logician",
+  "claim_id": "C4",
+  "claim": "The monitor flags a pair of facets unless both the text channel and the scalar channel agree.",
+  "audience": "logician",
+  "gloss": "The monitor flags a pair of facets if and only if it is not the case that both the text channel and the scalar channel agree.",
+  "label": "F",
+  "note": "biconditional reading",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C4_code_comment",
+  "claim_id": "C4",
+  "claim": "The monitor flags a pair of facets unless both the text channel and the scalar channel agree.",
+  "audience": "code_comment",
+  "gloss": "// Flag the pair unless both text and scalar channels agree. Condition: textAgree && scalarAgree == false.",
+  "label": "U",
+  "note": "code condition parses as textAgree && (scalarAgree==false) by precedence",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C4_ten_year_old",
+  "claim_id": "C4",
+  "claim": "The monitor flags a pair of facets unless both the text channel and the scalar channel agree.",
+  "audience": "ten_year_old",
+  "gloss": "The monitor gives a warning about two things unless both the word channel and the number channel say the same thing.",
+  "label": "A",
+  "note": "source sentence itself ambiguous: agree with each other vs each indicates agreement",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C4_headline",
+  "claim_id": "C4",
+  "claim": "The monitor flags a pair of facets unless both the text channel and the scalar channel agree.",
+  "audience": "headline",
+  "gloss": "Monitor flags facets unless channels agree",
+  "label": "F",
+  "note": "keeps the same ambiguity",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C4_manager",
+  "claim_id": "C4",
+  "claim": "The monitor flags a pair of facets unless both the text channel and the scalar channel agree.",
+  "audience": "manager",
+  "gloss": "The monitor flags a pair of facets only if the text and scalar channels do not agree.",
+  "label": "U",
+  "note": "'only if' reverses conditional direction",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C4_skeptic",
+  "claim_id": "C4",
+  "claim": "The monitor flags a pair of facets unless both the text channel and the scalar channel agree.",
+  "audience": "skeptic",
+  "gloss": "Flags facets only when text and scalar channels disagree.",
+  "label": "U",
+  "note": "'only when' reverses direction",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C5_logician",
+  "claim_id": "C5",
+  "claim": "If the judge is enabled but unreachable, the system raises an error instead of returning a score.",
+  "audience": "logician",
+  "gloss": "If the judge is enabled but unreachable, the system raises an error rather than returning a score.",
+  "label": "F",
+  "note": "",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C5_code_comment",
+  "claim_id": "C5",
+  "claim": "If the judge is enabled but unreachable, the system raises an error instead of returning a score.",
+  "audience": "code_comment",
+  "gloss": "// If judge is enabled but unreachable, raise error instead of returning a score.",
+  "label": "F",
+  "note": "code-comment imperative",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C5_ten_year_old",
+  "claim_id": "C5",
+  "claim": "If the judge is enabled but unreachable, the system raises an error instead of returning a score.",
+  "audience": "ten_year_old",
+  "gloss": "If the judge robot is turned on but can't be contacted, the computer says 'Error!' instead of giving a score.",
+  "label": "F",
+  "note": "",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C5_headline",
+  "claim_id": "C5",
+  "claim": "If the judge is enabled but unreachable, the system raises an error instead of returning a score.",
+  "audience": "headline",
+  "gloss": "Error if judge enabled but unreachable",
+  "label": "U",
+  "note": "drops 'instead of returning a score': weaker",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C5_manager",
+  "claim_id": "C5",
+  "claim": "If the judge is enabled but unreachable, the system raises an error instead of returning a score.",
+  "audience": "manager",
+  "gloss": "When a judge is enabled but cannot be reached, the system will raise an error rather than returning a score.",
+  "label": "F",
+  "note": "",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C5_skeptic",
+  "claim_id": "C5",
+  "claim": "If the judge is enabled but unreachable, the system raises an error instead of returning a score.",
+  "audience": "skeptic",
+  "gloss": "Enabled but unreachable judge? System gives error, not score.",
+  "label": "F",
+  "note": "",
+  "batch": "3-per-call"
+ },
+ {
+  "id": "C6_logician",
+  "claim_id": "C6",
+  "claim": "Not every commit with high stated confidence was later confirmed.",
+  "audience": "logician",
+  "gloss": "It is false that for every commit, if it had high stated confidence then it was later confirmed.",
+  "label": "F",
+  "note": "",
+  "batch": "6-per-call"
+ },
+ {
+  "id": "C6_code_comment",
+  "claim_id": "C6",
+  "claim": "Not every commit with high stated confidence was later confirmed.",
+  "audience": "code_comment",
+  "gloss": "// Not all commits marked with high confidence were later verified; some were false positives.",
+  "label": "U",
+  "note": "adds 'false positives': not confirmed != false",
+  "batch": "6-per-call"
+ },
+ {
+  "id": "C6_ten_year_old",
+  "claim_id": "C6",
+  "claim": "Not every commit with high stated confidence was later confirmed.",
+  "audience": "ten_year_old",
+  "gloss": "Not every time you were really sure about something did it turn out you were right.",
+  "label": "F",
+  "note": "loose",
+  "batch": "6-per-call"
+ },
+ {
+  "id": "C6_headline",
+  "claim_id": "C6",
+  "claim": "Not every commit with high stated confidence was later confirmed.",
+  "audience": "headline",
+  "gloss": "Not all high-confidence commits later confirmed.",
+  "label": "F",
+  "note": "",
+  "batch": "6-per-call"
+ },
+ {
+  "id": "C6_manager",
+  "claim_id": "C6",
+  "claim": "Not every commit with high stated confidence was later confirmed.",
+  "audience": "manager",
+  "gloss": "Despite high stated confidence, some commits were never confirmed, so trust but verify.",
+  "label": "F",
+  "note": "adds advice; core claim same",
+  "batch": "6-per-call"
+ },
+ {
+  "id": "C6_skeptic",
+  "claim_id": "C6",
+  "claim": "Not every commit with high stated confidence was later confirmed.",
+  "audience": "skeptic",
+  "gloss": "Some high-confidence commits turned out to be false.",
+  "label": "U",
+  "note": "'turned out to be false' is stronger than unconfirmed",
+  "batch": "6-per-call"
+ }
+]

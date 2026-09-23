@@ -14,6 +14,18 @@ export const defaultModels: Record<Provider, string> = {
  *  frozen study, because two runs can silently measure two different models. */
 export const isFloatingModel = (model: string): boolean => model.startsWith('~') || /(^|[-/])latest$/.test(model);
 
+/** Shared by study entry points; reject moving evaluation targets before any output is written. */
+export function studyModel(provider: Provider, split: 'development' | 'evaluation', model?: string): string {
+  const selected = model ?? defaultModels[provider];
+  if (split === 'evaluation' && isFloatingModel(selected)) {
+    throw new Error('Evaluation runs require a concrete model. Pass --model with an exact slug, e.g. typesafe/jev-1.13-20260917.');
+  }
+  if (!(provider === 'typesafe' ? /^jev-[a-zA-Z0-9.-]+$/ : /^~?typesafe\/jev-[a-zA-Z0-9.-]+$/).test(selected)) {
+    throw new Error('Select a valid Jev model slug for this provider.');
+  }
+  return selected;
+}
+
 export class ProviderError extends Error {
   kind: string;
   status?: number;
