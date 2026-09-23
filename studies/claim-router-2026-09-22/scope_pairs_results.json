@@ -1,0 +1,146 @@
+{
+ "P1G": {
+  "route": "check_sample",
+  "risk": 0.45,
+  "over": 0.77,
+  "scope": 0.41,
+  "mode": "induction",
+  "mc": 0.82,
+  "stakes": 0.68
+ },
+ "P1S": {
+  "route": "accept",
+  "risk": 0.26,
+  "over": 0.56,
+  "scope": 0.09,
+  "mode": "deduction",
+  "mc": 0.74,
+  "stakes": 0.51
+ },
+ "P2G": {
+  "route": "check_sample",
+  "risk": 0.59,
+  "over": 0.86,
+  "scope": 0.69,
+  "mode": "induction",
+  "mc": 0.94,
+  "stakes": 0.7
+ },
+ "P2S": {
+  "route": "prove",
+  "risk": 0.37,
+  "over": 0.72,
+  "scope": 0.22,
+  "mode": "deduction",
+  "mc": 0.5,
+  "stakes": 0.56
+ },
+ "P3G": {
+  "route": "check_sample",
+  "risk": 0.44,
+  "over": 0.7,
+  "scope": 0.45,
+  "mode": "induction",
+  "mc": 0.84,
+  "stakes": 0.55
+ },
+ "P3S": {
+  "route": "accept",
+  "risk": 0.29,
+  "over": 0.63,
+  "scope": 0.08,
+  "mode": "induction",
+  "mc": 0.59,
+  "stakes": 0.65
+ },
+ "P4G": {
+  "route": "check_sample",
+  "risk": 0.49,
+  "over": 0.79,
+  "scope": 0.55,
+  "mode": "induction",
+  "mc": 0.8,
+  "stakes": 0.77
+ },
+ "P4S": {
+  "route": "accept",
+  "risk": 0.15,
+  "over": 0.31,
+  "scope": 0.07,
+  "mode": "deduction",
+  "mc": 0.94,
+  "stakes": 0.73
+ },
+ "P5G": {
+  "route": "second_opinion",
+  "risk": 0.52,
+  "over": 0.86,
+  "scope": 0.47,
+  "mode": "abduction",
+  "mc": 0.42,
+  "stakes": 0.79
+ },
+ "P5S": {
+  "route": "accept",
+  "risk": 0.12,
+  "over": 0.2,
+  "scope": 0.07,
+  "mode": "deduction",
+  "mc": 0.95,
+  "stakes": 0.68
+ },
+ "P6G": {
+  "route": "second_opinion",
+  "risk": 0.61,
+  "over": 0.86,
+  "scope": 0.72,
+  "mode": "abduction",
+  "mc": 0.4,
+  "stakes": 0.55
+ },
+ "P6S": {
+  "route": "accept",
+  "risk": 0.12,
+  "over": 0.22,
+  "scope": 0.04,
+  "mode": "deduction",
+  "mc": 0.93,
+  "stakes": 0.52
+ },
+ "P7G": {
+  "route": "check_sample",
+  "risk": 0.54,
+  "over": 0.83,
+  "scope": 0.51,
+  "mode": "induction",
+  "mc": 0.95,
+  "stakes": 0.99
+ },
+ "P7S": {
+  "route": "prove",
+  "risk": 0.2,
+  "over": 0.24,
+  "scope": 0.27,
+  "mode": "deduction",
+  "mc": 0.84,
+  "stakes": 0.87
+ },
+ "P8G": {
+  "route": "check_sample",
+  "risk": 0.61,
+  "over": 0.94,
+  "scope": 0.68,
+  "mode": "induction",
+  "mc": 0.75,
+  "stakes": 0.82
+ },
+ "P8S": {
+  "route": "accept",
+  "risk": 0.2,
+  "over": 0.31,
+  "scope": 0.15,
+  "mode": "deduction",
+  "mc": 0.78,
+  "stakes": 0.78
+ }
+}

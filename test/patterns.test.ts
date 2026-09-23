@@ -122,3 +122,28 @@ test('run_capability over MCP receives an object context even when the host send
     assert.deepEqual((seen[1].state as {item:unknown}).item,{kind:'beta',conf:0.9,size:0,risky:0.1});
   }finally{await client.close();await server.close();store.close();}
 });
+
+test('run_capability can take its items from stored records in a scope',async()=>{
+  const { Client } = await import('@modelcontextprotocol/client');
+  const { InMemoryTransport } = await import('@modelcontextprotocol/server');
+  const { createMcpServer } = await import('../src/mcp-server.ts');
+  const store=new RuntimeStore(':memory:'),seen:Request[]=[];
+  const runtime=new CapabilityRuntime(store,{apiKey:'fixture',caller:async(_,request)=>{seen.push(request);return {response:{model:'f',answers:{q:{type:'noul',noul:0.7}},usage:{input_tokens:1,output_tokens:1}},attempts:1};}});
+  const server=createMcpServer(runtime),client=new Client({name:'t',version:'1'});
+  const [a,b]=InMemoryTransport.createLinkedPair();await server.connect(a);await client.connect(b);
+  try{
+    store.define({name:'rec',description:'Record fixture.',stages:[{id:'s',questions:{q:{type:'noul',instructions:'Does item.text fit context.task?'}}}]});
+    store.storeRecords([{id:'r1',scope:'cat',title:'One',text:'Does: first',source:'fixture',kind:'server',status:'active'},{id:'r2',scope:'cat',title:'Two',text:'Does: second',source:'fixture',kind:'server',status:'active'}]);
+    const r=await client.callTool({name:'run_capability',arguments:{name:'rec',records:{scope:'cat'},context:{task:'t'}}});
+    assert.ok(!r.isError,JSON.stringify(r));
+    assert.equal(seen.length,2);
+    assert.deepEqual((seen[0].state as {item:unknown}).item,{title:'One',text:'Does: first',kind:'server',source:'fixture'});
+    const brief=await client.callTool({name:'run_capability',arguments:{name:'rec',records:{scope:'cat'},summaryOnly:true}});
+    const result=(brief.structuredContent as {result:Record<string,unknown>}).result;
+    assert.ok(!('results' in result)&&'summary' in result&&'runId' in result);
+    const both=await client.callTool({name:'run_capability',arguments:{name:'rec',records:{scope:'cat'},items:[{id:'x',data:{}}]}});
+    assert.ok(both.isError);
+    const empty=await client.callTool({name:'run_capability',arguments:{name:'rec',records:{scope:'none'}}});
+    assert.ok(empty.isError);
+  }finally{await client.close();await server.close();store.close();}
+});

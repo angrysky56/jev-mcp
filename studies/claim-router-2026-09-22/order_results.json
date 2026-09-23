@@ -1,0 +1,86 @@
+{
+ "claim_first": {
+  "E10_tilde": [
+   "abduction",
+   0.45
+  ],
+  "E1_ded_low": [
+   "deduction",
+   1
+  ],
+  "E2_ded_high": [
+   "deduction",
+   0.99
+  ],
+  "E3_ind_high": [
+   "induction",
+   1
+  ],
+  "E4_abd": [
+   "abduction",
+   0.99
+  ],
+  "E5_unsup": [
+   "unsupported",
+   1
+  ],
+  "E6_rec": [
+   "recommendation",
+   0.67
+  ],
+  "E7_monitor": [
+   "induction",
+   0.91
+  ],
+  "E8_skim": [
+   "induction",
+   0.39
+  ],
+  "E9_ind_low": [
+   "induction",
+   1
+  ]
+ },
+ "basis_first": {
+  "E10_tilde": [
+   "abduction",
+   0.48
+  ],
+  "E1_ded_low": [
+   "deduction",
+   0.97
+  ],
+  "E2_ded_high": [
+   "deduction",
+   1
+  ],
+  "E3_ind_high": [
+   "induction",
+   1
+  ],
+  "E4_abd": [
+   "abduction",
+   0.93
+  ],
+  "E5_unsup": [
+   "unsupported",
+   1
+  ],
+  "E6_rec": [
+   "recommendation",
+   0.78
+  ],
+  "E7_monitor": [
+   "induction",
+   0.72
+  ],
+  "E8_skim": [
+   "abduction",
+   0.46
+  ],
+  "E9_ind_low": [
+   "induction",
+   0.94
+  ]
+ }
+}

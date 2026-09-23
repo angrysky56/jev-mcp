@@ -6,6 +6,8 @@ A working TypeScript MCP runtime for creating, testing, composing, and retaining
 
 The newer [continuity, planning, and operational self-model study](docs/jev-continuity-and-agency.md) adds prospective reminders, bounded memory selection, method retrieval, and a real Git worktree probe. It includes a stronger baseline audit alongside the Jev results.
 
+[tool_router](studies/tool-router-2026-09-22/README.md) has Jev suggest which of the MCP servers fit a task (20-server catalog stored as records; about 800 characters per routing) and adds `records` and `summaryOnly` options to `run_capability`.
+
 [Claim router](studies/claim-router-2026-09-22/README.md) makes the four TypeSafe patterns (fan-out, composite scoring, confidence gates, routing) part of how a capability is defined, and routes claims by reasoning mode to a prover, a sample check, or a rival-explanation test. It also documents a transport issue: some hosts stringify `context` and sort item keys.
 
 [Jev as the scorer inside Graph of Thoughts](studies/got-jev-scorer-2026-09-22/README.md) compares Jev with GoT's own LLM scorer on 36 GoT-generated rewrites and a counting control, and lists GoT/bridge bugs found along the way.

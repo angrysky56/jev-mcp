@@ -103,7 +103,16 @@ This affects earlier results.
 - `context` (for `run_capability`/`evaluate_capability`) and `state` (for `jev_judge`) arrived as **strings**.
 - Keys inside items arrived **sorted alphabetically**.
 
-**Key order changes Jev's answers.** With basis listed before claim, E7's mode confidence fell to 0.71–0.75, from 0.89–0.91 with claim first. So the same item can route differently depending on which client sends it.
+**Key order can change Jev's answers on borderline items.** With basis listed before claim, E7's mode confidence fell to 0.71–0.75, from 0.89–0.91 with claim first.
+
+I first wrote this up as a general effect. Then the router itself, run on my own conclusions, sent that claim to `check_sample`: it rested on one claim. Checking all 10 cases in both orders:
+
+- **The average shift was +0.01.**
+- **Clear cases barely moved.** E1–E5, E9: 0.00–0.06.
+- **Borderline ones moved 0.1–0.2.** E6 by −0.11, E7 by +0.19.
+- **E8 flipped label**, from induction (0.39) to abduction (0.46). It was ambiguous either way.
+
+So the same *borderline* item can route differently depending on which client sends it; clear items don't.
 
 **Runs that had a string context:**
 
@@ -124,6 +133,42 @@ This affects earlier results.
 The conclusions stand: Jev still can't verify counts.
 
 **Other runs:** the `inference_warrant` runs got items with keys sorted (basis before claim). They weren't re-run, so their mode confidences may be lower than a claim-first client would see.
+
+## The router audits its own author
+
+After the restart, `claim_router` was defined in the main library through the host. I ran it on four of my own conclusions from this session:
+
+| Claim | Route | Why |
+| --- | --- | --- |
+| Asking several questions in one call doesn't change answers | check_sample | tested on one claim |
+| Field order changes answers | check_sample | tested on one claim |
+| The earlier conclusions stand after the re-run | second_opinion | mode confidence 0.11, a mixed claim |
+| The routes are stable | check_sample | based on 2 repeats of 10 cases |
+
+`overclaim` scored 0.71–0.81 on all four.
+
+I followed through on the field-order route (see above): the claim didn't hold in general and had to be narrowed. The fan-out claim is likewise based on one claim, and is stated here only for that claim.
+
+Note: Cowork's tool list still showed the old `define_capability` schema after the restart, but the server accepted `composites` and `routes`. The bridge sorted the definition's question keys too, so the main-library hash (`0eb1ec6a…`) differs from the sandbox copy (`8b6adbeb…`) for the same content.
+
+## Can it catch overgeneralization? (scope pairs)
+
+Ty pointed out that I often overgeneralize in new, subtle domains. To test whether the router can help, I wrote 8 of today's conclusions two ways, with the same basis each time:
+
+- **G:** the general wording I actually used, such as "field order changes Jev's answers".
+- **S:** a rewrite scoped to what was measured, such as "on one claim, basis-first lowered mode confidence from 0.90 to 0.73".
+
+Predictions were stored first (`belief_ledger/pred_scope_pairs_1`); all five were met. Run `aba5016c`:
+
+| | General (G) | Scoped (S) |
+| --- | --- | --- |
+| warrant_risk | 0.44–0.61 | 0.12–0.37 (lower on 8/8 pairs) |
+| scope_gap | 0.41–0.72 | 0.04–0.27 (a 0.35 cut separates all 8) |
+| Routes | 6 check_sample, 2 second_opinion, 0 accept | 6 accept, 2 prove |
+
+**What this shows:** narrowing a claim to its sample and conditions moves the router in the right direction, consistently. `scope_gap` is the question that tracks it.
+
+**What it doesn't show:** that the router catches overgeneralizations as they're written. The scoped versions are close restatements of their basis, and I wrote both sides. The false-alarm rate on claims I scope naturally is still unmeasured.
 
 ## Routed handlers, run end to end
 

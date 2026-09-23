@@ -1,0 +1,154 @@
+[
+ {
+  "id": "T1",
+  "task": "Check whether 'a claim is committed only if its proof succeeds' implies 'every proved claim gets committed'.",
+  "core": [
+   "mcp_logic"
+  ],
+  "ok": [
+   "efh_core",
+   "jev"
+  ]
+ },
+ {
+  "id": "T2",
+  "task": "Explore several alternative designs for a caching layer, score them against our requirements, and keep the best two.",
+  "core": [
+   "graph_of_thought"
+  ],
+  "ok": [
+   "jev",
+   "wisdom_engine",
+   "advanced_reasoning"
+  ]
+ },
+ {
+  "id": "T3",
+  "task": "Find which sections of a 200-page PDF protocol specification discuss authentication and summarize them.",
+  "core": [
+   "pageindex"
+  ],
+  "ok": [
+   "context_compressor",
+   "pdf_viewer"
+  ]
+ },
+ {
+  "id": "T4",
+  "task": "Find every call to a deprecated function across a large Python repository and refactor them to the new API.",
+  "core": [
+   "ast_asg"
+  ],
+  "ok": [
+   "local_repl",
+   "desktop_commander",
+   "github",
+   "context7"
+  ]
+ },
+ {
+  "id": "T5",
+  "task": "Write code against the current version of a library's API without guessing the options.",
+  "core": [
+   "context7"
+  ],
+  "ok": [
+   "browser"
+  ]
+ },
+ {
+  "id": "T6",
+  "task": "Build a React dashboard page with tables, cards and a theme.",
+  "core": [
+   "shadcn_ui"
+  ],
+  "ok": [
+   "context7"
+  ]
+ },
+ {
+  "id": "T7",
+  "task": "Write a short science-fiction story with a consistent world and characters.",
+  "core": [
+   "advanced_writer"
+  ],
+  "ok": [
+   "graph_of_thought"
+  ]
+ },
+ {
+  "id": "T8",
+  "task": "Filter 20 web search results down to the ones that actually answer a research question, ranked.",
+  "core": [
+   "jev"
+  ],
+  "ok": [
+   "context_compressor"
+  ]
+ },
+ {
+  "id": "T9",
+  "task": "Open a pull request on GitHub with the changes from a local branch and describe them.",
+  "core": [
+   "github"
+  ],
+  "ok": [
+   "desktop_commander",
+   "local_repl"
+  ]
+ },
+ {
+  "id": "T10",
+  "task": "Figure out why a nightly data job fails intermittently when nothing in its code changed.",
+  "core": [
+   "wisdom_engine"
+  ],
+  "ok": [
+   "local_repl",
+   "desktop_commander",
+   "jev",
+   "advanced_reasoning"
+  ]
+ },
+ {
+  "id": "T11",
+  "task": "Benchmark three local Ollama models on Ty's GPU and record their speed.",
+  "core": [
+   "local_repl",
+   "desktop_commander"
+  ],
+  "ok": [
+   "hugging_face"
+  ]
+ },
+ {
+  "id": "T12",
+  "task": "Rename 30 photos in a connected folder by the date each was taken.",
+  "core": [],
+  "ok": [
+   "desktop_commander",
+   "local_repl"
+  ]
+ },
+ {
+  "id": "T13",
+  "task": "Build a linked knowledge base from Ty's research notes and find non-obvious connections between concepts.",
+  "core": [
+   "project_synapse"
+  ],
+  "ok": [
+   "context_compressor",
+   "advanced_reasoning"
+  ]
+ },
+ {
+  "id": "T14",
+  "task": "Understand why a team member keeps reacting angrily in meetings and how to respond.",
+  "core": [
+   "aseke_compass"
+  ],
+  "ok": [
+   "wisdom_engine"
+  ]
+ }
+]

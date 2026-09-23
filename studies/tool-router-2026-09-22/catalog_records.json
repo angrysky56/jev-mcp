@@ -1,0 +1,164 @@
+{
+ "records": [
+  {
+   "id": "mcp_logic",
+   "scope": "mcp_catalog",
+   "title": "mcp-logic",
+   "text": "Does: First-order logic prover and model finder (Prover9/Mace4): prove a conclusion from premises, find counterexamples, check satisfiability and consistency, abductive explanation.\nGood for: Checking whether a conclusion strictly follows from stated premises; necessary vs sufficient conditions; finding a counterexample to a general rule.\nNot for: Empirical questions about the world; arithmetic word problems; anything without explicit premises.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "efh_core",
+   "scope": "mcp_catalog",
+   "title": "efh-core",
+   "text": "Does: Claim ledger with a verification gate: assert and commit claims, verify implications with Z3 plus a fidelity judge, consistency monitoring across agents, audit trail.\nGood for: Turning claims into recorded knowledge only after formal verification; keeping many agents' claims consistent over time.\nNot for: One-off questions; informal notes.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "graph_of_thought",
+   "scope": "mcp_catalog",
+   "title": "graph-of-thought",
+   "text": "Does: Runs a graph of LLM operations on its own model: generate many candidate solutions, score them, keep the best, merge and improve.\nGood for: Exploring many alternative designs, drafts or solutions and pruning to the best; merging several drafts.\nNot for: Single factual answers; counting or exact computation; long graphs from Cowork (60 s limit).",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "jev",
+   "scope": "mcp_catalog",
+   "title": "jev",
+   "text": "Does: Fast, cheap typed-judgment model: yes/no probabilities, label choice, graded scores over JSON; saved capabilities with composite scores and routing (claim_router, evidence_stance, source_relevance).\nGood for: Classifying, filtering or ranking many items at once; routing; checking whether wording is supported by stated evidence; relevance of search results.\nNot for: Counting, arithmetic, dates; generating text; adversarial or untrusted input as a safety gate.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "wisdom_engine",
+   "scope": "mcp_catalog",
+   "title": "wisdom-engine",
+   "text": "Does: Generates competing hypotheses for an observation from mechanism, narrative and constraint perspectives, eliminates them by constraints, ad hoc defences and explaining-away, then synthesizes the surviving explanation.\nGood for: Diagnosing why something happened; listing rival explanations for a symptom or bug; stress-testing a favoured explanation.\nNot for: Tasks with a known answer or a fixed procedure.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "advanced_reasoning",
+   "scope": "mcp_catalog",
+   "title": "advanced-reasoning",
+   "text": "Does: Structured reasoning journal: thoughts with hypotheses, evidence, confidence and revisions, stored in a memory graph that persists across sessions.\nGood for: Long investigations spanning sessions that need a persistent, revisable reasoning trail.\nNot for: Short tasks; tasks whose answer does not depend on a reasoning record.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "context_compressor",
+   "scope": "mcp_catalog",
+   "title": "context-compressor",
+   "text": "Does: Compresses long text or files into summaries that keep named entities and key facts; stores searchable chunks that can be expanded later.\nGood for: Fitting long documents, logs or conversation history into limited context; searching compressed notes.\nNot for: Exact quotation; short texts.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "pageindex",
+   "scope": "mcp_catalog",
+   "title": "PageIndex",
+   "text": "Does: Document library for long PDFs and reports: upload, structure-aware browsing, relevance search, and page-level retrieval.\nGood for: Answering questions about long PDFs, specs, papers or reports; finding which pages discuss a topic.\nNot for: Code; short documents already in context.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "pdf_viewer",
+   "scope": "mcp_catalog",
+   "title": "pdf-viewer",
+   "text": "Does: Displays a PDF to the user in the app and navigates or interacts with its pages.\nGood for: Showing Ty a PDF or a specific page while discussing it.\nNot for: Extracting or searching content in bulk.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "ast_asg",
+   "scope": "mcp_catalog",
+   "title": "ast-asg",
+   "text": "Does: Parses code into syntax trees and semantic graphs, analyzes whole projects, syncs code structure to Neo4j, structural search and pattern-based transforms.\nGood for: Understanding the structure of an unfamiliar codebase; finding or refactoring all uses of a function or pattern structurally.\nNot for: Prose; single small edits.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "project_synapse",
+   "scope": "mcp_catalog",
+   "title": "project-synapse",
+   "text": "Does: Knowledge graph and wiki: ingest text, formal semantic parsing, explore connections between entities, remember and recall memories over time, maintain wiki pages.\nGood for: Building or querying a personal knowledge base; finding non-obvious connections between concepts in notes.\nNot for: One-off lookups; code.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "aseke_compass",
+   "scope": "mcp_catalog",
+   "title": "aseke-compass",
+   "text": "Does: Scaffolds analysis of human behavior, situations or conflicts using affective neuroscience (primary emotional systems) and behavioural patterns.\nGood for: Understanding motivations behind a person's or group's behaviour or a conflict.\nNot for: Technical or factual tasks.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "advanced_writer",
+   "scope": "mcp_catalog",
+   "title": "advanced-writer",
+   "text": "Does: Fiction and narrative toolkit: brainstorm ideas, develop characters, build a world bible, choose a story structure, draft, expand and revise stories.\nGood for: Writing or revising stories, novels and other narrative fiction.\nNot for: Technical documentation; factual reports.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "local_repl",
+   "scope": "mcp_catalog",
+   "title": "LocalREPL",
+   "text": "Does: Persistent Python REPLs and shells running on Ty's real computer (not the sandbox VM), keeping state across calls, with a searchable command log.\nGood for: Work that needs Ty's actual machine: the GPU, local services such as Ollama or Neo4j, long-running processes, state kept across many steps.\nNot for: Tasks the sandbox shell already handles, such as editing files in a connected folder.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "desktop_commander",
+   "scope": "mcp_catalog",
+   "title": "Desktop Commander",
+   "text": "Does: Shell, process control, file search and editing on Ty's computer; long-running processes, SSH, reading structured files.\nGood for: Managing processes and services on Ty's machine, SSH, searching the filesystem beyond connected folders.\nNot for: Tasks the sandbox shell already handles in connected folders.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "context7",
+   "scope": "mcp_catalog",
+   "title": "Context7",
+   "text": "Does: Looks up current documentation and code examples for libraries and frameworks.\nGood for: Writing code against a library API; checking current versions, options and usage.\nNot for: Non-code questions.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "shadcn_ui",
+   "scope": "mcp_catalog",
+   "title": "Shadcn UI",
+   "text": "Does: Source code, demos, blocks and themes for shadcn/ui React components.\nGood for: Building React user interfaces with standard components and themes.\nNot for: Backend code; non-React interfaces.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "github",
+   "scope": "mcp_catalog",
+   "title": "GitHub",
+   "text": "Does: GitHub repositories, files, branches, issues, pull requests and releases for Ty's account (angrysky56).\nGood for: Opening or reviewing pull requests, filing issues, reading remote repos, releases.\nNot for: Local-only work that is not on GitHub.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "hugging_face",
+   "scope": "mcp_catalog",
+   "title": "Hugging Face",
+   "text": "Does: Search Hugging Face models, datasets, papers and Spaces; inspect repos; run jobs and sandboxes on Hugging Face.\nGood for: Finding a model or dataset for a job; reading model cards; running compute on Hugging Face.\nNot for: Local GPU work on Ty's machine.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  },
+  {
+   "id": "browser",
+   "scope": "mcp_catalog",
+   "title": "Built-in browser",
+   "text": "Does: Claude's browser pane: open web pages, read them, fill forms, take screenshots.\nGood for: Interacting with websites that need clicking, forms, or logins; reading pages that the fetch tool cannot.\nNot for: Plain web search or reading simple pages.",
+   "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
+   "kind": "mcp_server"
+  }
+ ]
+}

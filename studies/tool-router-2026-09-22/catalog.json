@@ -1,0 +1,182 @@
+[
+ {
+  "id": "mcp_logic",
+  "data": {
+   "name": "mcp-logic",
+   "does": "First-order logic prover and model finder (Prover9/Mace4): prove a conclusion from premises, find counterexamples, check satisfiability and consistency, abductive explanation.",
+   "good_for": "Checking whether a conclusion strictly follows from stated premises; necessary vs sufficient conditions; finding a counterexample to a general rule.",
+   "not_for": "Empirical questions about the world; arithmetic word problems; anything without explicit premises."
+  }
+ },
+ {
+  "id": "efh_core",
+  "data": {
+   "name": "efh-core",
+   "does": "Claim ledger with a verification gate: assert and commit claims, verify implications with Z3 plus a fidelity judge, consistency monitoring across agents, audit trail.",
+   "good_for": "Turning claims into recorded knowledge only after formal verification; keeping many agents' claims consistent over time.",
+   "not_for": "One-off questions; informal notes."
+  }
+ },
+ {
+  "id": "graph_of_thought",
+  "data": {
+   "name": "graph-of-thought",
+   "does": "Runs a graph of LLM operations on its own model: generate many candidate solutions, score them, keep the best, merge and improve.",
+   "good_for": "Exploring many alternative designs, drafts or solutions and pruning to the best; merging several drafts.",
+   "not_for": "Single factual answers; counting or exact computation; long graphs from Cowork (60 s limit)."
+  }
+ },
+ {
+  "id": "jev",
+  "data": {
+   "name": "jev",
+   "does": "Fast, cheap typed-judgment model: yes/no probabilities, label choice, graded scores over JSON; saved capabilities with composite scores and routing (claim_router, evidence_stance, source_relevance).",
+   "good_for": "Classifying, filtering or ranking many items at once; routing; checking whether wording is supported by stated evidence; relevance of search results.",
+   "not_for": "Counting, arithmetic, dates; generating text; adversarial or untrusted input as a safety gate."
+  }
+ },
+ {
+  "id": "wisdom_engine",
+  "data": {
+   "name": "wisdom-engine",
+   "does": "Generates competing hypotheses for an observation from mechanism, narrative and constraint perspectives, eliminates them by constraints, ad hoc defences and explaining-away, then synthesizes the surviving explanation.",
+   "good_for": "Diagnosing why something happened; listing rival explanations for a symptom or bug; stress-testing a favoured explanation.",
+   "not_for": "Tasks with a known answer or a fixed procedure."
+  }
+ },
+ {
+  "id": "advanced_reasoning",
+  "data": {
+   "name": "advanced-reasoning",
+   "does": "Structured reasoning journal: thoughts with hypotheses, evidence, confidence and revisions, stored in a memory graph that persists across sessions.",
+   "good_for": "Long investigations spanning sessions that need a persistent, revisable reasoning trail.",
+   "not_for": "Short tasks; tasks whose answer does not depend on a reasoning record."
+  }
+ },
+ {
+  "id": "context_compressor",
+  "data": {
+   "name": "context-compressor",
+   "does": "Compresses long text or files into summaries that keep named entities and key facts; stores searchable chunks that can be expanded later.",
+   "good_for": "Fitting long documents, logs or conversation history into limited context; searching compressed notes.",
+   "not_for": "Exact quotation; short texts."
+  }
+ },
+ {
+  "id": "pageindex",
+  "data": {
+   "name": "PageIndex",
+   "does": "Document library for long PDFs and reports: upload, structure-aware browsing, relevance search, and page-level retrieval.",
+   "good_for": "Answering questions about long PDFs, specs, papers or reports; finding which pages discuss a topic.",
+   "not_for": "Code; short documents already in context."
+  }
+ },
+ {
+  "id": "pdf_viewer",
+  "data": {
+   "name": "pdf-viewer",
+   "does": "Displays a PDF to the user in the app and navigates or interacts with its pages.",
+   "good_for": "Showing Ty a PDF or a specific page while discussing it.",
+   "not_for": "Extracting or searching content in bulk."
+  }
+ },
+ {
+  "id": "ast_asg",
+  "data": {
+   "name": "ast-asg",
+   "does": "Parses code into syntax trees and semantic graphs, analyzes whole projects, syncs code structure to Neo4j, structural search and pattern-based transforms.",
+   "good_for": "Understanding the structure of an unfamiliar codebase; finding or refactoring all uses of a function or pattern structurally.",
+   "not_for": "Prose; single small edits."
+  }
+ },
+ {
+  "id": "project_synapse",
+  "data": {
+   "name": "project-synapse",
+   "does": "Knowledge graph and wiki: ingest text, formal semantic parsing, explore connections between entities, remember and recall memories over time, maintain wiki pages.",
+   "good_for": "Building or querying a personal knowledge base; finding non-obvious connections between concepts in notes.",
+   "not_for": "One-off lookups; code."
+  }
+ },
+ {
+  "id": "aseke_compass",
+  "data": {
+   "name": "aseke-compass",
+   "does": "Scaffolds analysis of human behavior, situations or conflicts using affective neuroscience (primary emotional systems) and behavioural patterns.",
+   "good_for": "Understanding motivations behind a person's or group's behaviour or a conflict.",
+   "not_for": "Technical or factual tasks."
+  }
+ },
+ {
+  "id": "advanced_writer",
+  "data": {
+   "name": "advanced-writer",
+   "does": "Fiction and narrative toolkit: brainstorm ideas, develop characters, build a world bible, choose a story structure, draft, expand and revise stories.",
+   "good_for": "Writing or revising stories, novels and other narrative fiction.",
+   "not_for": "Technical documentation; factual reports."
+  }
+ },
+ {
+  "id": "local_repl",
+  "data": {
+   "name": "LocalREPL",
+   "does": "Persistent Python REPLs and shells running on Ty's real computer (not the sandbox VM), keeping state across calls, with a searchable command log.",
+   "good_for": "Work that needs Ty's actual machine: the GPU, local services such as Ollama or Neo4j, long-running processes, state kept across many steps.",
+   "not_for": "Tasks the sandbox shell already handles, such as editing files in a connected folder."
+  }
+ },
+ {
+  "id": "desktop_commander",
+  "data": {
+   "name": "Desktop Commander",
+   "does": "Shell, process control, file search and editing on Ty's computer; long-running processes, SSH, reading structured files.",
+   "good_for": "Managing processes and services on Ty's machine, SSH, searching the filesystem beyond connected folders.",
+   "not_for": "Tasks the sandbox shell already handles in connected folders."
+  }
+ },
+ {
+  "id": "context7",
+  "data": {
+   "name": "Context7",
+   "does": "Looks up current documentation and code examples for libraries and frameworks.",
+   "good_for": "Writing code against a library API; checking current versions, options and usage.",
+   "not_for": "Non-code questions."
+  }
+ },
+ {
+  "id": "shadcn_ui",
+  "data": {
+   "name": "Shadcn UI",
+   "does": "Source code, demos, blocks and themes for shadcn/ui React components.",
+   "good_for": "Building React user interfaces with standard components and themes.",
+   "not_for": "Backend code; non-React interfaces."
+  }
+ },
+ {
+  "id": "github",
+  "data": {
+   "name": "GitHub",
+   "does": "GitHub repositories, files, branches, issues, pull requests and releases for Ty's account (angrysky56).",
+   "good_for": "Opening or reviewing pull requests, filing issues, reading remote repos, releases.",
+   "not_for": "Local-only work that is not on GitHub."
+  }
+ },
+ {
+  "id": "hugging_face",
+  "data": {
+   "name": "Hugging Face",
+   "does": "Search Hugging Face models, datasets, papers and Spaces; inspect repos; run jobs and sandboxes on Hugging Face.",
+   "good_for": "Finding a model or dataset for a job; reading model cards; running compute on Hugging Face.",
+   "not_for": "Local GPU work on Ty's machine."
+  }
+ },
+ {
+  "id": "browser",
+  "data": {
+   "name": "Built-in browser",
+   "does": "Claude's browser pane: open web pages, read them, fill forms, take screenshots.",
+   "good_for": "Interacting with websites that need clicking, forms, or logins; reading pages that the fetch tool cannot.",
+   "not_for": "Plain web search or reading simple pages."
+  }
+ }
+]

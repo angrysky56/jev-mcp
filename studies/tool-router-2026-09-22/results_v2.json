@@ -1,0 +1,251 @@
+{
+ "summary": {
+  "top1": 13,
+  "tasks": 14,
+  "negativeT12Clean": true,
+  "falseUseTotal": 0,
+  "falseUsePerTask": 0
+ },
+ "rows": [
+  {
+   "id": "T1",
+   "runId": "798211d3-e68e-4ab1-b929-d7a84a10a81b",
+   "top": [
+    "mcp_logic:0.54",
+    "jev:0.24",
+    "efh_core:0.14"
+   ],
+   "use": [],
+   "consider": [
+    "mcp_logic"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": []
+  },
+  {
+   "id": "T2",
+   "runId": "ca6c2fb6-56d3-4f32-b429-e196cb864c0d",
+   "top": [
+    "graph_of_thought:0.73",
+    "advanced_reasoning:0.44",
+    "jev:0.40"
+   ],
+   "use": [
+    "graph_of_thought"
+   ],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": []
+  },
+  {
+   "id": "T3",
+   "runId": "80f5a9df-36be-4d32-95dd-74adc815836a",
+   "top": [
+    "pageindex:0.83",
+    "context_compressor:0.55",
+    "desktop_commander:0.27"
+   ],
+   "use": [
+    "pageindex"
+   ],
+   "consider": [
+    "context_compressor"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": []
+  },
+  {
+   "id": "T4",
+   "runId": "f6d49ad9-53fc-4d69-bb8b-00f0f8d9bfb3",
+   "top": [
+    "ast_asg:0.86",
+    "desktop_commander:0.52",
+    "context7:0.45"
+   ],
+   "use": [
+    "ast_asg"
+   ],
+   "consider": [
+    "desktop_commander"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": []
+  },
+  {
+   "id": "T5",
+   "runId": "5b4cb6bd-e05b-4c5e-868f-af44f2819e96",
+   "top": [
+    "context7:0.58",
+    "browser:0.45",
+    "ast_asg:0.40"
+   ],
+   "use": [],
+   "consider": [
+    "context7"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": []
+  },
+  {
+   "id": "T6",
+   "runId": "8495d891-225f-43bd-ace7-bc1ba8b9e59e",
+   "top": [
+    "shadcn_ui:0.64",
+    "context7:0.42",
+    "graph_of_thought:0.29"
+   ],
+   "use": [
+    "shadcn_ui"
+   ],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": []
+  },
+  {
+   "id": "T7",
+   "runId": "15b0fd4a-71bb-4baa-9ec2-c5fef738cd34",
+   "top": [
+    "advanced_writer:0.76",
+    "graph_of_thought:0.60",
+    "project_synapse:0.23"
+   ],
+   "use": [
+    "advanced_writer",
+    "graph_of_thought"
+   ],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": []
+  },
+  {
+   "id": "T8",
+   "runId": "5994ba10-8f9c-40e7-abce-95f0acab6033",
+   "top": [
+    "jev:0.82",
+    "graph_of_thought:0.38",
+    "context_compressor:0.19"
+   ],
+   "use": [
+    "jev"
+   ],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": []
+  },
+  {
+   "id": "T9",
+   "runId": "d8098057-c9c7-4284-a9cc-f5f66089b96c",
+   "top": [
+    "github:0.89",
+    "browser:0.55",
+    "desktop_commander:0.27"
+   ],
+   "use": [
+    "github"
+   ],
+   "consider": [
+    "browser"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": []
+  },
+  {
+   "id": "T10",
+   "runId": "54f4a63a-01b7-4f56-bc3f-230a3d7447ac",
+   "top": [
+    "desktop_commander:0.76",
+    "local_repl:0.65",
+    "wisdom_engine:0.64"
+   ],
+   "use": [
+    "desktop_commander",
+    "local_repl",
+    "wisdom_engine"
+   ],
+   "consider": [
+    "advanced_reasoning"
+   ],
+   "top1": false,
+   "falseUse": [],
+   "missedCore": []
+  },
+  {
+   "id": "T11",
+   "runId": "f9dacb23-1906-49e6-bc6a-c83103c2b611",
+   "top": [
+    "local_repl:0.88",
+    "desktop_commander:0.52",
+    "graph_of_thought:0.10"
+   ],
+   "use": [
+    "local_repl"
+   ],
+   "consider": [
+    "desktop_commander"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": []
+  },
+  {
+   "id": "T12",
+   "runId": "729875e6-98bd-4b55-901a-315a66c4a8e3",
+   "top": [
+    "desktop_commander:0.12",
+    "graph_of_thought:0.10",
+    "context7:0.08"
+   ],
+   "use": [],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": []
+  },
+  {
+   "id": "T13",
+   "runId": "7e47c89e-3aca-4446-b32e-a2f5af2fff2b",
+   "top": [
+    "project_synapse:0.87",
+    "advanced_reasoning:0.75",
+    "graph_of_thought:0.52"
+   ],
+   "use": [
+    "project_synapse",
+    "advanced_reasoning"
+   ],
+   "consider": [
+    "graph_of_thought",
+    "context_compressor"
+   ],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": []
+  },
+  {
+   "id": "T14",
+   "runId": "b88a7364-aec3-4166-ae07-565604bc2729",
+   "top": [
+    "aseke_compass:0.78",
+    "wisdom_engine:0.71",
+    "graph_of_thought:0.31"
+   ],
+   "use": [
+    "aseke_compass",
+    "wisdom_engine"
+   ],
+   "consider": [],
+   "top1": true,
+   "falseUse": [],
+   "missedCore": []
+  }
+ ]
+}
