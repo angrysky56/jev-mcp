@@ -36,7 +36,7 @@
    "id": "wisdom_engine",
    "scope": "mcp_catalog",
    "title": "wisdom-engine",
-   "text": "Does: Generates competing hypotheses for an observation from mechanism, narrative and constraint perspectives, eliminates them by constraints, ad hoc defences and explaining-away, then synthesizes the surviving explanation.\nGood for: Diagnosing why something happened; listing rival explanations for a symptom or bug; stress-testing a favoured explanation.\nNot for: Tasks with a known answer or a fixed procedure.",
+   "text": "Does: Generates competing hypotheses for an observation from mechanism, narrative and constraint perspectives, eliminates them by constraints, ad hoc defences and explaining-away, then synthesizes the surviving explanation.\nGood for: Diagnosing why something happened; drafting rival explanations for a symptom or bug; stress-testing a favoured explanation.\nNot for: Tasks with a known answer or a fixed procedure. Its hypotheses often reword one cause, so it is a first draft of rivals, not a complete list. From Cowork only generate_hypotheses fits the 60 s limit; apply_via_negativa times out.",
    "source": "jev-mcp/studies/tool-router-2026-09-22/catalog.json",
    "kind": "mcp_server"
   },

@@ -45,8 +45,27 @@ Each task names the server(s) that should come out on top, plus others that woul
 
 ## Findings worth acting on
 
-- **wisdom-engine fills Jev's known gap.** Jev can't come up with rival explanations. `wisdom-engine.generate_hypotheses` does, and `apply_via_negativa` eliminates them. So claim_router's `test_rivals` route can become: wisdom-engine generates rivals, then `evidence_stance` judges them against the observations. Not wired up yet.
+- **wisdom-engine fills Jev's known gap.** Jev can't come up with rival explanations. `wisdom-engine.generate_hypotheses` does, and `apply_via_negativa` eliminates them. So claim_router's `test_rivals` route can become: wisdom-engine generates rivals, then `evidence_stance` judges them against the observations. Tried later the same day; see the live check below.
 - **LocalREPL runs on Ty's real machine**, unlike the sandboxed device shell. Anything needing the GPU, Ollama or Neo4j goes there.
+
+## Live check after restart
+
+- **Calling it from Cowork works.** A call with `records` and `summaryOnly` succeeded, even though Cowork's cached tool list still shows the old `run_capability` schema.
+- **The task:** wire wisdom-engine into claim_router's `test_rivals` route. It routed graph-of-thought and wisdom-engine to `use`, and jev to `consider`.
+- **The recommended server failed on its first call.** `wisdom-engine.generate_hypotheses` returned an error: its LLM fallback reached Ollama asking for `gemma4:12b`, and Ollama answered 404, which likely means that model isn't installed. It failed loudly by design. This is the "descriptions, not health" limit in practice: the router can recommend a server that is currently broken.
+- **Fixed, then retried (same day).** Ollama was asked for `gemma4:12b`, which isn't installed. `OLLAMA_MODEL` now names `aura-ornith:35b`, and an unknown model name now gives a clear error listing what is installed. With 3 prompts in parallel, the 35B local model timed out at 120 s. Ty then added an OpenRouter key, and `generate_hypotheses` now answers through `deepseek/deepseek-v4.1-flash` inside the 60 s bridge limit (2 of 2 calls).
+- **Rival-generation test on claim E4** ("the host didn't pass the key; nothing else could explain it"). wisdom-engine gave 3 hypotheses, then `evidence_stance` v2 judged them (run `4ae2d67a`):
+
+  | Hypothesis (short) | Really a rival? (my label) | Jev stance | Jev rival_explanation |
+  | --- | --- | --- | --- |
+  | GUI launch never read ~/.bashrc | No, it restates the claim | supports 0.76 | 0.61 |
+  | "Blame story" that hides a key-name mismatch | Partly: names the mismatch | contradicts 0.97 | 0.92 |
+  | ~/.bashrc invisible **and** the server needed TYPESAFE_API_KEY | Partly: adds the mismatch | supports 0.68 | 0.77 |
+
+  - In both calls (n = 2), all 3 "competing" hypotheses reused the claim's own mechanism, and only the key-name mismatch was a distinct rival. Neither the misspelled-variable rival I listed by hand earlier nor a `.env` that was never loaded appeared. So wisdom-engine's three perspectives vary the framing more than the cause.
+  - Jev again gave a restatement of the claim a middling rival score (0.61). It still can't tell "same cause, reworded" from "different cause", so a person or a second tool has to make that call.
+  - **`apply_via_negativa` timed out** at the 60 s bridge limit (1 of 1 call; it runs several LLM stages in a row). It can't be used from Cowork as is.
+- **What this means for `test_rivals`:** usable as "wisdom-engine drafts rivals, Claude adds the ones it missed and removes restatements, then `evidence_stance` sorts them". wisdom-engine alone is not a full rival search.
 
 ## Limits
 
